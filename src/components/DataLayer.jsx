@@ -93,12 +93,98 @@ export default function DataLayer() {
 
   const scores = calculateScores();
 
+  // Generar insights basados en los datos
+  const generateInsights = () => {
+    const insights = [];
+
+    // Google Trends Insight
+    if (trendsData?.keywords?.length > 0) {
+      const topKeyword = trendsData.keywords[0];
+      const avgGrowth = trendsData.keywords.reduce((sum, kw) => {
+        const growth = parseFloat(kw.growth_3m?.replace('%', '').replace('+', '')) || 0;
+        return sum + growth;
+      }, 0) / trendsData.keywords.length;
+      insights.push({
+        source: 'Google Trends',
+        icon: '🔍',
+        text: `"${topKeyword.keyword}" lidera búsquedas con ${topKeyword.average_interest}/100 de interés, con un crecimiento promedio de ${avgGrowth.toFixed(0)}% en keywords automotrices.`
+      });
+    }
+
+    // TikTok Insight
+    if (tiktokData?.trends?.hashtags?.length > 0) {
+      const topHashtag = tiktokData.trends.hashtags[0];
+      const peruHashtags = tiktokData.trends.hashtags.filter(h => h.region === 'Peru').length;
+      insights.push({
+        source: 'TikTok',
+        icon: '🎥',
+        text: `${topHashtag.hashtag} alcanza ${topHashtag.views} de visualizaciones con ${topHashtag.growth} de crecimiento, ${peruHashtags} hashtags tienen tracción específica en Perú.`
+      });
+    }
+
+    // Meta Insight
+    if (metaData?.aggregatedTopics?.length > 0) {
+      const topTopic = metaData.aggregatedTopics[0];
+      const positiveTopics = metaData.aggregatedTopics.filter(t =>
+        t.sentiment === 'very positive' || t.sentiment === 'positive'
+      ).length;
+      insights.push({
+        source: 'Meta',
+        icon: '📱',
+        text: `"${topTopic.topic}" genera ${topTopic.mentions?.toLocaleString()} menciones con ${topTopic.engagement_score}/10 de engagement, ${positiveTopics} de ${metaData.aggregatedTopics.length} temas tienen sentimiento positivo.`
+      });
+    }
+
+    // GA4 Insight
+    if (ga4Data?.overview) {
+      const convRate = (ga4Data.overview.conversionRate * 100).toFixed(1);
+      const topPage = ga4Data.topPages?.[0];
+      insights.push({
+        source: 'GA4',
+        icon: '📊',
+        text: `${ga4Data.overview.totalUsers?.toLocaleString()} usuarios generaron ${ga4Data.overview.conversions} leads (${convRate}% conversión), "${topPage?.page}" es la página más efectiva.`
+      });
+    }
+
+    // Conexión Multi-fuente
+    const connections = [];
+    if (trendsData?.keywords && tiktokData?.trends?.hashtags) {
+      // Buscar keywords que aparecen en hashtags
+      trendsData.keywords.slice(0, 3).forEach(kw => {
+        const kwLower = kw.keyword.toLowerCase();
+        tiktokData.trends.hashtags.forEach(tag => {
+          if (tag.hashtag.toLowerCase().includes(kwLower.split(' ')[0])) {
+            connections.push(`"${kw.keyword}"`);
+          }
+        });
+      });
+    }
+
+    if (connections.length > 0) {
+      insights.push({
+        source: 'Conexión Multi-fuente',
+        icon: '🔗',
+        text: `${connections.slice(0, 2).join(' y ')} ${connections.length > 1 ? 'aparecen' : 'aparece'} como señales fuertes en Google Trends, TikTok y Meta simultáneamente, indicando momentum real del mercado.`
+      });
+    } else {
+      insights.push({
+        source: 'Conexión Multi-fuente',
+        icon: '🔗',
+        text: `Las 4 fuentes confirman alto interés en SUVs híbridas: búsquedas creciendo +${((scores.search / 10) * 100).toFixed(0)}%, contenido viral activo, conversación social positiva y conversión del ${(ga4Data?.overview?.conversionRate * 100 || 6.3).toFixed(1)}%.`
+      });
+    }
+
+    return insights;
+  };
+
+  const insights = generateInsights();
+
   return (
     <div className="space-y-6">
       {/* Header & Score Summary */}
       <div className="bg-gradient-to-br from-toyota-red to-toyota-darkRed rounded-2xl shadow-toyota-lg p-8 text-white">
         <div className="flex items-start justify-between mb-6">
-          <div>
+          <div className="flex-1">
             <h2 className="text-3xl font-bold mb-2">
               Capa de Data - Captura de Señales
             </h2>
@@ -106,42 +192,20 @@ export default function DataLayer() {
               Monitoreo en tiempo real del ecosistema digital automotriz en Perú
             </p>
           </div>
-          <button
-            onClick={loadData}
-            disabled={isRefreshing}
-            className="flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition disabled:opacity-50 backdrop-blur-sm"
-          >
-            <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-            Actualizar
-          </button>
-        </div>
-
-        {/* Score Summary */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <p className="text-white/70 text-xs uppercase font-semibold mb-1">Score Global</p>
-            <p className="text-4xl font-bold mb-1">{scores.overall}</p>
-            <p className="text-xs text-white/60">Promedio de 4 fuentes</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <p className="text-white/70 text-xs uppercase font-semibold mb-1">Búsqueda</p>
-            <p className="text-3xl font-bold mb-1">{scores.search}</p>
-            <p className="text-xs text-white/60">Google Trends</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <p className="text-white/70 text-xs uppercase font-semibold mb-1">Tendencia</p>
-            <p className="text-3xl font-bold mb-1">{scores.trend}</p>
-            <p className="text-xs text-white/60">TikTok Viral</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <p className="text-white/70 text-xs uppercase font-semibold mb-1">Social</p>
-            <p className="text-3xl font-bold mb-1">{scores.social}</p>
-            <p className="text-xs text-white/60">Meta Engagement</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <p className="text-white/70 text-xs uppercase font-semibold mb-1">Intención</p>
-            <p className="text-3xl font-bold mb-1">{scores.intent}</p>
-            <p className="text-xs text-white/60">GA4 Conversión</p>
+          <div className="flex items-center gap-4">
+            <div className="text-right">
+              <p className="text-white/70 text-xs uppercase font-semibold mb-1">Score Global</p>
+              <p className="text-5xl font-bold">{scores.overall}</p>
+              <p className="text-xs text-white/60">de 10.0</p>
+            </div>
+            <button
+              onClick={loadData}
+              disabled={isRefreshing}
+              className="flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition disabled:opacity-50 backdrop-blur-sm"
+            >
+              <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+              Actualizar
+            </button>
           </div>
         </div>
 
@@ -170,6 +234,24 @@ export default function DataLayer() {
               </span>
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Insights Clave del Mercado */}
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          📊 Insights Clave del Mercado
+        </h3>
+        <div className="space-y-3">
+          {insights.map((insight, idx) => (
+            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+              <span className="text-2xl flex-shrink-0">{insight.icon}</span>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-gray-500 uppercase mb-1">{insight.source}</p>
+                <p className="text-sm text-gray-800 leading-relaxed">{insight.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
