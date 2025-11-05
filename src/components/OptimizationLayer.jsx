@@ -220,96 +220,83 @@ export default function OptimizationLayer() {
         </ResponsiveContainer>
       </div>
 
-      {/* Channel Performance & Funnel */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Channel Distribution */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-          <h3 className="text-base font-bold text-gray-900 mb-4">Distribución de Leads por Canal</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <PieChart>
-              <Pie
-                data={channelData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                label={(entry) => `${entry.name}: ${entry.value}%`}
-                outerRadius={80}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {channelData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            {channelData.map((channel, idx) => (
-              <div key={idx} className="flex items-center justify-between p-2 bg-gray-50 rounded">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: channel.color }}></div>
-                  <span className="text-sm font-medium">{channel.name}</span>
-                </div>
-                <span className="text-sm font-bold text-gray-800">{channel.leads}</span>
+      {/* Channel Distribution */}
+      <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+        <h3 className="text-base font-bold text-gray-900 mb-4">Distribución de Leads por Canal</h3>
+        <ResponsiveContainer width="100%" height={250}>
+          <PieChart>
+            <Pie
+              data={channelData}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={(entry) => `${entry.name}: ${entry.value}%`}
+              outerRadius={80}
+              fill="#8884d8"
+              dataKey="value"
+            >
+              {channelData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+        <div className="mt-4 grid grid-cols-2 gap-3">
+          {channelData.map((channel, idx) => (
+            <div key={idx} className="flex items-center justify-between p-2 bg-gray-50 rounded">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: channel.color }}></div>
+                <span className="text-sm font-medium">{channel.name}</span>
               </div>
-            ))}
-          </div>
+              <span className="text-sm font-bold text-gray-800">{channel.leads}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Funnel de Conversión - Horizontal */}
+      <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+        <h3 className="text-base font-bold text-gray-900 mb-6">Funnel de Conversión</h3>
+
+        {/* Horizontal Flow */}
+        <div className="flex items-center justify-between gap-3 overflow-x-auto pb-4">
+          {funnelSteps.map((step, idx) => (
+            <div key={idx} className="flex items-center gap-3 flex-shrink-0">
+              {/* Step Card */}
+              <div className={`bg-gradient-to-br ${step.color} rounded-xl p-4 text-white shadow-md min-w-[140px]`}>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">{step.icon}</div>
+                  <p className="text-xs font-medium text-white/80 uppercase tracking-wide mb-1">{step.stage}</p>
+                  <p className="text-lg font-bold">{step.value.toLocaleString()}</p>
+                </div>
+              </div>
+
+              {/* Arrow with conversion rate */}
+              {idx < funnelSteps.length - 1 && (
+                <div className="flex flex-col items-center justify-center min-w-[60px]">
+                  <div className="text-sm font-bold text-gray-900 mb-1">{step.conversionRate}%</div>
+                  <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
-        {/* Journey de Conversión */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-          <h3 className="text-base font-bold text-gray-900 mb-2">Journey de Conversión</h3>
-          <p className="text-sm text-gray-600 mb-6">Tasa de conversión entre cada etapa del embudo</p>
-
-          <div className="space-y-4">
-            {funnelSteps.map((step, idx) => (
-              <div key={idx}>
-                {/* Step Card */}
-                <div className={`bg-gradient-to-r ${step.color} rounded-xl p-4 text-white shadow-md`}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="text-3xl">{step.icon}</div>
-                      <div>
-                        <p className="text-xs font-medium text-white/80 uppercase tracking-wide">{step.stage}</p>
-                        <p className="text-xl font-bold">{step.value.toLocaleString()}</p>
-                      </div>
-                    </div>
-
-                    {step.conversionRate !== null && (
-                      <div className="text-right bg-white/20 rounded-lg px-3 py-2">
-                        <p className="text-xs font-medium text-white/90">{step.conversionLabel}</p>
-                        <p className="text-lg font-bold">{step.conversionRate}%</p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Connector Arrow */}
-                {idx < funnelSteps.length - 1 && (
-                  <div className="flex justify-center py-2">
-                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Summary Stats */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-600 mb-1">Conversión Global</p>
-                <p className="text-xl font-bold text-gray-900">0.01%</p>
-                <p className="text-xs text-gray-500">Impresiones → Test Drives</p>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-600 mb-1">Etapa Crítica</p>
-                <p className="text-xl font-bold text-orange-600">1.4%</p>
-                <p className="text-xs text-gray-500">Landing → Formulario</p>
-              </div>
+        {/* Summary Stats */}
+        <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gray-50 rounded-lg p-3">
+              <p className="text-xs text-gray-600 mb-1">Conversión Global</p>
+              <p className="text-xl font-bold text-gray-900">0.01%</p>
+              <p className="text-xs text-gray-500">Impresiones → Test Drives</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-3">
+              <p className="text-xs text-gray-600 mb-1">Etapa Crítica</p>
+              <p className="text-xl font-bold text-orange-600">1.4%</p>
+              <p className="text-xs text-gray-500">Landing → Formulario</p>
             </div>
           </div>
         </div>
