@@ -7,9 +7,9 @@
 export const MOCK_GA4_DATA = {
   // Sesiones web
   sessions: {
-    total: 42500,
-    new_users: 38250,
-    returning: 4250,
+    total: 42200,
+    new_users: 25650,
+    returning: 2850,
     avg_session_duration: '4:15', // Mayor que autos (más tiempo investigando carreras)
     pages_per_session: 5.8,
     bounce_rate: 32.5, // porcentaje
@@ -19,65 +19,65 @@ export const MOCK_GA4_DATA = {
   top_pages: [
     {
       page: '/admision',
-      title: 'Admisión UCSP 2025',
-      views: 18500,
-      bounce_rate: 28,
-      avg_time: '5:30',
+      title: 'Admisión UCSP 2026',
+      views: 11200,
+      bounce_rate: 32,
+      avg_time: '3:45',
     },
     {
       page: '/carreras/ingenieria-industrial',
       title: 'Ingeniería Industrial',
-      views: 12800,
-      bounce_rate: 35,
-      avg_time: '4:20',
-    },
-    {
-      page: '/carreras/derecho',
-      title: 'Derecho',
-      views: 10200,
-      bounce_rate: 32,
-      avg_time: '4:45',
-    },
-    {
-      page: '/becas',
-      title: 'Becas y Financiamiento',
-      views: 8900,
-      bounce_rate: 18,
-      avg_time: '6:10',
+      views: 7500,
+      bounce_rate: 28,
+      avg_time: '4:12',
     },
     {
       page: '/carreras/medicina',
       title: 'Medicina Humana',
-      views: 7650,
-      bounce_rate: 30,
-      avg_time: '5:00',
+      views: 7200,
+      bounce_rate: 25,
+      avg_time: '5:05',
+    },
+    {
+      page: '/becas',
+      title: 'Becas y Financiamiento',
+      views: 9500,
+      bounce_rate: 42,
+      avg_time: '2:52',
+    },
+    {
+      page: '/carreras/derecho',
+      title: 'Derecho',
+      views: 5800,
+      bounce_rate: 35,
+      avg_time: '3:28',
     },
   ],
 
   // Conversiones (KPIs principales)
   conversions: {
-    form_submissions: 3200,
-    charla_requests: 485,
-    brochure_downloads: 2850,
-    whatsapp_clicks: 4200,
-    phone_calls: 720,
-    newsletter_signups: 1580,
+    form_submissions: 980,
+    charla_requests: 185,
+    brochure_downloads: 420,
+    whatsapp_clicks: 1250,
+    phone_calls: 220,
+    newsletter_signups: 380,
   },
 
   // Fuentes de tráfico
   traffic_sources: {
-    organic_search: { percentage: 32, sessions: 13600, label: 'Búsqueda Orgánica' },
-    paid_search: { percentage: 30, sessions: 12750, label: 'Google Ads' },
-    social_media: { percentage: 28, sessions: 11900, label: 'Meta Ads' },
-    direct: { percentage: 7, sessions: 2975, label: 'Directo' },
-    referral: { percentage: 3, sessions: 1275, label: 'Referencias' },
+    organic_search: { percentage: 32, sessions: 13504, label: 'Búsqueda Orgánica' },
+    paid_search: { percentage: 30, sessions: 12660, label: 'Google Ads' },
+    social_media: { percentage: 28, sessions: 11816, label: 'Meta Ads' },
+    direct: { percentage: 7, sessions: 2954, label: 'Directo' },
+    referral: { percentage: 3, sessions: 1266, label: 'Referencias' },
   },
 
   // Dispositivos
   devices: {
-    mobile: { percentage: 72, sessions: 30600, label: 'Mobile' },
-    desktop: { percentage: 23, sessions: 9775, label: 'Desktop' },
-    tablet: { percentage: 5, sessions: 2125, label: 'Tablet' },
+    mobile: { percentage: 72, sessions: 30384, label: 'Mobile' },
+    desktop: { percentage: 23, sessions: 9706, label: 'Desktop' },
+    tablet: { percentage: 5, sessions: 2110, label: 'Tablet' },
   },
 
   // Ubicaciones (zonas objetivo)
@@ -187,39 +187,34 @@ export const PERFORMANCE_KPIS = {
 // UCSP OPPORTUNITY SCORE - Reemplazo de Honda Opportunity Score
 // ============================================================================
 export const OPPORTUNITY_SCORE = {
-  current_score: 82,
-  trend: '+5.2%',
+  current_score: 67,
+  trend: '+3.8%',
   components: {
     search_interest: {
-      score: 85,
-      weight: 0.25,
-      contribution: 21.25,
+      score: 52,
+      weight: 0.28,
+      contribution: 14.56,
     },
     social_engagement: {
-      score: 78,
-      weight: 0.20,
-      contribution: 15.6,
+      score: 54,
+      weight: 0.22,
+      contribution: 11.88,
     },
     conversion_intent: {
-      score: 88,
-      weight: 0.30,
-      contribution: 26.4,
+      score: 87,
+      weight: 0.33,
+      contribution: 28.71,
     },
     lead_quality: {
-      score: 75,
-      weight: 0.15,
-      contribution: 11.25,
-    },
-    competitiveness: {
-      score: 80,
-      weight: 0.10,
-      contribution: 8.0,
+      score: 68,
+      weight: 0.17,
+      contribution: 11.56,
     },
   },
   recommendation: {
-    message: 'Momento óptimo para escalar inversión en Google Search y Meta Ads enfocados en Ingeniería Industrial y Medicina. Score superior a 80 indica alta receptividad del mercado educativo en Arequipa.',
-    confidence: '95%',
-    priority: 'high',
+    message: 'Oportunidad moderada para inversión focalizada en canales digitales. Priorizar Google Search y Meta Ads con foco en Medicina (alta conversión) y optimizar presencia en TikTok. Score de 67 indica receptividad media del mercado con margen de mejora.',
+    confidence: '82%',
+    priority: 'medium',
   },
 };
 
