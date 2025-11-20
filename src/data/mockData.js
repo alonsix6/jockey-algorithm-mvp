@@ -1,5 +1,5 @@
-// Mock Data para Honda - Dashboard Demo (Autos y Motos)
-// Datos simulados realistas para presentación a cliente
+// Mock Data para UCSP - Dashboard Demo
+// Datos simulados realistas para presentación
 
 // ============================================================================
 // MOCK GA4 DATA - Google Analytics 4 simulado
@@ -7,88 +7,86 @@
 export const MOCK_GA4_DATA = {
   // Sesiones web
   sessions: {
-    total: 89250,
-    new_users: 67890,
-    returning: 21360,
-    avg_session_duration: '3:24', // minutos:segundos
-    pages_per_session: 4.2,
-    bounce_rate: 28.5, // porcentaje
+    total: 42500,
+    new_users: 38250,
+    returning: 4250,
+    avg_session_duration: '4:15', // Mayor que autos (más tiempo investigando carreras)
+    pages_per_session: 5.8,
+    bounce_rate: 32.5, // porcentaje
   },
 
   // Páginas más visitadas
   top_pages: [
     {
-      page: '/cr-v-advanced-hybrid',
-      title: 'CR-V Advanced Hybrid - Características',
-      views: 34500,
-      bounce_rate: 32,
-      avg_time: '2:45',
-    },
-    {
-      page: '/financiamiento',
-      title: 'Opciones de Financiamiento',
-      views: 18200,
+      page: '/admision',
+      title: 'Admisión UCSP 2025',
+      views: 18500,
       bounce_rate: 28,
-      avg_time: '3:15',
+      avg_time: '5:30',
     },
     {
-      page: '/test-drive',
-      title: 'Agenda tu Test Drive',
+      page: '/carreras/ingenieria-industrial',
+      title: 'Ingeniería Industrial',
       views: 12800,
-      bounce_rate: 15,
+      bounce_rate: 35,
       avg_time: '4:20',
     },
     {
-      page: '/comparador',
-      title: 'Comparador de SUVs',
-      views: 9700,
-      bounce_rate: 45,
-      avg_time: '2:10',
+      page: '/carreras/derecho',
+      title: 'Derecho',
+      views: 10200,
+      bounce_rate: 32,
+      avg_time: '4:45',
     },
     {
-      page: '/hr-v-2026',
-      title: 'HR-V 2026 - Galería',
-      views: 7850,
-      bounce_rate: 38,
-      avg_time: '1:50',
+      page: '/becas',
+      title: 'Becas y Financiamiento',
+      views: 8900,
+      bounce_rate: 18,
+      avg_time: '6:10',
+    },
+    {
+      page: '/carreras/medicina',
+      title: 'Medicina Humana',
+      views: 7650,
+      bounce_rate: 30,
+      avg_time: '5:00',
     },
   ],
 
   // Conversiones (KPIs principales)
   conversions: {
-    form_submissions: 795,
-    test_drive_requests: 223,
-    brochure_downloads: 1820,
-    whatsapp_clicks: 2850,
-    phone_calls: 545,
-    newsletter_signups: 1210,
+    form_submissions: 3200,
+    charla_requests: 485,
+    brochure_downloads: 2850,
+    whatsapp_clicks: 4200,
+    phone_calls: 720,
+    newsletter_signups: 1580,
   },
 
   // Fuentes de tráfico
   traffic_sources: {
-    organic_search: { percentage: 35, sessions: 31237, label: 'Búsqueda Orgánica' },
-    paid_search: { percentage: 28, sessions: 24990, label: 'Google Ads' },
-    social_media: { percentage: 22, sessions: 19635, label: 'Redes Sociales' },
-    direct: { percentage: 10, sessions: 8925, label: 'Directo' },
-    referral: { percentage: 5, sessions: 4462, label: 'Referencias' },
+    organic_search: { percentage: 32, sessions: 13600, label: 'Búsqueda Orgánica' },
+    paid_search: { percentage: 30, sessions: 12750, label: 'Google Ads' },
+    social_media: { percentage: 28, sessions: 11900, label: 'Meta Ads' },
+    direct: { percentage: 7, sessions: 2975, label: 'Directo' },
+    referral: { percentage: 3, sessions: 1275, label: 'Referencias' },
   },
 
   // Dispositivos
   devices: {
-    mobile: { percentage: 68, sessions: 60690, label: 'Mobile' },
-    desktop: { percentage: 27, sessions: 24097, label: 'Desktop' },
-    tablet: { percentage: 5, sessions: 4462, label: 'Tablet' },
+    mobile: { percentage: 72, sessions: 30600, label: 'Mobile' },
+    desktop: { percentage: 23, sessions: 9775, label: 'Desktop' },
+    tablet: { percentage: 5, sessions: 2125, label: 'Tablet' },
   },
 
-  // Ubicaciones (ciudades Perú)
+  // Ubicaciones (zonas objetivo)
   locations: [
-    { city: 'Lima', sessions: 62475, conversions: 872, percentage: 70 },
-    { city: 'Arequipa', sessions: 8925, conversions: 125, percentage: 10 },
-    { city: 'Trujillo', sessions: 6247, conversions: 87, percentage: 7 },
-    { city: 'Cusco', sessions: 4462, conversions: 62, percentage: 5 },
-    { city: 'Chiclayo', sessions: 3570, conversions: 50, percentage: 4 },
-    { city: 'Piura', sessions: 2677, conversions: 37, percentage: 3 },
-    { city: 'Otros', sessions: 892, conversions: 14, percentage: 1 },
+    { city: 'Arequipa', sessions: 29750, conversions: 2240, percentage: 70 },
+    { city: 'Puno', sessions: 7650, conversions: 576, percentage: 18 },
+    { city: 'Cusco', sessions: 4250, conversions: 320, percentage: 10 },
+    { city: 'Moquegua', sessions: 425, conversions: 32, percentage: 1 },
+    { city: 'Tacna', sessions: 425, conversions: 32, percentage: 1 },
   ],
 };
 
@@ -96,419 +94,586 @@ export const MOCK_GA4_DATA = {
 // PERFORMANCE KPIs - Métricas principales del dashboard
 // ============================================================================
 export const PERFORMANCE_KPIS = {
-  // Leads calificados
-  leads: {
-    total: 795,
-    qualified: 517, // 65%
-    qualification_rate: 65.0,
-    cost_per_lead: 19.60, // USD (más realista para automotive)
-    trend: '+12%',
-    trend_value: 12,
-    previous_period: 710,
-    monthly_target: 1200,
-    target_completion: 66.3, // porcentaje
+  // Postulaciones completadas (reemplazo de leads)
+  postulaciones: {
+    current: 1256,
+    previous: 1092,
+    change: '+15.0',
+    trend: 'up',
+    label: 'Postulaciones Completadas',
+    description: 'Total de postulaciones válidas en periodo',
   },
 
-  // Alcance
-  reach: {
-    impressions: 3500000, // 3.5M
-    unique_reach: 1200000, // 1.2M
-    frequency: 2.9,
-    trend: '+22%',
-    trend_value: 22,
-    previous_period: 2868852,
-    cpm: 2.80, // USD
+  // Alcance total
+  alcance: {
+    current: 875000,
+    previous: 718000,
+    change: '+21.9',
+    trend: 'up',
+    label: 'Alcance Total',
+    description: 'Usuarios únicos impactados',
   },
 
-  // Engagement
+  // Engagement/Interacciones
   engagement: {
-    total_interactions: 87500,
-    engagement_rate: 2.5, // porcentaje
-    shares: 12300,
-    saves: 8900,
-    comments: 24100,
-    likes: 42200,
-    trend: '+8%',
-    trend_value: 8,
-    previous_period: 81018,
+    current: 142500,
+    previous: 131800,
+    change: '+8.1',
+    trend: 'up',
+    label: 'Interacciones',
+    description: 'Likes, shares, comentarios, saves',
   },
 
-  // Conversión (funnel completo)
-  conversion_funnel: {
-    impressions: 3500000,
-    clicks: 105000, // CTR 3%
-    ctr: 3.0,
-    landing_page_visits: 89250, // 85% del tráfico
-    landing_page_rate: 85,
-    form_submissions: 795, // 0.9% conversion (realista automotive)
-    conversion_rate: 0.9,
-    test_drive_bookings: 223, // 28% de leads
-    booking_rate: 28.1,
+  // CPP (Costo por Postulación) - reemplazo de CPL
+  cpp: {
+    current: 38.50,
+    previous: 41.80,
+    change: '-7.9',
+    trend: 'down', // Reducción es positivo
+    label: 'Costo por Postulación',
+    description: 'S/ invertido por cada postulación válida',
+    currency: 'S/',
   },
 
-  // Budget & ROI
-  budget: {
-    total_spent: 15587.50, // USD
-    remaining: 4412.50,
-    total_budget: 20000,
-    spent_percentage: 77.9,
-    cost_per_click: 0.15,
-    roas: 4.2, // Return on Ad Spend simulado
+  // Charlas informativas asistidas (reemplazo de test drives)
+  charlas: {
+    current: 485,
+    previous: 412,
+    change: '+17.7',
+    trend: 'up',
+    label: 'Charlas Asistidas',
+    description: 'Asistentes a charlas informativas',
+  },
+
+  // WhatsApp conversaciones
+  whatsapp: {
+    current: 1420,
+    previous: 1108,
+    change: '+28.2',
+    trend: 'up',
+    label: 'Conversaciones WhatsApp',
+    description: 'Conversaciones iniciadas vía Meta Ads',
   },
 };
 
 // ============================================================================
-// HONDA OPPORTUNITY SCORE - Signal Score adaptado
+// UCSP OPPORTUNITY SCORE - Reemplazo de Honda Opportunity Score
 // ============================================================================
 export const OPPORTUNITY_SCORE = {
-  current_score: 87,
-  previous_score: 82,
-  trend: '+5',
-  grade: 'A', // A, B, C, D, F
-
-  // Componentes del score
-  components: {
-    trending_topics: {
-      score: 92,
-      weight: 0.30,
-      contribution: 27.6,
-      indicators: [
-        { name: 'Búsquedas CR-V (crecimiento)', value: 45, unit: '%', status: 'up' },
-        { name: 'Conversación híbridos', value: 38, unit: '%', status: 'up' },
-        { name: 'Menciones competencia', value: -12, unit: '%', status: 'down' },
-      ],
-    },
-    intention_to_buy: {
+  total: 82,
+  grade: 'A',
+  components: [
+    {
+      name: 'Interés de Búsqueda',
       score: 85,
-      weight: 0.35,
-      contribution: 29.75,
-      indicators: [
-        { name: 'Búsquedas precio', value: 52, unit: '%', status: 'up' },
-        { name: 'Búsquedas concesionario', value: 28, unit: '%', status: 'up' },
-        { name: 'Búsquedas financiamiento', value: 33, unit: '%', status: 'up' },
-        { name: 'Solicitudes test drive', value: 223, unit: 'leads', status: 'up' },
-      ],
+      weight: 25,
+      trend: 'rising',
+      description: 'Tendencias de Google Trends en zonas objetivo',
     },
-    engagement: {
+    {
+      name: 'Engagement Social',
       score: 78,
-      weight: 0.25,
-      contribution: 19.5,
-      indicators: [
-        { name: 'Interacciones sociales', value: 87500, unit: 'total', status: 'up' },
-        { name: 'Shares contenido', value: 12300, unit: 'shares', status: 'up' },
-        { name: 'Comentarios positivos', value: 89, unit: '%', status: 'stable' },
-      ],
-    },
-    reach: {
-      score: 94,
-      weight: 0.10,
-      contribution: 9.4,
-      indicators: [
-        { name: 'Impresiones totales', value: 3500000, unit: 'views', status: 'up' },
-        { name: 'Alcance orgánico', value: 22, unit: '%', status: 'up' },
-      ],
-    },
-  },
-
-  // Recomendación automática
-  recommendation: {
-    action: 'INCREASE_INVESTMENT',
-    confidence: 'high',
-    message: 'Alta oportunidad: Aumentar inversión en Google Search (+25%) y Meta Ads (+15%)',
-    priority: 'high',
-  },
-};
-
-// ============================================================================
-// BUDGET ALLOCATION - Distribución de presupuesto recomendada
-// ============================================================================
-export const BUDGET_ALLOCATION = {
-  total_budget: 20000, // USD mensuales
-  distribution: {
-    google_search: {
-      percentage: 35,
-      amount: 7000,
-      kpi: 'Leads calificados',
-      target: '500 leads @ $14 CPL',
-      current_performance: 'CPL $12.50 ✓',
-      status: 'performing',
-    },
-    social_media: {
-      percentage: 30,
-      amount: 6000,
-      kpi: 'Alcance + Engagement',
-      target: '2M impresiones, 50K interacciones',
-      current_performance: '3.5M impresiones ✓',
-      status: 'overperforming',
-    },
-    youtube: {
-      percentage: 20,
-      amount: 4000,
-      kpi: 'View-through rate',
-      target: '1M views, 30% VTR',
-      current_performance: '28% VTR →',
-      status: 'ontrack',
-    },
-    display: {
-      percentage: 10,
-      amount: 2000,
-      kpi: 'Brand Awareness',
-      target: '5M impresiones',
-      current_performance: '4.2M impresiones →',
-      status: 'ontrack',
-    },
-    tiktok: {
-      percentage: 5,
-      amount: 1000,
-      kpi: 'Testing nuevos formatos',
-      target: '500K views',
-      current_performance: '320K views ⚠',
-      status: 'underperforming',
-    },
-  },
-
-  // Recomendaciones de redistribución
-  recommendations: [
-    {
-      type: 'increase',
-      channel: 'google_search',
-      from: 35,
-      to: 40,
-      reason: 'CPL por debajo del target, alta conversión',
-      impact: '+100 leads estimados',
+      weight: 20,
+      trend: 'stable',
+      description: 'Interacciones en TikTok, Instagram y Facebook',
     },
     {
-      type: 'increase',
-      channel: 'social_media',
-      from: 30,
-      to: 32,
-      reason: 'Engagement rate superior a benchmark',
-      impact: '+15K interacciones estimadas',
+      name: 'Intención de Conversión',
+      score: 88,
+      weight: 30,
+      trend: 'rising',
+      description: 'Lead Ads + Conversaciones WhatsApp',
     },
     {
-      type: 'maintain',
-      channel: 'youtube',
-      reason: 'Performance según lo esperado',
+      name: 'Calidad de Leads',
+      score: 75,
+      weight: 15,
+      trend: 'stable',
+      description: 'HubSpot Lead Score promedio',
+    },
+    {
+      name: 'Competitividad',
+      score: 80,
+      weight: 10,
+      trend: 'rising',
+      description: 'Share of Voice vs UNSA/UCSM',
     },
   ],
 };
 
 // ============================================================================
-// CONTENT PILLARS - Pilares de contenido Honda
+// CARRERAS PERFORMANCE - Rendimiento por carrera
 // ============================================================================
-export const CONTENT_PILLARS = [
-  {
-    id: 'ehev-tech',
-    title: 'Tecnología e:HEV',
-    description: 'Híbrido sin enchufar, 70% eléctrico',
-    formats: ['Videos explicativos', 'Infografías', 'Demos tecnología'],
-    performance: {
-      engagement_rate: 3.2,
-      reach: 890000,
-      conversions: 287,
-    },
-    recommended_budget: 0.30,
-    status: 'performing',
-  },
-  {
-    id: 'honda-sensing',
-    title: 'Honda Sensing',
-    description: 'Tecnología que protege lo que más importa',
-    formats: ['Demos de seguridad', 'Historias reales', 'Video emocional'],
-    performance: {
-      engagement_rate: 4.1,
-      reach: 1200000,
-      conversions: 412,
-    },
-    recommended_budget: 0.35,
-    status: 'overperforming',
-  },
-  {
-    id: 'versatility-suv',
-    title: 'Versatilidad SUV',
-    description: 'De la ciudad a la aventura sin límites',
-    formats: ['Videos de ruta', 'Magic Seats demos', 'UGC'],
-    performance: {
-      engagement_rate: 2.8,
-      reach: 720000,
-      conversions: 178,
-    },
-    recommended_budget: 0.20,
-    status: 'ontrack',
-  },
-  {
-    id: 'efficiency',
-    title: 'Eficiencia Real',
-    description: 'Hasta 22 km/litro en modo económico',
-    formats: ['Data viz', 'Comparativas ahorro', 'Testimoniales'],
-    performance: {
-      engagement_rate: 2.1,
-      reach: 480000,
-      conversions: 98,
-    },
-    recommended_budget: 0.15,
-    status: 'underperforming',
-  },
-];
-
-// ============================================================================
-// ALERTS & INSIGHTS - Alertas automáticas
-// ============================================================================
-export const ALERTS = [
+export const CARRERAS_PERFORMANCE = [
   {
     id: 1,
-    type: 'opportunity',
-    severity: 'high',
-    title: 'Trending: "SUV híbrida precio"',
-    message: 'Búsquedas aumentaron +45% en las últimas 48h',
-    action: 'Aumentar bid en Google Search',
-    channel: 'Google Ads',
-    potential_impact: '+50 leads estimados',
-    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 horas atrás
+    nombre: 'Ingeniería Industrial',
+    demanda: 'Alta',
+    postulaciones: 285,
+    cpp: 38.50,
+    conversion: 24,
+    vacantes: 80,
+    tendencia: 'rising',
+    hashtags: ['#IngenieriaIndustrial', '#IngenieriaUCSP'],
+    leadAds: {
+      formularios: 420,
+      conversion_rate: 32,
+      cpl: 28.00,
+    },
+    whatsapp: {
+      conversaciones: 185,
+      respondidas: 142,
+      tasa_respuesta: 77,
+    },
+    landing: {
+      visitas: 2850,
+      conversion_rate: 18.5,
+    },
   },
   {
     id: 2,
-    type: 'performance',
-    severity: 'medium',
-    title: 'Instagram Stories con mejor engagement',
-    message: 'Stories tienen 3x mejor engagement que posts',
-    action: 'Redistribuir 15% de budget a Stories',
-    channel: 'Meta Ads',
-    potential_impact: '+12K interacciones estimadas',
-    timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 horas atrás
+    nombre: 'Derecho',
+    demanda: 'Alta',
+    postulaciones: 240,
+    cpp: 45.20,
+    conversion: 22,
+    vacantes: 60,
+    tendencia: 'stable',
+    hashtags: ['#DerechoUCSP', '#Derecho'],
+    leadAds: {
+      formularios: 380,
+      conversion_rate: 28,
+      cpl: 32.50,
+    },
+    whatsapp: {
+      conversaciones: 156,
+      respondidas: 98,
+      tasa_respuesta: 63,
+    },
+    landing: {
+      visitas: 2420,
+      conversion_rate: 16.2,
+    },
   },
   {
     id: 3,
-    type: 'warning',
-    severity: 'low',
-    title: 'TikTok por debajo del target',
-    message: 'Views 36% por debajo del objetivo mensual',
-    action: 'Revisar creatividades y targeting',
-    channel: 'TikTok Ads',
-    potential_impact: 'Ajuste de estrategia necesario',
-    timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 horas atrás
+    nombre: 'Medicina Humana',
+    demanda: 'Muy Alta',
+    postulaciones: 320,
+    cpp: 52.00,
+    conversion: 18,
+    vacantes: 40,
+    tendencia: 'rising',
+    hashtags: ['#MedicinaUCSP', '#Medicina'],
+    leadAds: {
+      formularios: 485,
+      conversion_rate: 35,
+      cpl: 38.00,
+    },
+    whatsapp: {
+      conversaciones: 220,
+      respondidas: 175,
+      tasa_respuesta: 80,
+    },
+    landing: {
+      visitas: 3200,
+      conversion_rate: 22.0,
+    },
   },
   {
     id: 4,
-    type: 'success',
-    severity: 'high',
-    title: 'Meta superando objetivos',
-    message: 'Alcance +40% sobre target mensual',
-    action: 'Mantener estrategia actual',
-    channel: 'Meta Ads',
-    potential_impact: 'ROI optimizado',
-    timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 día atrás
+    nombre: 'Administración',
+    demanda: 'Alta',
+    postulaciones: 195,
+    cpp: 42.30,
+    conversion: 20,
+    vacantes: 70,
+    tendencia: 'stable',
+    hashtags: ['#AdministracionUCSP', '#Negocios'],
+    leadAds: {
+      formularios: 320,
+      conversion_rate: 26,
+      cpl: 30.50,
+    },
+    whatsapp: {
+      conversaciones: 128,
+      respondidas: 85,
+      tasa_respuesta: 66,
+    },
+    landing: {
+      visitas: 1950,
+      conversion_rate: 15.8,
+    },
+  },
+  {
+    id: 5,
+    nombre: 'Arquitectura y Urbanismo',
+    demanda: 'Media-Alta',
+    postulaciones: 165,
+    cpp: 48.80,
+    conversion: 19,
+    vacantes: 50,
+    tendencia: 'rising',
+    hashtags: ['#ArquitecturaUCSP', '#Arquitectura'],
+    leadAds: {
+      formularios: 280,
+      conversion_rate: 25,
+      cpl: 34.00,
+    },
+    whatsapp: {
+      conversaciones: 112,
+      respondidas: 72,
+      tasa_respuesta: 64,
+    },
+    landing: {
+      visitas: 1820,
+      conversion_rate: 14.5,
+    },
+  },
+  {
+    id: 6,
+    nombre: 'Psicología',
+    demanda: 'Alta',
+    postulaciones: 175,
+    cpp: 40.50,
+    conversion: 21,
+    vacantes: 60,
+    tendencia: 'stable',
+    hashtags: ['#PsicologiaUCSP', '#Psicologia'],
+    leadAds: {
+      formularios: 295,
+      conversion_rate: 27,
+      cpl: 29.00,
+    },
+    whatsapp: {
+      conversaciones: 125,
+      respondidas: 88,
+      tasa_respuesta: 70,
+    },
+    landing: {
+      visitas: 1980,
+      conversion_rate: 16.0,
+    },
+  },
+  {
+    id: 7,
+    nombre: 'Ingeniería Civil',
+    demanda: 'Media',
+    postulaciones: 142,
+    cpp: 44.20,
+    conversion: 18,
+    vacantes: 55,
+    tendencia: 'stable',
+    hashtags: ['#IngenieriaCivil', '#CivilUCSP'],
+    leadAds: {
+      formularios: 240,
+      conversion_rate: 24,
+      cpl: 31.50,
+    },
+    whatsapp: {
+      conversaciones: 95,
+      respondidas: 62,
+      tasa_respuesta: 65,
+    },
+    landing: {
+      visitas: 1650,
+      conversion_rate: 13.8,
+    },
+  },
+  {
+    id: 8,
+    nombre: 'Contabilidad',
+    demanda: 'Media',
+    postulaciones: 128,
+    cpp: 38.90,
+    conversion: 20,
+    vacantes: 50,
+    tendencia: 'stable',
+    hashtags: ['#ContabilidadUCSP', '#Contabilidad'],
+    leadAds: {
+      formularios: 220,
+      conversion_rate: 23,
+      cpl: 28.50,
+    },
+    whatsapp: {
+      conversaciones: 85,
+      respondidas: 58,
+      tasa_respuesta: 68,
+    },
+    landing: {
+      visitas: 1480,
+      conversion_rate: 14.2,
+    },
+  },
+  {
+    id: 9,
+    nombre: 'Ciencia de la Computación',
+    demanda: 'Media-Alta',
+    postulaciones: 158,
+    cpp: 46.00,
+    conversion: 22,
+    vacantes: 45,
+    tendencia: 'rising',
+    hashtags: ['#CienciaComputacion', '#TechUCSP'],
+    leadAds: {
+      formularios: 265,
+      conversion_rate: 28,
+      cpl: 33.00,
+    },
+    whatsapp: {
+      conversaciones: 105,
+      respondidas: 75,
+      tasa_respuesta: 71,
+    },
+    landing: {
+      visitas: 1920,
+      conversion_rate: 15.5,
+    },
+  },
+  {
+    id: 10,
+    nombre: 'Ciencia de Datos',
+    demanda: 'Alta',
+    postulaciones: 185,
+    cpp: 50.20,
+    conversion: 25,
+    vacantes: 40,
+    tendencia: 'rising',
+    hashtags: ['#CienciaDatos', '#DataScience'],
+    leadAds: {
+      formularios: 320,
+      conversion_rate: 30,
+      cpl: 36.50,
+    },
+    whatsapp: {
+      conversaciones: 135,
+      respondidas: 102,
+      tasa_respuesta: 76,
+    },
+    landing: {
+      visitas: 2150,
+      conversion_rate: 17.8,
+    },
+  },
+  {
+    id: 11,
+    nombre: 'Ingeniería Electrónica y Telecomunicaciones',
+    demanda: 'Media',
+    postulaciones: 118,
+    cpp: 42.80,
+    conversion: 19,
+    vacantes: 45,
+    tendencia: 'stable',
+    hashtags: ['#ElectronicaUCSP', '#Telecomunicaciones'],
+    leadAds: {
+      formularios: 198,
+      conversion_rate: 22,
+      cpl: 30.00,
+    },
+    whatsapp: {
+      conversaciones: 78,
+      respondidas: 50,
+      tasa_respuesta: 64,
+    },
+    landing: {
+      visitas: 1420,
+      conversion_rate: 13.2,
+    },
+  },
+  {
+    id: 12,
+    nombre: 'Ingeniería Mecatrónica',
+    demanda: 'Media',
+    postulaciones: 125,
+    cpp: 45.60,
+    conversion: 20,
+    vacantes: 40,
+    tendencia: 'stable',
+    hashtags: ['#MecatronicaUCSP', '#Mecatronica'],
+    leadAds: {
+      formularios: 210,
+      conversion_rate: 23,
+      cpl: 32.00,
+    },
+    whatsapp: {
+      conversaciones: 82,
+      respondidas: 55,
+      tasa_respuesta: 67,
+    },
+    landing: {
+      visitas: 1520,
+      conversion_rate: 14.0,
+    },
+  },
+  {
+    id: 13,
+    nombre: 'Ingeniería Ambiental',
+    demanda: 'Media',
+    postulaciones: 105,
+    cpp: 41.20,
+    conversion: 18,
+    vacantes: 35,
+    tendencia: 'rising',
+    hashtags: ['#IngenieriaAmbiental', '#Sostenibilidad'],
+    leadAds: {
+      formularios: 175,
+      conversion_rate: 21,
+      cpl: 29.50,
+    },
+    whatsapp: {
+      conversaciones: 68,
+      respondidas: 45,
+      tasa_respuesta: 66,
+    },
+    landing: {
+      visitas: 1280,
+      conversion_rate: 12.8,
+    },
   },
 ];
 
 // ============================================================================
-// A/B TESTS - Pruebas automáticas
+// COMPETENCIA - Universidades competidoras
 // ============================================================================
-export const AB_TESTS = [
+export const COMPETENCIA = [
   {
-    id: 1,
-    name: 'Mensaje híbrido vs mensaje aventura',
-    status: 'completed',
-    winner: 'A',
-    variant_a: {
-      name: 'Tecnología Híbrida',
-      ctr: 3.8,
-      conversions: 156,
-      cost_per_conversion: 11.20,
-    },
-    variant_b: {
-      name: 'Aventura 4x4',
-      ctr: 3.1,
-      conversions: 128,
-      cost_per_conversion: 13.80,
-    },
-    recommendation: 'Escalar mensaje híbrido (+22% CTR, -19% CPC)',
-    confidence: 95,
+    name: 'UNSA',
+    full_name: 'Universidad Nacional de San Agustín',
+    market_share: 45,
+    postulantes: 49509,
+    rank: 1,
+    type: 'Pública',
+    fortalezas: ['Tradición', 'Bajo costo', 'Mayor demanda del país'],
+    debilidades: ['Masificación', 'Infraestructura limitada'],
   },
   {
-    id: 2,
-    name: 'Video corto vs video largo',
-    status: 'running',
-    variant_a: {
-      name: 'Video 15seg',
-      view_rate: 68,
-      engagement_rate: 2.9,
-      cost_per_view: 0.04,
-    },
-    variant_b: {
-      name: 'Video 30seg',
-      view_rate: 45,
-      engagement_rate: 4.2,
-      cost_per_view: 0.06,
-    },
-    current_leader: 'B',
-    confidence: 78,
+    name: 'UCSM',
+    full_name: 'Universidad Católica Santa María',
+    market_share: 28,
+    postulantes: 8500,
+    rank: 2,
+    type: 'Privada',
+    fortalezas: ['Infraestructura', 'Carreras similares'],
+    debilidades: ['Menor acreditación internacional'],
+  },
+  {
+    name: 'UCSP',
+    full_name: 'Universidad Católica San Pablo',
+    market_share: 15,
+    postulantes: 3200,
+    rank: 3,
+    type: 'Privada',
+    fortalezas: ['Primera licenciada del sur', 'Acreditación internacional', 'Formación integral'],
+    debilidades: ['Menor awareness', 'Percepción de costo'],
+  },
+  {
+    name: 'UTP',
+    full_name: 'Universidad Tecnológica del Perú',
+    market_share: 8,
+    postulantes: 2800,
+    rank: 4,
+    type: 'Privada',
+    fortalezas: ['Presencia nacional', 'Marketing agresivo'],
+    debilidades: ['Menor calidad percibida'],
+  },
+  {
+    name: 'UAP',
+    full_name: 'Universidad Alas Peruanas',
+    market_share: 4,
+    postulantes: 1500,
+    rank: 5,
+    type: 'Privada',
+    fortalezas: ['Presencia nacional'],
+    debilidades: ['Problemas de licenciamiento'],
   },
 ];
 
 // ============================================================================
-// COMPETITOR INSIGHTS - Análisis de competencia
+// HUBSPOT MOCKUP - Datos simulados de HubSpot
 // ============================================================================
-export const COMPETITOR_INSIGHTS = [
-  {
-    brand: 'Toyota RAV4',
-    sentiment: 82,
-    share_of_voice: 32,
-    trending_topics: ['Líder mercado', 'Híbrida', 'Confiabilidad'],
-    threat_level: 'high',
+export const HUBSPOT_MOCKUP = {
+  campaigns: [
+    {
+      id: 'camp_001',
+      name: 'Admisión 2025-I Pregrado',
+      status: 'active',
+      budget: 25000,
+      spent: 18750,
+      leads: 856,
+      cpl: 21.90,
+      alert_status: 'normal', // normal, warning, danger
+      platform: 'Meta Ads',
+      audience: 'Pregrado',
+    },
+    {
+      id: 'camp_002',
+      name: 'Ingeniería Industrial - Lead Ads',
+      status: 'active',
+      budget: 8500,
+      spent: 6820,
+      leads: 285,
+      cpl: 23.93,
+      alert_status: 'normal',
+      platform: 'Meta Ads',
+      audience: 'Pregrado',
+    },
+    {
+      id: 'camp_003',
+      name: 'Medicina - Google Search',
+      status: 'active',
+      budget: 12000,
+      spent: 10500,
+      leads: 198,
+      cpl: 53.03,
+      alert_status: 'warning', // CPL cercano al límite
+      platform: 'Google Ads',
+      audience: 'Pregrado',
+    },
+    {
+      id: 'camp_004',
+      name: 'Posgrado - Maestrías',
+      status: 'active',
+      budget: 6500,
+      spent: 4875,
+      leads: 68,
+      cpl: 71.69,
+      alert_status: 'warning',
+      platform: 'Google Ads',
+      audience: 'Posgrado',
+    },
+  ],
+  alerts: [
+    {
+      type: 'warning',
+      message: 'Campaña "Medicina - Google Search" con CPL de S/53.03, cerca del límite de S/55',
+      campaign_id: 'camp_003',
+      timestamp: '2025-11-20T14:30:00',
+    },
+    {
+      type: 'warning',
+      message: 'Campaña "Posgrado - Maestrías" con CPL de S/71.69, cerca del límite de S/80',
+      campaign_id: 'camp_004',
+      timestamp: '2025-11-20T13:15:00',
+    },
+  ],
+  lead_quality: {
+    avg_score: 72,
+    distribution: {
+      hot: 28, // %
+      warm: 45,
+      cold: 27,
+    },
   },
-  {
-    brand: 'Hyundai Tucson',
-    sentiment: 76,
-    share_of_voice: 18,
-    trending_topics: ['2da más vendida', 'Garantía', 'Equipamiento'],
-    threat_level: 'high',
-  },
-  {
-    brand: 'Mazda CX-5',
-    sentiment: 74,
-    share_of_voice: 12,
-    trending_topics: ['Diseño premium', 'Manejo deportivo', 'Calidad'],
-    threat_level: 'medium',
-  },
-  {
-    brand: 'Nissan X-Trail',
-    sentiment: 68,
-    share_of_voice: 10,
-    trending_topics: ['7 asientos', 'e-POWER', 'Versatilidad'],
-    threat_level: 'medium',
-  },
-  {
-    brand: 'Hyundai Creta',
-    sentiment: 72,
-    share_of_voice: 8,
-    trending_topics: ['Precio accesible', 'SUV compacta', 'Tecnología'],
-    threat_level: 'medium',
-  },
-  {
-    brand: 'Mitsubishi Outlander Sport',
-    sentiment: 65,
-    share_of_voice: 6,
-    trending_topics: ['Precio competitivo', 'Confiabilidad', 'AWD'],
-    threat_level: 'low',
-  },
-  {
-    brand: 'Honda CR-V / HR-V',
-    sentiment: 80,
-    share_of_voice: 14,
-    trending_topics: ['e:HEV híbrido', 'Honda Sensing', 'Tecnología'],
-    threat_level: null, // Es nuestra marca
-  },
-];
+};
 
-// Exportar todo
+// ============================================================================
+// EXPORTS
+// ============================================================================
 export default {
   MOCK_GA4_DATA,
   PERFORMANCE_KPIS,
   OPPORTUNITY_SCORE,
-  BUDGET_ALLOCATION,
-  CONTENT_PILLARS,
-  ALERTS,
-  AB_TESTS,
-  COMPETITOR_INSIGHTS,
+  CARRERAS_PERFORMANCE,
+  COMPETENCIA,
+  HUBSPOT_MOCKUP,
 };

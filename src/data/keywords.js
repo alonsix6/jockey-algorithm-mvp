@@ -1,379 +1,409 @@
-// Keywords y hashtags para Honda - Perú (Autos y Motos)
+// Keywords y hashtags para UCSP - Universidad Católica San Pablo (Arequipa, Perú)
 // Configuración completa para búsquedas y monitoreo social
 
-export const KEYWORDS_HONDA_AUTOS = {
-  // Producto principal
-  principal: [
-    'Honda CR-V',
-    'CR-V Advanced Hybrid',
-    'Honda HR-V 2026',
-    'CR-V Perú',
-    'Honda CR-V precio',
-    'CR-V híbrida Perú',
-    'HR-V precio Perú',
-    'Honda Perú',
-    'CR-V 2025',
-    'HR-V 2026',
+export const KEYWORDS_UCSP = {
+  // Marca UCSP
+  marca: [
+    'UCSP',
+    'Universidad Católica San Pablo',
+    'San Pablo Arequipa',
+    'UCSP admisión',
+    'admisión UCSP 2025',
+    'examen UCSP',
+    'UCSP Perú',
+    'Universidad San Pablo',
+    'Católica San Pablo',
+    'UCSP 2025',
   ],
 
-  // Categoría SUV
-  suv: [
-    'SUV híbrida',
-    'mejor SUV Perú',
-    'SUV familiar',
-    'SUV Honda',
-    'comprar SUV',
-    'SUV compacta',
-    'SUV mediana',
-    'SUV confiable',
-    'mejor híbrida Perú',
+  // Carreras principales (top 5 más demandadas)
+  carreras: [
+    'ingeniería industrial UCSP',
+    'derecho UCSP',
+    'medicina UCSP',
+    'administración UCSP',
+    'arquitectura UCSP',
+    'ingeniería civil Arequipa',
+    'psicología UCSP',
+    'contabilidad Arequipa',
+    'ciencia de datos UCSP',
+    'mecatrónica Arequipa',
   ],
 
-  // Tecnología híbrida e:HEV
-  hibrido: [
-    'Honda e:HEV',
-    'híbrido sin enchufar',
-    'auto híbrido Perú',
-    'tecnología e:HEV',
-    'eficiencia combustible',
-    'autos ecológicos',
-    'movilidad sostenible',
-    'ahorro gasolina',
-    'híbrido autorecargable',
-    'vehículo híbrido',
+  // Intención de búsqueda (postulación)
+  intencion: [
+    'donde estudiar en Arequipa',
+    'mejores universidades Arequipa',
+    'universidad católica Arequipa',
+    'costo universidad UCSP',
+    'pensiones UCSP',
+    'becas UCSP',
+    'admisión 2025 Arequipa',
+    'examen de admisión UCSP',
+    'requisitos UCSP',
+    'cronograma admisión UCSP',
   ],
 
   // Competencia directa
   competidores: [
-    'Toyota RAV4',
-    'Mazda CX-5',
-    'Nissan X-Trail',
-    'Hyundai Tucson',
-    'Hyundai Creta',
-    'Nissan Kicks',
-    'Mazda CX-30',
-    'Kia Sportage',
+    'UNSA admisión',
+    'UCSM Arequipa',
+    'UCSP vs UCSM',
+    'UCSP vs UNSA',
+    'universidades Arequipa ranking',
+    'UTP Arequipa',
+    'UAP Arequipa',
+    'universidad Arequipa',
+    'mejores universidades sur Perú',
   ],
 
-  // Intención de compra
-  compra: [
-    'precio Honda Perú',
-    'financiamiento Honda',
-    'concesionario Honda',
-    'Pana Autos',
-    'test drive Honda',
-    'cotizar CR-V',
-    'crédito vehicular',
-    'comprar Honda',
-    'Honda 29990',
-    'bono Honda 2025',
+  // Información académica
+  academico: [
+    'universidad licenciada Arequipa',
+    'acreditación SUNEDU',
+    'licenciamiento UCSP',
+    'universidad católica licenciada',
+    'acreditación internacional UCSP',
+    'ranking universidades Arequipa',
+    'calidad educativa UCSP',
   ],
 
-  // Comparativas
-  comparativas: [
-    'CR-V vs RAV4',
-    'CR-V vs Tucson',
-    'CR-V vs CX-5',
-    'HR-V vs Creta',
-    'HR-V vs Kicks',
-    'mejor híbrida',
-    'comparativa SUV',
-    'Honda vs Toyota',
+  // Proceso de admisión
+  admision: [
+    'postular UCSP',
+    'examen UCSP 2025',
+    'inscripción UCSP',
+    'vacantes UCSP',
+    'modalidades admisión UCSP',
+    'preparación examen UCSP',
+    'sílabo UCSP',
+    'resultados admisión UCSP',
   ],
 
-  // Features y características
-  features: [
-    'Honda Sensing',
-    'Magic Seats',
-    'AWD',
-    'tracción integral',
-    'bajo consumo',
-    'espacio familiar',
-    'seguridad Honda',
-    '22 km litro',
-    'BOSE 12 parlantes',
-  ],
-};
-
-export const KEYWORDS_HONDA_MOTOS = {
-  // Producto principal
-  principal: [
-    'Honda Dio',
-    'Honda Wave',
-    'Honda Navi',
-    'Honda CB',
-    'Honda XR',
-    'motos Honda Perú',
-    'scooter Honda',
-    'Honda PCX',
-    'Honda Elite',
+  // Geografías clave
+  geografias: [
+    'universidad Arequipa',
+    'universidad Puno',
+    'universidad Cusco',
+    'universidad Moquegua',
+    'universidad Tacna',
+    'universidad Juliaca',
+    'estudiar en Arequipa',
   ],
 
-  // Categoría motos
-  categoria: [
-    'moto automática',
-    'scooter 110cc',
-    'moto ciudad',
-    'moto económica',
-    'mejor moto Perú',
-    'moto confiable',
-    'moto trabajo',
-    'motos Honda 2025',
-  ],
-
-  // Competencia motos
-  competidores: [
-    'Yamaha',
-    'Suzuki',
-    'Bajaj',
-    'Kawasaki',
-    'Italika',
-  ],
-
-  // Intención de compra motos
-  compra: [
-    'precio motos Honda',
-    'financiamiento motos',
-    'Honda motos Perú',
-    'concesionario motos',
-    'motos Honda precio',
-    'crédito moto',
-  ],
-
-  // Features motos
-  features: [
-    'bajo consumo',
-    'motor 110cc',
-    'automática',
-    'ahorro combustible',
-    'confiable',
-    'servicio Honda',
+  // Posgrado
+  posgrado: [
+    'maestría UCSP',
+    'posgrado Arequipa',
+    'diplomados UCSP',
+    'MBA Arequipa',
+    'maestría derecho UCSP',
+    'maestría ingeniería',
+    'educación continua UCSP',
   ],
 };
 
-export const HASHTAGS_HONDA_AUTOS = {
-  // Principales
+export const HASHTAGS_UCSP = {
+  // Principales UCSP
   principales: [
-    '#HondaPeru',
-    '#HondaCRV',
-    '#CRVHybrid',
-    '#HondaHRV',
-    '#CRVE',
-    '#AdvancedHybrid',
+    '#UCSP',
+    '#UniversidadCatolicaSanPablo',
+    '#SanPabloArequipa',
+    '#AdmisionUCSP',
+    '#UCSP2025',
+    '#SomosUCSP',
   ],
 
-  // SUV
-  suv: [
-    '#SUVHonda',
-    '#SUVHibrida',
-    '#SUVFamiliar',
-    '#MejorSUV',
-    '#SUVCompacta',
+  // Carreras
+  carreras: [
+    '#IngenieriaUCSP',
+    '#DerechoUCSP',
+    '#MedicinaUCSP',
+    '#AdministracionUCSP',
+    '#ArquitecturaUCSP',
+    '#PsicologiaUCSP',
+    '#CienciaDeDatosUCSP',
+    '#IngenieriaCivil',
+    '#Mecatronica',
   ],
 
-  // Híbridos y sostenibilidad
-  hibrido: [
-    '#Hibrida',
-    '#eHEV',
-    '#HibridoSinEnchufar',
-    '#AutosEcologicos',
-    '#MovilidadSostenible',
-    '#TecnologiaHibrida',
-    '#EficienciaEnergetica',
-    '#EcoFriendly',
+  // Admisión y postulantes
+  admision: [
+    '#Postulantes2025',
+    '#Admision2025',
+    '#ExamenDeAdmision',
+    '#Preuniversitario',
+    '#PostulaUCSP',
+    '#VacantesUCSP',
+    '#AdmisionUCSP2025',
   ],
 
-  // Tecnología Honda
-  tech: [
-    '#HondaSensing',
-    '#MagicSeats',
-    '#TecnologiaHonda',
-    '#InnovacionHonda',
-    '#SafetyFirst',
-    '#HondaTech',
+  // Vida universitaria
+  vidaUniversitaria: [
+    '#VidaUniversitaria',
+    '#EstudiaUniversitario',
+    '#CampusUCSP',
+    '#UniversitariosArequipa',
+    '#ViveUCSP',
+    '#ExperienciaUCSP',
   ],
 
-  // Lifestyle
-  lifestyle: [
-    '#VidaSustentable',
-    '#AventuraUrbana',
-    '#FamiliaPeruana',
-    '#RoadTrip',
-    '#ViajesFamiliares',
-    '#EstiloDeVida',
+  // Geografía
+  geografia: [
+    '#Arequipa',
+    '#UniversidadesArequipa',
+    '#EstudiaEnArequipa',
+    '#ArequipaPeru',
+    '#SurPeru',
+    '#Puno',
+    '#Cusco',
+    '#Moquegua',
+    '#Tacna',
   ],
 
-  // Perú
-  peru: [
-    '#AutosPeru',
-    '#LimaPeru',
-    '#PeruAutomotriz',
-    '#Lima',
-    '#0km',
-    '#Financiamiento',
-  ],
-};
-
-export const HASHTAGS_HONDA_MOTOS = {
-  // Principales
-  principales: [
-    '#HondaMotos',
-    '#HondaPeru',
-    '#MotosHonda',
-    '#HondaDio',
-    '#HondaWave',
-    '#HondaNavi',
+  // Generales educación
+  educacion: [
+    '#UniversidadesPeru',
+    '#EstudiaPeru',
+    '#EducacionSuperior',
+    '#UniversidadLicenciada',
+    '#CalidadAcademica',
+    '#FormacionIntegral',
   ],
 
-  // Categoría
-  categoria: [
-    '#Scooter',
-    '#MotoAutomatica',
-    '#MotosCiudad',
-    '#MotoEconomica',
-    '#110cc',
-  ],
-
-  // Perú motos
-  peru: [
-    '#MotosPeru',
-    '#LimaPeru',
-    '#MotosLima',
-    '#Financiamiento',
+  // Competencia (para monitoreo)
+  competencia: [
+    '#UNSA',
+    '#UCSM',
+    '#UTP',
+    '#UniversidadesCatolicas',
   ],
 };
 
-// Combinar hashtags autos
-export const ALL_HASHTAGS_AUTOS = [
-  ...HASHTAGS_HONDA_AUTOS.principales,
-  ...HASHTAGS_HONDA_AUTOS.suv,
-  ...HASHTAGS_HONDA_AUTOS.hibrido,
-  ...HASHTAGS_HONDA_AUTOS.tech,
-  ...HASHTAGS_HONDA_AUTOS.lifestyle,
-  ...HASHTAGS_HONDA_AUTOS.peru,
+// Combinar todos los hashtags
+export const ALL_HASHTAGS = [
+  ...HASHTAGS_UCSP.principales,
+  ...HASHTAGS_UCSP.carreras,
+  ...HASHTAGS_UCSP.admision,
+  ...HASHTAGS_UCSP.vidaUniversitaria,
+  ...HASHTAGS_UCSP.geografia,
+  ...HASHTAGS_UCSP.educacion,
 ];
 
-// Combinar hashtags motos
-export const ALL_HASHTAGS_MOTOS = [
-  ...HASHTAGS_HONDA_MOTOS.principales,
-  ...HASHTAGS_HONDA_MOTOS.categoria,
-  ...HASHTAGS_HONDA_MOTOS.peru,
+// Combinar keywords para Google Trends
+export const ALL_KEYWORDS = [
+  ...KEYWORDS_UCSP.marca,
+  ...KEYWORDS_UCSP.carreras,
+  ...KEYWORDS_UCSP.intencion,
+  ...KEYWORDS_UCSP.admision,
 ];
 
-// Combinar keywords autos para Google Trends
-export const ALL_KEYWORDS_AUTOS = [
-  ...KEYWORDS_HONDA_AUTOS.principal,
-  ...KEYWORDS_HONDA_AUTOS.suv,
-  ...KEYWORDS_HONDA_AUTOS.hibrido,
-  ...KEYWORDS_HONDA_AUTOS.compra,
+// Keywords de alta intención (conversión)
+export const HIGH_INTENT_KEYWORDS = [
+  ...KEYWORDS_UCSP.admision,
+  ...KEYWORDS_UCSP.intencion.filter(k => k.includes('costo') || k.includes('becas') || k.includes('admisión')),
+  'postular UCSP',
+  'examen UCSP 2025',
+  'inscripción UCSP',
+  'vacantes UCSP',
+  'pensiones UCSP',
 ];
 
-// Combinar keywords motos
-export const ALL_KEYWORDS_MOTOS = [
-  ...KEYWORDS_HONDA_MOTOS.principal,
-  ...KEYWORDS_HONDA_MOTOS.categoria,
-  ...KEYWORDS_HONDA_MOTOS.compra,
-];
-
-// Keywords de alta intención - Autos
-export const HIGH_INTENT_KEYWORDS_AUTOS = [
-  ...KEYWORDS_HONDA_AUTOS.compra,
-  ...KEYWORDS_HONDA_AUTOS.principal.filter(k => k.includes('precio')),
-  'test drive Honda',
-  'cotizar CR-V',
-  'financiamiento Honda',
-  'bono Honda',
-];
-
-// Keywords de alta intención - Motos
-export const HIGH_INTENT_KEYWORDS_MOTOS = [
-  ...KEYWORDS_HONDA_MOTOS.compra,
-  'precio motos Honda',
-  'financiamiento motos',
-];
-
-// Configuración para Google Trends - Autos
-export const GOOGLE_TRENDS_CONFIG_AUTOS = {
-  keywords: ALL_KEYWORDS_AUTOS.slice(0, 15), // Máximo 15 keywords principales
+// Configuración para Google Trends
+export const GOOGLE_TRENDS_CONFIG = {
+  keywords: ALL_KEYWORDS.slice(0, 15), // Máximo 15 keywords principales
   region: 'PE', // Perú
-  category: 47, // Autos & Vehicles
+  // Geografías específicas a monitorear
+  geo: {
+    arequipa: 'PE-ARE',
+    puno: 'PE-PUN',
+    cusco: 'PE-CUS',
+    moquegua: 'PE-MOQ',
+    tacna: 'PE-TAC',
+  },
+  category: 67, // Education (en lugar de Autos)
   timeframe: 'now 7-d', // Últimos 7 días
   refreshInterval: 3600000, // 1 hora en ms
 };
 
-// Configuración para Google Trends - Motos
-export const GOOGLE_TRENDS_CONFIG_MOTOS = {
-  keywords: ALL_KEYWORDS_MOTOS.slice(0, 15),
-  region: 'PE',
-  category: 47, // Autos & Vehicles
-  timeframe: 'now 7-d',
-  refreshInterval: 3600000,
-};
-
-// Configuración para TikTok - Autos
-export const TIKTOK_CONFIG_AUTOS = {
-  hashtags: HASHTAGS_HONDA_AUTOS.principales,
+// Configuración para TikTok
+export const TIKTOK_CONFIG = {
+  hashtags: HASHTAGS_UCSP.principales,
   region: 'PE',
   metrics: ['views', 'likes', 'shares', 'comments'],
-  trending_threshold: 10000,
+  trending_threshold: 5000, // Menor que autos (nicho educación)
 };
 
-// Configuración para TikTok - Motos
-export const TIKTOK_CONFIG_MOTOS = {
-  hashtags: HASHTAGS_HONDA_MOTOS.principales,
-  region: 'PE',
-  metrics: ['views', 'likes', 'shares', 'comments'],
-  trending_threshold: 5000,
+// Configuración para Meta (Facebook/Instagram)
+export const META_CONFIG = {
+  hashtags: [
+    ...HASHTAGS_UCSP.principales,
+    ...HASHTAGS_UCSP.carreras,
+    ...HASHTAGS_UCSP.admision,
+  ],
+  pages: [
+    'Universidad Católica San Pablo',
+    'UCSP Oficial',
+    'Admisión UCSP',
+  ],
+  groups: [
+    'Postulantes UCSP 2025',
+    'Estudiantes UCSP',
+    'Ingresantes UCSP',
+  ],
 };
 
-// Fuentes de datos automotrices Perú
-export const AUTOMOTIVE_SOURCES = [
+// Fuentes de información educativa Perú
+export const EDUCATION_SOURCES = [
   {
-    name: 'Neoauto',
-    url: 'https://neoauto.com',
-    type: 'marketplace',
-    scraping: true,
-  },
-  {
-    name: 'Autocosmos Perú',
-    url: 'https://autocosmos.com.pe',
-    type: 'reviews',
-    scraping: true,
-  },
-  {
-    name: 'Motor1 Perú',
-    url: 'https://motor1.com/es',
-    type: 'news',
-    scraping: false,
-  },
-  {
-    name: 'Honda Perú Oficial - Autos',
-    url: 'https://autos.honda.com.pe',
+    name: 'UCSP Oficial',
+    url: 'https://ucsp.edu.pe',
     type: 'official',
     scraping: false,
   },
   {
-    name: 'Honda Perú Oficial - Motos',
-    url: 'https://motos.honda.com.pe',
+    name: 'Admisión UCSP',
+    url: 'https://admision.ucsp.edu.pe',
     type: 'official',
     scraping: false,
+  },
+  {
+    name: 'SUNEDU',
+    url: 'https://www.sunedu.gob.pe',
+    type: 'regulatory',
+    scraping: false,
+  },
+  {
+    name: 'Ponte en Carrera',
+    url: 'https://www.ponteencarrera.pe',
+    type: 'platform',
+    scraping: true,
+  },
+  {
+    name: 'Estudia Perú',
+    url: 'https://estudiaperu.pe',
+    type: 'platform',
+    scraping: true,
+  },
+];
+
+// Carreras UCSP (para monitoreo individual)
+export const CARRERAS_UCSP = [
+  {
+    id: 1,
+    nombre: 'Ingeniería Industrial',
+    slug: 'ingenieria-industrial',
+    demanda: 'Alta',
+    keywords: ['ingeniería industrial UCSP', 'ingeniería industrial Arequipa'],
+    hashtags: ['#IngenieriaIndustrial', '#IngenieriaUCSP'],
+  },
+  {
+    id: 2,
+    nombre: 'Derecho',
+    slug: 'derecho',
+    demanda: 'Alta',
+    keywords: ['derecho UCSP', 'abogado Arequipa', 'derecho católica'],
+    hashtags: ['#DerechoUCSP', '#Derecho', '#Abogado'],
+  },
+  {
+    id: 3,
+    nombre: 'Medicina Humana',
+    slug: 'medicina',
+    demanda: 'Muy Alta',
+    keywords: ['medicina UCSP', 'medicina Arequipa', 'carrera medicina'],
+    hashtags: ['#MedicinaUCSP', '#Medicina', '#FuturosDoctor'],
+  },
+  {
+    id: 4,
+    nombre: 'Administración',
+    slug: 'administracion',
+    demanda: 'Alta',
+    keywords: ['administración negocios UCSP', 'administración Arequipa'],
+    hashtags: ['#AdministracionUCSP', '#Negocios'],
+  },
+  {
+    id: 5,
+    nombre: 'Arquitectura y Urbanismo',
+    slug: 'arquitectura',
+    demanda: 'Media-Alta',
+    keywords: ['arquitectura UCSP', 'arquitectura Arequipa'],
+    hashtags: ['#ArquitecturaUCSP', '#Arquitectura'],
+  },
+  {
+    id: 6,
+    nombre: 'Psicología',
+    slug: 'psicologia',
+    demanda: 'Alta',
+    keywords: ['psicología UCSP', 'psicología Arequipa'],
+    hashtags: ['#PsicologiaUCSP', '#Psicologia'],
+  },
+  {
+    id: 7,
+    nombre: 'Ingeniería Civil',
+    slug: 'ingenieria-civil',
+    demanda: 'Media',
+    keywords: ['ingeniería civil UCSP', 'civil Arequipa'],
+    hashtags: ['#IngenieriaCivil', '#CivilUCSP'],
+  },
+  {
+    id: 8,
+    nombre: 'Contabilidad',
+    slug: 'contabilidad',
+    demanda: 'Media',
+    keywords: ['contabilidad UCSP', 'contador Arequipa'],
+    hashtags: ['#ContabilidadUCSP', '#Contabilidad'],
+  },
+  {
+    id: 9,
+    nombre: 'Ciencia de la Computación',
+    slug: 'ciencia-computacion',
+    demanda: 'Media-Alta',
+    keywords: ['ciencia computación UCSP', 'computación Arequipa'],
+    hashtags: ['#CienciaComputacion', '#TechUCSP'],
+  },
+  {
+    id: 10,
+    nombre: 'Ciencia de Datos',
+    slug: 'ciencia-datos',
+    demanda: 'Alta',
+    keywords: ['ciencia datos UCSP', 'data science Arequipa'],
+    hashtags: ['#CienciaDatos', '#DataScience'],
+  },
+  {
+    id: 11,
+    nombre: 'Ingeniería Electrónica y Telecomunicaciones',
+    slug: 'electronica-telecomunicaciones',
+    demanda: 'Media',
+    keywords: ['electrónica UCSP', 'telecomunicaciones Arequipa'],
+    hashtags: ['#ElectronicaUCSP', '#Telecomunicaciones'],
+  },
+  {
+    id: 12,
+    nombre: 'Ingeniería Mecatrónica',
+    slug: 'mecatronica',
+    demanda: 'Media',
+    keywords: ['mecatrónica UCSP', 'mecatrónica Arequipa'],
+    hashtags: ['#MecatronicaUCSP', '#Mecatronica'],
+  },
+  {
+    id: 13,
+    nombre: 'Ingeniería Ambiental',
+    slug: 'ingenieria-ambiental',
+    demanda: 'Media',
+    keywords: ['ingeniería ambiental UCSP', 'ambiental Arequipa'],
+    hashtags: ['#IngenieriaAmbiental', '#Sostenibilidad'],
   },
 ];
 
 export default {
-  KEYWORDS_HONDA_AUTOS,
-  KEYWORDS_HONDA_MOTOS,
-  HASHTAGS_HONDA_AUTOS,
-  HASHTAGS_HONDA_MOTOS,
-  ALL_HASHTAGS_AUTOS,
-  ALL_HASHTAGS_MOTOS,
-  ALL_KEYWORDS_AUTOS,
-  ALL_KEYWORDS_MOTOS,
-  HIGH_INTENT_KEYWORDS_AUTOS,
-  HIGH_INTENT_KEYWORDS_MOTOS,
-  GOOGLE_TRENDS_CONFIG_AUTOS,
-  GOOGLE_TRENDS_CONFIG_MOTOS,
-  TIKTOK_CONFIG_AUTOS,
-  TIKTOK_CONFIG_MOTOS,
-  AUTOMOTIVE_SOURCES,
+  KEYWORDS_UCSP,
+  HASHTAGS_UCSP,
+  ALL_HASHTAGS,
+  ALL_KEYWORDS,
+  HIGH_INTENT_KEYWORDS,
+  GOOGLE_TRENDS_CONFIG,
+  TIKTOK_CONFIG,
+  META_CONFIG,
+  EDUCATION_SOURCES,
+  CARRERAS_UCSP,
 };
