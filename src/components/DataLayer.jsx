@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Search, TrendingUp, Video, Share2, Car, RefreshCw, ChevronDown, ChevronUp, BarChart3, Info, Bike } from 'lucide-react';
-import { PRODUCT_MODES } from '../data/config';
+import { Search, TrendingUp, Video, Share2, GraduationCap, RefreshCw, ChevronDown, ChevronUp, BarChart3, Info } from 'lucide-react';
 
 export default function DataLayer() {
-  const [productMode, setProductMode] = useState('autos'); // 'autos' | 'motos'
   const [trendsData, setTrendsData] = useState(null);
   const [tiktokData, setTiktokData] = useState(null);
   const [metaData, setMetaData] = useState(null);
@@ -21,12 +19,12 @@ export default function DataLayer() {
 
   useEffect(() => {
     loadData();
-  }, [productMode]); // Recargar cuando cambia el modo
+  }, []); // Cargar al montar
 
   const loadData = async () => {
     setIsRefreshing(true);
     try {
-      const basePath = `/data/${productMode}`;
+      const basePath = `/data/autos`; // Solo una fuente de datos ahora
       const [trends, tiktok, meta, ga4] = await Promise.all([
         fetch(`${basePath}/trends/latest.json`).then(r => r.json()).catch(() => null),
         fetch(`${basePath}/tiktok/latest.json`).then(r => r.json()).catch(() => null),
@@ -110,7 +108,7 @@ export default function DataLayer() {
       insights.push({
         source: 'Google Trends',
         icon: '🔍',
-        text: `"${topKeyword.keyword}" lidera búsquedas con ${topKeyword.average_interest}/100 de interés, con un crecimiento promedio de ${avgGrowth.toFixed(0)}% en keywords automotrices.`
+        text: `"${topKeyword.keyword}" lidera búsquedas con ${topKeyword.average_interest}/100 de interés, con un crecimiento promedio de ${avgGrowth.toFixed(0)}% en keywords universitarias.`
       });
     }
 
@@ -173,7 +171,7 @@ export default function DataLayer() {
       insights.push({
         source: 'Conexión Multi-fuente',
         icon: '🔗',
-        text: `Las 4 fuentes confirman alto interés en SUVs híbridas: búsquedas creciendo +${((scores.search / 10) * 100).toFixed(0)}%, contenido viral activo, conversación social positiva y conversión del ${(ga4Data?.overview?.conversionRate * 100 || 6.3).toFixed(1)}%.`
+        text: `Las 4 fuentes confirman alto interés en admisión UCSP: búsquedas creciendo +${((scores.search / 10) * 100).toFixed(0)}%, contenido viral activo, conversación social positiva y conversión del ${(ga4Data?.overview?.conversionRate * 100 || 6.3).toFixed(1)}%.`
       });
     }
 
@@ -185,39 +183,21 @@ export default function DataLayer() {
   return (
     <div className="space-y-6">
       {/* Header & Score Summary */}
-      <div className="bg-gradient-to-br from-honda-red to-honda-darkRed rounded-2xl shadow-honda-lg p-8 text-white">
+      <div className="bg-gradient-to-br from-ucsp-blue to-ucsp-darkBlue rounded-2xl shadow-ucsp-lg p-8 text-white">
         <div className="flex items-start justify-between mb-6">
           <div className="flex-1">
-            <h2 className="text-xl font-bold mb-2">
-              Capa de Data - Captura de Señales
-            </h2>
-            <p className="text-white/80 text-base mb-4">
-              Monitoreo en tiempo real del ecosistema digital automotriz en Perú
-            </p>
-            {/* Toggle Autos/Motos */}
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-1 inline-flex">
-              <button
-                onClick={() => setProductMode('autos')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-200 ${
-                  productMode === 'autos'
-                    ? 'bg-white text-honda-red shadow-lg font-semibold'
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <span className="text-lg">🚗</span>
-                <span className="text-sm font-semibold">Autos</span>
-              </button>
-              <button
-                onClick={() => setProductMode('motos')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-200 ${
-                  productMode === 'motos'
-                    ? 'bg-white text-honda-red shadow-lg font-semibold'
-                    : 'text-white/70 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <span className="text-lg">🏍️</span>
-                <span className="text-sm font-semibold">Motos</span>
-              </button>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                <GraduationCap className="w-8 h-8 text-ucsp-blue" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-1">
+                  Capa de Data - Captura de Señales
+                </h2>
+                <p className="text-white/80 text-base">
+                  Monitoreo en tiempo real del ecosistema digital educativo en el sur del Perú
+                </p>
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -266,9 +246,9 @@ export default function DataLayer() {
       </div>
 
       {/* Insights Clave del Mercado */}
-      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-honda-lg p-8 border border-gray-100">
+      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-ucsp-lg p-8 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-honda-red to-honda-darkRed rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy rounded-xl flex items-center justify-center shadow-lg">
             <span className="text-2xl">📊</span>
           </div>
           <div>
@@ -331,7 +311,7 @@ export default function DataLayer() {
             <Search className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">Google Trends</h3>
-              <p className="text-xs text-blue-100">Keywords automotrices en tendencia • Score: {scores.search}/10</p>
+              <p className="text-xs text-blue-100">Keywords universitarias en tendencia • Score: {scores.search}/10</p>
             </div>
           </div>
           {expandedSections.trends ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -344,9 +324,9 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-blue-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Promedio del "interés de búsqueda" (0-100) de todas las keywords automotrices monitoreadas en Perú. Score alto indica fuerte demanda de información sobre CR-V y SUVs híbridas.</p>
+                <p>Promedio del "interés de búsqueda" (0-100) de todas las keywords universitarias monitoreadas en Perú. Score alto indica fuerte demanda de información sobre UCSP y carreras híbridas.</p>
                 <p className="mt-2 text-xs text-blue-700">
-                  <strong>Fuente:</strong> Google Trends API (Perú) • <strong>Actualización:</strong> Semanal • <strong>Categoría:</strong> Automotive
+                  <strong>Fuente:</strong> Google Trends API (Perú) • <strong>Actualización:</strong> Semanal • <strong>Categoría:</strong> Education
                 </p>
               </div>
             </div>
@@ -434,7 +414,7 @@ export default function DataLayer() {
             <Video className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">TikTok Creative Center</h3>
-              <p className="text-xs text-cyan-100">Hashtags automotrices virales • Score: {scores.trend}/10</p>
+              <p className="text-xs text-cyan-100">Hashtags universitarias virales • Score: {scores.trend}/10</p>
             </div>
           </div>
           {expandedSections.tiktok ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -447,7 +427,7 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-cyan-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Promedio del "relevance score" (0-100) de los hashtags automotrices más virales. Score alto indica alto potencial de viralidad para contenido de CR-V y SUVs.</p>
+                <p>Promedio del "relevance score" (0-100) de los hashtags universitarias más virales. Score alto indica alto potencial de viralidad para contenido de UCSP y carreras.</p>
                 <p className="mt-2 text-xs text-cyan-700">
                   <strong>Fuente:</strong> TikTok Creative Center (datos públicos) • <strong>Actualización:</strong> Semanal • <strong>Región:</strong> Peru + Global
                 </p>
@@ -509,7 +489,7 @@ export default function DataLayer() {
             <Share2 className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">Meta/Facebook Trends</h3>
-              <p className="text-xs text-blue-100">Tendencias automotrices en redes sociales • Score: {scores.social}/10</p>
+              <p className="text-xs text-blue-100">Tendencias universitarias en redes sociales • Score: {scores.social}/10</p>
             </div>
           </div>
           {expandedSections.meta ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -522,9 +502,9 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-blue-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Promedio del "engagement score" (0-10) de los temas automotrices más discutidos en Facebook e Instagram. Score alto indica fuerte conversación social sobre CR-V.</p>
+                <p>Promedio del "engagement score" (0-10) de los temas universitarias más discutidos en Facebook e Instagram. Score alto indica fuerte conversación social sobre UCSP.</p>
                 <p className="mt-2 text-xs text-blue-700">
-                  <strong>Fuente:</strong> Páginas públicas verificadas (Honda Perú 286K likes, Pana Autos 285K, etc.) • <strong>Actualización:</strong> Semanal • <strong>Método:</strong> Análisis manual de engagement público
+                  <strong>Fuente:</strong> Páginas públicas verificadas (UCSP Perú 286K likes, UCSP Oficial 150K, etc.) • <strong>Actualización:</strong> Semanal • <strong>Método:</strong> Análisis manual de engagement público
                 </p>
               </div>
             </div>
@@ -588,7 +568,7 @@ export default function DataLayer() {
             <BarChart3 className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">Google Analytics 4</h3>
-              <p className="text-xs text-amber-100">Conversión e intención de compra • Score: {scores.intent}/10</p>
+              <p className="text-xs text-amber-100">Conversión e intención de postulación • Score: {scores.intent}/10</p>
             </div>
           </div>
           {expandedSections.ga4 ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -601,9 +581,9 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-amber-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Basado en tasa de conversión (leads calificados / sesiones totales) multiplicado por factor 150. Score alto indica fuerte intención de compra de visitantes del micrositio CR-V.</p>
+                <p>Basado en tasa de conversión (leads calificados / sesiones totales) multiplicado por factor 150. Score alto indica fuerte intención de postulación de visitantes del portal de admisiones UCSP.</p>
                 <p className="mt-2 text-xs text-amber-700">
-                  <strong>Fuente:</strong> Google Analytics 4 • <strong>Actualización:</strong> Diario • <strong>Property:</strong> Honda Perú - CR-V Microsite
+                  <strong>Fuente:</strong> Google Analytics 4 • <strong>Actualización:</strong> Diario • <strong>Property:</strong> UCSP Perú - UCSP Microsite
                 </p>
               </div>
             </div>
@@ -710,77 +690,38 @@ export default function DataLayer() {
       </div>
 
       {/* Keywords Reference */}
-      <div className="bg-gradient-to-br from-honda-red to-honda-darkRed rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy rounded-xl p-6 text-white">
         <h3 className="text-base font-bold mb-4 flex items-center gap-2">
-          {productMode === 'autos' ? (
-            <>
-              <Car className="w-6 h-6" />
-              Keywords Monitoreadas - Honda Autos (CR-V & HR-V)
-            </>
-          ) : (
-            <>
-              <Bike className="w-6 h-6" />
-              Keywords Monitoreadas - Honda Motos
-            </>
-          )}
+          <GraduationCap className="w-6 h-6" />
+          Keywords Monitoreadas - UCSP (Admisiones 2025)
         </h3>
 
-        {productMode === 'autos' ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <p className="text-sm text-white/70 mb-2 font-semibold">Principales:</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Honda CR-V</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">CR-V Híbrida</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">SUV Híbrida</span>
-              </div>
-            </div>
-            <div>
-              <p className="text-sm text-white/70 mb-2 font-semibold">Intención:</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Precio CR-V</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Test Drive</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Financiamiento</span>
-              </div>
-            </div>
-            <div>
-              <p className="text-sm text-white/70 mb-2 font-semibold">Competencia:</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Toyota RAV4</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Mazda CX-5</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Nissan X-Trail</span>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <p className="text-sm text-white/70 mb-2 font-semibold">Marca:</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">UCSP</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Admisión UCSP</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">San Pablo Arequipa</span>
             </div>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <p className="text-sm text-white/70 mb-2 font-semibold">Principales:</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Honda Dio</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Honda Wave</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Honda Navi</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Scooter 110cc</span>
-              </div>
-            </div>
-            <div>
-              <p className="text-sm text-white/70 mb-2 font-semibold">Intención:</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Precio Motos</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Financiamiento</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Automáticas</span>
-              </div>
-            </div>
-            <div>
-              <p className="text-sm text-white/70 mb-2 font-semibold">Competencia:</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Bajaj</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Yamaha</span>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Lifan</span>
-              </div>
+          <div>
+            <p className="text-sm text-white/70 mb-2 font-semibold">Carreras Top:</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Ingeniería Industrial</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Derecho UCSP</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Medicina UCSP</span>
             </div>
           </div>
-        )}
+          <div>
+            <p className="text-sm text-white/70 mb-2 font-semibold">Competencia:</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">UNSA</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">UCSM</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">UTP Arequipa</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
