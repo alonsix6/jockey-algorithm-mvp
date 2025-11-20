@@ -221,7 +221,7 @@ export default function DecisionLayer() {
           </div>
           <div>
             <h3 className="text-base font-bold text-gray-900">Audiencias Objetivo UCSP</h3>
-            <p className="text-sm text-gray-600">Segmentación inteligente para Admisiones 2025-I</p>
+            <p className="text-sm text-gray-600">Segmentación inteligente para Admisiones 2026-I</p>
           </div>
         </div>
 

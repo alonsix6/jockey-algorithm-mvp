@@ -96,9 +96,9 @@ export const MOCK_GA4_DATA = {
 export const PERFORMANCE_KPIS = {
   // Postulaciones completadas (reemplazo de leads)
   postulaciones: {
-    current: 1256,
-    previous: 1092,
-    change: '+15.0',
+    current: 780,
+    previous: 680,
+    change: '+14.7',
     trend: 'up',
     label: 'Postulaciones Completadas',
     description: 'Total de postulaciones válidas en periodo',
@@ -106,19 +106,19 @@ export const PERFORMANCE_KPIS = {
 
   // Alias para compatibilidad con OptimizationLayer.jsx
   leads: {
-    qualified: 1256,
-    total: 1580,
-    qualification_rate: 79.5,
-    cost_per_lead: 10.40,
-    trend: '+15.0%',
-    trend_value: 15.0,
+    qualified: 780,
+    total: 980,
+    qualification_rate: 79.6,
+    cost_per_lead: 16.80,
+    trend: '+14.7%',
+    trend_value: 14.7,
   },
 
   // Alcance total
   alcance: {
-    current: 875000,
-    previous: 718000,
-    change: '+21.9',
+    current: 540000,
+    previous: 445000,
+    change: '+21.3',
     trend: 'up',
     label: 'Alcance Total',
     description: 'Usuarios únicos impactados',
@@ -126,18 +126,18 @@ export const PERFORMANCE_KPIS = {
 
   // Alias para compatibilidad
   reach: {
-    unique_reach: 875000,
-    impressions: 2450000,
+    unique_reach: 540000,
+    impressions: 1500000,
     frequency: 2.8,
-    trend: '+21.9%',
-    trend_value: 21.9,
+    trend: '+21.3%',
+    trend_value: 21.3,
   },
 
   // Engagement/Interacciones
   engagement: {
-    total_interactions: 142500,
+    total_interactions: 88000,
     engagement_rate: 16.3,
-    shares: 18500,
+    shares: 11400,
     trend: '+8.1%',
     trend_value: 8.1,
   },
@@ -153,9 +153,9 @@ export const PERFORMANCE_KPIS = {
 
   // CPP (Costo por Postulación) - reemplazo de CPL
   cpp: {
-    current: 10.40,
-    previous: 11.30,
-    change: '-7.9',
+    current: 16.80,
+    previous: 18.50,
+    change: '-9.2',
     trend: 'down', // Reducción es positivo
     label: 'Costo por Postulación',
     description: '$ invertido por cada postulación válida',
@@ -164,9 +164,9 @@ export const PERFORMANCE_KPIS = {
 
   // Charlas informativas asistidas (reemplazo de test drives)
   charlas: {
-    current: 485,
-    previous: 412,
-    change: '+17.7',
+    current: 185,
+    previous: 165,
+    change: '+12.1',
     trend: 'up',
     label: 'Charlas Asistidas',
     description: 'Asistentes a charlas informativas',
@@ -174,9 +174,9 @@ export const PERFORMANCE_KPIS = {
 
   // WhatsApp conversaciones
   whatsapp: {
-    current: 1420,
-    previous: 1108,
-    change: '+28.2',
+    current: 1250,
+    previous: 980,
+    change: '+27.6',
     trend: 'up',
     label: 'Conversaciones WhatsApp',
     description: 'Conversaciones iniciadas vía Meta Ads',
@@ -612,7 +612,7 @@ export const HUBSPOT_MOCKUP = {
   campaigns: [
     {
       id: 'camp_001',
-      name: 'Admisión 2025-I Pregrado',
+      name: 'Admisión 2026-I Pregrado',
       status: 'active',
       budget: 25000,
       spent: 18750,
@@ -687,7 +687,7 @@ export const HUBSPOT_MOCKUP = {
 // BUDGET ALLOCATION - Distribución de presupuesto por canal
 // ============================================================================
 export const BUDGET_ALLOCATION = {
-  total_budget: 23000, // USD mensual para Admisiones 2025-I
+  total_budget: 23000, // USD mensual para Admisiones 2026-I
   distribution: {
     google_search: {
       amount: 8050, // 35%
@@ -865,7 +865,7 @@ export const COMPETITOR_INSIGHTS = [
     sentiment: 72,
     threat_level: 'high',
     trending_topics: ['Universidad pública', 'Tradición', 'Ingeniería'],
-    description: 'Principal universidad pública del sur, 2da en ranking nacional Sunedu 2025',
+    description: 'Principal universidad pública del sur, 2da en ranking nacional Sunedu 2026',
   },
   {
     brand: 'UCSM',
