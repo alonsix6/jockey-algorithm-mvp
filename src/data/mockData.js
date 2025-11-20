@@ -859,44 +859,6 @@ export const ALERTS = [
 ];
 
 // ============================================================================
-// A/B TESTS - Tests activos
-// ============================================================================
-export const AB_TESTS = [
-  {
-    id: 1,
-    name: 'Copy Lead Ads: "Tu futuro inicia aquí" vs "Fórmate con los mejores"',
-    status: 'running',
-    variant_a: {
-      name: 'Tu futuro inicia aquí',
-      ctr: 3.8,
-      conversions: 142,
-    },
-    variant_b: {
-      name: 'Fórmate con los mejores',
-      ctr: 4.5,
-      conversions: 168,
-    },
-    recommendation: 'Variante B tiene +18% mejor CTR, escalar al 100%',
-  },
-  {
-    id: 2,
-    name: 'Video thumbnail: Campus vs Estudiantes',
-    status: 'completed',
-    variant_a: {
-      name: 'Campus UCSP',
-      view_rate: 28.5,
-      watch_time: '0:42',
-    },
-    variant_b: {
-      name: 'Estudiantes',
-      view_rate: 35.2,
-      watch_time: '0:58',
-    },
-    recommendation: 'Variante B (Estudiantes) ganó, usar para próximas campañas',
-  },
-];
-
-// ============================================================================
 // COMPETITOR INSIGHTS - Análisis de competencia universitaria
 // ============================================================================
 export const COMPETITOR_INSIGHTS = [
@@ -950,6 +912,5 @@ export default {
   BUDGET_ALLOCATION,
   CONTENT_PILLARS,
   ALERTS,
-  AB_TESTS,
   COMPETITOR_INSIGHTS,
 };
