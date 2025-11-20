@@ -1,41 +1,17 @@
-// Configuración general del Honda Algorithm
+// Configuración general del UCSP Algorithm
 // Textos, mensajes, secciones y configuración de UI
 
 // ============================================================================
 // BRAND CONFIGURATION - Configuración de marca
 // ============================================================================
 export const BRAND_CONFIG = {
-  name: 'Honda Algorithm',
-  tagline: 'Social Intelligence para Honda Perú',
-  subtitle: 'Optimización automática de inversión digital',
-  product: 'Honda CR-V & HR-V 2025/2026',
-  market: 'Perú',
-  client: 'Reset - Agencia de Medios',
+  name: 'UCSP Algorithm',
+  tagline: 'Social Intelligence para Universidad Católica San Pablo',
+  subtitle: 'Optimización automática de inversión digital en admisiones',
+  product: 'Pregrado y Posgrado 2025-I',
+  market: 'Sur del Perú (Arequipa, Puno, Cusco, Moquegua, Tacna)',
+  client: 'Universidad Católica San Pablo',
   version: '1.0.0',
-};
-
-// ============================================================================
-// PRODUCT MODES - Configuración Autos/Motos
-// ============================================================================
-export const PRODUCT_MODES = {
-  autos: {
-    id: 'autos',
-    name: 'Honda Autos',
-    icon: '🚗',
-    products: 'CR-V & HR-V 2025/2026',
-    description: 'SUVs híbridas y familiares',
-    market_share: '14%',
-    competitors: ['Toyota', 'Hyundai', 'Mazda', 'Nissan'],
-  },
-  motos: {
-    id: 'motos',
-    name: 'Honda Motos',
-    icon: '🏍️',
-    products: 'Scooters, Urbanas & Deportivas',
-    description: 'Motocicletas para ciudad y aventura',
-    market_share: '24%',
-    competitors: ['Bajaj', 'Yamaha', 'Lifan', 'Zongshen'],
-  },
 };
 
 // ============================================================================
@@ -45,18 +21,18 @@ export const LAYER_CONFIG = {
   data: {
     id: 'data',
     name: 'Captura de Señales',
-    subtitle: 'Monitoreo en tiempo real del ecosistema digital automotriz',
+    subtitle: 'Monitoreo en tiempo real del ecosistema digital educativo',
     description: 'Búsqueda, Tendencia, Intención, Emoción',
     icon: 'Search',
-    color: 'from-honda-red to-honda-red',
+    color: 'from-ucsp-blue to-ucsp-lightBlue',
   },
   decision: {
     id: 'decision',
     name: 'Inteligencia de Mercado',
-    subtitle: 'Insights automáticos para optimizar inversión',
+    subtitle: 'Insights automáticos para optimizar inversión en admisiones',
     description: 'Análisis y definición de estrategia',
     icon: 'Target',
-    color: 'from-honda-red via-honda-darkRed to-honda-gray',
+    color: 'from-ucsp-blue via-ucsp-burgundy to-ucsp-gold',
   },
   execution: {
     id: 'execution',
@@ -64,7 +40,7 @@ export const LAYER_CONFIG = {
     subtitle: 'Distribución inteligente de presupuesto y contenidos',
     description: 'Implementación en tiempo real',
     icon: 'Zap',
-    color: 'from-honda-gray to-honda-black',
+    color: 'from-ucsp-burgundy to-ucsp-darkBurgundy',
   },
   optimization: {
     id: 'optimization',
@@ -72,38 +48,38 @@ export const LAYER_CONFIG = {
     subtitle: 'Resultados en tiempo real y ajustes automáticos',
     description: 'Evaluación y redistribución',
     icon: 'TrendingUp',
-    color: 'from-honda-black to-honda-black',
+    color: 'from-ucsp-darkBlue to-ucsp-blue',
   },
 };
 
 // ============================================================================
-// KEY MESSAGES - Mensajes clave de comunicación Honda
+// KEY MESSAGES - Mensajes clave de comunicación UCSP
 // ============================================================================
 export const KEY_MESSAGES = {
-  hybrid: {
-    title: 'Tecnología e:HEV',
-    message: 'Híbrido sin enchufar, 70% del tiempo en modo eléctrico',
-    description: 'Ahorra hasta 40% en combustible sin complicaciones',
+  licenciamiento: {
+    title: 'Universidad Licenciada',
+    message: 'Primera universidad licenciada de Arequipa y el sur del Perú',
+    description: 'Licenciamiento SUNEDU desde 2017, calidad garantizada',
   },
-  family: {
-    title: 'Seguridad Honda Sensing',
-    message: 'Tecnología que protege lo que más importa',
-    description: 'Sistema de asistencia al conductor en 8 de 10 modelos',
+  formacion: {
+    title: 'Formación Integral',
+    message: 'Formación humanística y profesional de excelencia',
+    description: 'Educación católica con visión de servicio',
   },
-  adventure: {
-    title: 'Versatilidad SUV',
-    message: 'Desde la ciudad hasta la aventura, sin límites',
-    description: 'CR-V con AWD y HR-V con Magic Seats',
+  acreditacion: {
+    title: 'Acreditación Internacional',
+    message: 'Carreras acreditadas por SINEACE, ICACIT e IAC-CINDA',
+    description: 'Calidad académica reconocida internacionalmente',
   },
-  sustainability: {
-    title: 'Movilidad Inteligente',
-    message: 'Eficiencia real para el tráfico de Lima',
-    description: 'Hasta 22 km/litro en modo económico',
+  tecnologia: {
+    title: 'Innovación y Tecnología',
+    message: 'Nuevas carreras: Ciencia de Datos e IA',
+    description: 'Arequipa como hub digital del sur del Perú',
   },
-  technology: {
-    title: 'Innovación Honda',
-    message: '82% de reconocimiento por confiabilidad',
-    description: 'Honda Sensing y tecnología e:HEV',
+  valores: {
+    title: 'Valores Católicos',
+    message: 'Comunidad universitaria con identidad católica',
+    description: 'Centralidad de la persona y búsqueda de la verdad',
   },
 };
 
@@ -119,14 +95,15 @@ export const DATA_SOURCES_CONFIG = {
     color: 'text-blue-600',
     bgColor: 'bg-blue-50',
     region: 'PE',
-    category: 'Autos & Vehicles',
+    category: 'Education',
     interval: 'hourly',
     status: 'active',
+    geo: ['Arequipa', 'Puno', 'Cusco', 'Moquegua', 'Tacna'],
   },
   tiktok: {
     enabled: true,
-    name: 'TikTok Creative Center',
-    description: 'Hashtags y contenido viral',
+    name: 'TikTok',
+    description: 'Hashtags y contenido viral educativo',
     icon: 'Video',
     color: 'text-cyan-500',
     bgColor: 'bg-cyan-50',
@@ -146,20 +123,20 @@ export const DATA_SOURCES_CONFIG = {
   youtube: {
     enabled: true,
     name: 'YouTube',
-    description: 'Videos y reviews automotrices',
+    description: 'Videos y testimoniales universitarios',
     icon: 'Youtube',
     color: 'text-red-600',
     bgColor: 'bg-red-50',
     status: 'active',
   },
-  automotive: {
+  education: {
     enabled: true,
-    name: 'Portales Automotrices',
-    description: 'Neoauto, Autocosmos, Motor1',
+    name: 'Portales Educativos',
+    description: 'Ponte en Carrera, Estudia Perú, SUNEDU',
     icon: 'Globe',
     color: 'text-green-600',
     bgColor: 'bg-green-50',
-    sources: ['Neoauto', 'Autocosmos', 'Motor1'],
+    sources: ['Ponte en Carrera', 'Estudia Perú', 'SUNEDU'],
     status: 'active',
   },
   ga4: {
@@ -175,7 +152,7 @@ export const DATA_SOURCES_CONFIG = {
 };
 
 // ============================================================================
-// CHANNELS - Canales de activación
+// CHANNELS - Canales de activación (sin LinkedIn ni TikTok Ads)
 // ============================================================================
 export const CHANNELS_CONFIG = {
   google_search: {
@@ -183,16 +160,17 @@ export const CHANNELS_CONFIG = {
     icon: 'Search',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50',
-    primary_kpi: 'Leads calificados',
-    description: 'Intención de compra alta',
+    primary_kpi: 'Postulaciones calificadas',
+    description: 'Intención de búsqueda alta',
   },
-  social_media: {
+  meta_ads: {
     name: 'Meta Ads',
     icon: 'Share2',
     color: 'text-blue-500',
     bgColor: 'bg-blue-50',
     primary_kpi: 'Alcance + Engagement',
     description: 'Facebook e Instagram',
+    subchannels: ['Lead Ads', 'Conversaciones WhatsApp', 'Visitas Landing'],
   },
   youtube: {
     name: 'YouTube',
@@ -210,55 +188,89 @@ export const CHANNELS_CONFIG = {
     primary_kpi: 'Brand Awareness',
     description: 'Red de display de Google',
   },
-  tiktok: {
-    name: 'TikTok Ads',
-    icon: 'Video',
-    color: 'text-cyan-500',
-    bgColor: 'bg-cyan-50',
-    primary_kpi: 'Testing formatos',
-    description: 'Nuevas audiencias',
-  },
 };
 
 // ============================================================================
-// AUDIENCES - Audiencias objetivo
+// AUDIENCES - Audiencias objetivo (Pregrado y Posgrado)
 // ============================================================================
 export const TARGET_AUDIENCES = [
   {
-    id: 'young-families',
-    name: 'Familias Profesionales',
-    description: '35-50 años, con hijos',
-    size: '~420K',
+    id: 'pregrado',
+    name: 'Postulantes Pregrado',
+    description: '17-25 años, estudiantes y bachilleres',
+    size: '~10,500',
+    age_range: '17-25',
     priority: 'high',
-    interests: ['Honda Sensing', 'Espacio', 'Confiabilidad'],
-    message: KEY_MESSAGES.family.message,
+    segments: [
+      {
+        name: 'Escolares 5to Secundaria',
+        size: '~8,000',
+        age: '17-18',
+        characteristics: ['Primera elección universitaria', 'Alto engagement redes', 'Influenciados por padres'],
+      },
+      {
+        name: 'Bachilleres y Trabajadores',
+        size: '~2,500',
+        age: '19-25',
+        characteristics: ['Traslados externos', 'Retorno a estudios', 'Mayor autonomía decisión'],
+      },
+    ],
+    interests: ['Carreras demandadas', 'Becas', 'Vida universitaria', 'Acreditación'],
+    message: 'Tu futuro empieza aquí: formación humanista y excelencia académica',
+    channels: {
+      'Meta Ads': 35,
+      'Google Search': 30,
+      'YouTube': 20,
+      'Display': 15,
+    },
+    engagement_rate: 12.5,
+    cpl_target: 35, // S/ costo por lead objetivo
+    conversion_funnel: {
+      alcance: 850000,
+      visitas_landing: 12000,
+      formularios: 3000,
+      postulaciones: 1050,
+      matriculados: 240,
+    },
   },
   {
-    id: 'eco-conscious',
-    name: 'Eco-conscious Premium',
-    description: '30-45 años, ejecutivos',
-    size: '~310K',
-    priority: 'high',
-    interests: ['e:HEV', 'Eficiencia', 'Tecnología'],
-    message: KEY_MESSAGES.hybrid.message,
-  },
-  {
-    id: 'urban-millennials',
-    name: 'Millennials Urbanos',
-    description: '25-35 años, primera SUV',
-    size: '~380K',
-    priority: 'high',
-    interests: ['Tecnología', 'Precio accesible', 'Magic Seats'],
-    message: 'Tu primera SUV Honda a precio accesible',
-  },
-  {
-    id: 'pragmatic-buyers',
-    name: 'Compradores Pragmáticos',
-    description: '30-50 años, eficiencia',
-    size: '~250K',
+    id: 'posgrado',
+    name: 'Postulantes Posgrado',
+    description: '25-45 años, profesionales',
+    size: '~3,000',
+    age_range: '25-45',
     priority: 'medium',
-    interests: ['Ahorro combustible', 'Confiabilidad', 'Servicio'],
-    message: KEY_MESSAGES.sustainability.message,
+    segments: [
+      {
+        name: 'Profesionales Jóvenes',
+        size: '~1,800',
+        age: '25-32',
+        characteristics: ['Primera maestría', 'Crecimiento profesional', 'Equilibrio trabajo-estudio'],
+      },
+      {
+        name: 'Profesionales Establecidos',
+        size: '~1,200',
+        age: '33-45',
+        characteristics: ['Especialización', 'Cambio de carrera', 'Alta exigencia académica'],
+      },
+    ],
+    interests: ['Maestrías', 'Diplomados', 'MBA', 'Horarios flexibles', 'Acreditación'],
+    message: '5 maestrías y diplomados con acreditación internacional',
+    channels: {
+      'Google Search': 40,
+      'Meta Ads': 35,
+      'YouTube': 15,
+      'Display': 10,
+    },
+    engagement_rate: 8.5,
+    cpl_target: 65, // S/ costo por lead objetivo (más alto que pregrado)
+    conversion_funnel: {
+      alcance: 120000,
+      visitas_landing: 4500,
+      formularios: 850,
+      postulaciones: 280,
+      matriculados: 85,
+    },
   },
 ];
 
@@ -267,24 +279,33 @@ export const TARGET_AUDIENCES = [
 // ============================================================================
 export const OPTIMAL_TIMING = {
   dayparts: [
-    { name: 'Mañana', hours: '7:00 - 9:00', performance: 'high', multiplier: 1.2 },
-    { name: 'Mediodía', hours: '12:00 - 14:00', performance: 'medium', multiplier: 1.0 },
-    { name: 'Tarde', hours: '18:00 - 21:00', performance: 'high', multiplier: 1.3 },
+    { name: 'Mañana', hours: '7:00 - 9:00', performance: 'high', multiplier: 1.3, audience: 'Pregrado y Posgrado' },
+    { name: 'Mediodía', hours: '12:00 - 14:00', performance: 'medium', multiplier: 1.0, audience: 'Pregrado' },
+    { name: 'Tarde', hours: '18:00 - 21:00', performance: 'high', multiplier: 1.4, audience: 'Pregrado y Posgrado' },
+    { name: 'Noche', hours: '21:00 - 23:00', performance: 'medium', multiplier: 1.1, audience: 'Posgrado' },
   ],
   weekdays: [
     { name: 'Lunes', performance: 'high', recommended: true },
-    { name: 'Martes', performance: 'medium', recommended: false },
-    { name: 'Miércoles', performance: 'high', recommended: true },
+    { name: 'Martes', performance: 'high', recommended: true },
+    { name: 'Miércoles', performance: 'medium', recommended: true },
     { name: 'Jueves', performance: 'high', recommended: true },
-    { name: 'Viernes', performance: 'low', recommended: false },
-    { name: 'Sábado', performance: 'medium', recommended: false },
-    { name: 'Domingo', performance: 'low', recommended: false },
+    { name: 'Viernes', performance: 'medium', recommended: false },
+    { name: 'Sábado', performance: 'low', recommended: false },
+    { name: 'Domingo', performance: 'medium', recommended: false },
   ],
   events: [
-    'Fin de semana largo',
-    'Temporada de bonos (Jul-Dic)',
-    'Fiestas Patrias',
-    'Navidad',
+    'Inicio campaña admisión (Enero-Febrero)',
+    'Exámenes de admisión (Marzo-Abril)',
+    'Fiestas Patrias (Julio)',
+    'Campaña admisión II (Agosto-Septiembre)',
+    'Charlas vocacionales (Todo el año)',
+  ],
+  geographies: [
+    { city: 'Arequipa', hours: '7-9 AM, 18-21 PM', multiplier: 1.4, focus: 70 },
+    { city: 'Puno/Juliaca', hours: '19-21 PM', multiplier: 1.5, focus: 18 },
+    { city: 'Cusco', hours: '18-20 PM', multiplier: 1.3, focus: 10 },
+    { city: 'Moquegua', hours: '19-21 PM', multiplier: 1.2, focus: 1 },
+    { city: 'Tacna', hours: '19-21 PM', multiplier: 1.2, focus: 1 },
   ],
 };
 
@@ -293,44 +314,80 @@ export const OPTIMAL_TIMING = {
 // ============================================================================
 export const METRIC_CARDS_CONFIG = [
   {
-    id: 'leads',
-    title: 'Leads Calificados',
-    description: 'Formularios completos con interés real',
+    id: 'postulaciones',
+    title: 'Postulaciones Completadas',
+    description: 'Postulaciones válidas y calificadas',
     icon: 'Target',
-    color: 'honda-red',
-    gradient: 'from-honda-red to-honda-darkRed',
+    color: 'ucsp-blue',
+    gradient: 'from-ucsp-blue to-ucsp-lightBlue',
   },
   {
     id: 'reach',
     title: 'Alcance Total',
-    description: 'Usuarios únicos impactados',
+    description: 'Usuarios únicos impactados en zonas objetivo',
     icon: 'Users',
-    color: 'honda-gray',
-    gradient: 'from-honda-gray to-honda-black',
+    color: 'ucsp-burgundy',
+    gradient: 'from-ucsp-burgundy to-ucsp-wine',
   },
   {
     id: 'engagement',
     title: 'Interacciones',
     description: 'Likes, shares, comentarios, saves',
     icon: 'Heart',
-    color: 'honda-gray',
-    gradient: 'from-honda-gray to-honda-black',
+    color: 'ucsp-gold',
+    gradient: 'from-ucsp-gold to-ucsp-burgundy',
   },
   {
     id: 'opportunity',
-    title: 'Opportunity Score',
-    description: 'Índice de oportunidad de inversión',
+    title: 'UCSP Opportunity Score',
+    description: 'Índice de oportunidad de inversión en admisiones',
     icon: 'Zap',
-    color: 'honda-red',
-    gradient: 'from-honda-red to-honda-black',
+    color: 'ucsp-blue',
+    gradient: 'from-ucsp-blue to-ucsp-darkBlue',
   },
 ];
+
+// ============================================================================
+// HUBSPOT INTEGRATION - Configuración de HubSpot (Mockup)
+// ============================================================================
+export const HUBSPOT_CONFIG = {
+  enabled: false, // Cambiar a true cuando se integre API real
+  api_key: null,
+  endpoints: {
+    campaigns: '/marketing/v3/campaigns',
+    contacts: '/crm/v3/objects/contacts',
+    analytics: '/analytics/v2/reports',
+  },
+  cpl_thresholds: {
+    pregrado: {
+      max_cpl: 50, // S/ máximo por lead pregrado
+      alert_at: 45, // Alerta cuando se acerca al límite
+      pause_at: 55, // Pausar si supera este valor
+    },
+    posgrado: {
+      max_cpl: 80,
+      alert_at: 70,
+      pause_at: 90,
+    },
+  },
+  conversion_tracking: {
+    lead_ads: true,
+    whatsapp_conversations: true,
+    landing_page_visits: true,
+    form_submissions: true,
+  },
+  alerts: {
+    email: true,
+    webhook: false,
+    dashboard: true,
+  },
+};
 
 // ============================================================================
 // UI TEXT - Textos de interfaz
 // ============================================================================
 export const UI_TEXT = {
-  loading: 'Cargando Honda Algorithm...',
+  loading: 'Cargando UCSP Algorithm...',
   lastUpdate: 'Última actualización',
   systemActive: 'Sistema activo',
   noData: 'No hay datos disponibles',
@@ -339,7 +396,7 @@ export const UI_TEXT = {
 
   // Footer
   footer: {
-    copyright: '© 2025 Honda Algorithm - Powered by Reset',
+    copyright: '© 2025 UCSP Algorithm - Universidad Católica San Pablo',
     version: 'v1.0.0',
   },
 
@@ -349,6 +406,8 @@ export const UI_TEXT = {
     export: 'Exportar',
     refresh: 'Actualizar',
     filter: 'Filtrar',
+    expandAll: 'Mostrar todas las carreras',
+    collapseAll: 'Mostrar solo top 5',
   },
 };
 
@@ -357,7 +416,6 @@ export const UI_TEXT = {
 // ============================================================================
 export default {
   BRAND_CONFIG,
-  PRODUCT_MODES,
   LAYER_CONFIG,
   KEY_MESSAGES,
   DATA_SOURCES_CONFIG,
@@ -365,5 +423,6 @@ export default {
   TARGET_AUDIENCES,
   OPTIMAL_TIMING,
   METRIC_CARDS_CONFIG,
+  HUBSPOT_CONFIG,
   UI_TEXT,
 };

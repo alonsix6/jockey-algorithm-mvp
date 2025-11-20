@@ -1,70 +1,69 @@
-import { TrendingUp, BarChart3, RefreshCw, Award, Target, Users, Heart, Zap, AlertCircle } from 'lucide-react';
+import { TrendingUp, BarChart3, RefreshCw, Award, Target, Users, Heart, Zap, AlertCircle, GraduationCap, Bell } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { PERFORMANCE_KPIS, ALERTS, AB_TESTS, COMPETITOR_INSIGHTS } from '../data/mockData';
-import { LAYER_CONFIG, METRIC_CARDS_CONFIG } from '../data/config';
+import { PERFORMANCE_KPIS, ALERTS, AB_TESTS, COMPETITOR_INSIGHTS, HUBSPOT_MOCKUP } from '../data/mockData';
+import { LAYER_CONFIG, METRIC_CARDS_CONFIG, HUBSPOT_CONFIG } from '../data/config';
 
 export default function OptimizationLayer() {
-  // Performance últimos 7 días - Honda CR-V
+  // Performance últimos 7 días - UCSP Admisiones
   const performanceData = [
-    { date: '28 Oct', leads: 156, reach: 420000, engagement: 11200, spent: 2100 },
-    { date: '29 Oct', leads: 168, reach: 435000, engagement: 12500, spent: 2250 },
-    { date: '30 Oct', leads: 174, reach: 468000, engagement: 13800, spent: 2180 },
-    { date: '31 Oct', leads: 182, reach: 492000, engagement: 14200, spent: 2320 },
-    { date: '01 Nov', leads: 195, reach: 515000, engagement: 15100, spent: 2280 },
-    { date: '02 Nov', leads: 189, reach: 498000, engagement: 14700, spent: 2350 },
-    { date: '03 Nov', leads: 203, reach: 528000, engagement: 16200, spent: 2290 }
+    { date: '14 Nov', postulaciones: 168, reach: 118000, engagement: 18200, spent: 6450 },
+    { date: '15 Nov', postulaciones: 175, reach: 122000, engagement: 19100, spent: 6780 },
+    { date: '16 Nov', postulaciones: 182, reach: 127000, engagement: 20300, spent: 6920 },
+    { date: '17 Nov', postulaciones: 178, reach: 124000, engagement: 19800, spent: 6850 },
+    { date: '18 Nov', postulaciones: 191, reach: 131000, engagement: 21500, spent: 7100 },
+    { date: '19 Nov', postulaciones: 185, reach: 128000, engagement: 20700, spent: 6950 },
+    { date: '20 Nov', postulaciones: 198, reach: 135000, engagement: 22400, spent: 7250 }
   ];
 
-  // Channel performance distribution
+  // Channel performance distribution (sin TikTok ni LinkedIn)
   const channelData = [
-    { name: 'Google Search', value: 35, leads: 425, color: '#3B82F6' }, // Azul consistente
-    { name: 'Meta Ads', value: 30, leads: 364, color: '#1D4ED8' }, // Azul más oscuro para diferenciar
-    { name: 'YouTube', value: 20, leads: 242, color: '#EF4444' }, // Rojo
-    { name: 'Display', value: 10, leads: 121, color: '#10B981' }, // Verde
-    { name: 'TikTok', value: 5, leads: 95, color: '#06B6D4' } // Turquesa TikTok
+    { name: 'Google Search', value: 35, postulaciones: 439, color: '#003B7A' }, // UCSP Blue
+    { name: 'Meta Ads', value: 35, postulaciones: 439, color: '#6B1B3D' }, // UCSP Burgundy
+    { name: 'YouTube', value: 20, postulaciones: 251, color: '#EF4444' }, // Rojo YouTube
+    { name: 'Display', value: 10, postulaciones: 125, color: '#C5A572' } // UCSP Gold
   ];
 
-  // Funnel de conversión - rediseñado como steps con conversión entre etapas
+  // Funnel de conversión UCSP - Simplificado
   const funnelSteps = [
     {
-      stage: 'Impresiones',
-      value: 3500000,
-      conversionRate: 3.0,
-      conversionLabel: 'CTR',
-      icon: '👁️',
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
-      stage: 'Clics',
-      value: 105000,
-      conversionRate: 85.0,
+      stage: 'Alcance',
+      value: 875000,
+      conversionRate: 1.4,
       conversionLabel: 'a Landing',
-      icon: '👆',
-      color: 'from-indigo-500 to-indigo-600'
+      icon: '👥',
+      color: 'from-ucsp-blue to-ucsp-lightBlue'
     },
     {
       stage: 'Visitas Landing',
-      value: 89250,
-      conversionRate: 1.4,
+      value: 12000,
+      conversionRate: 25.0,
       conversionLabel: 'a Formulario',
-      icon: '📄',
-      color: 'from-green-500 to-green-600'
+      icon: '🌐',
+      color: 'from-ucsp-lightBlue to-ucsp-skyBlue'
     },
     {
       stage: 'Formularios',
-      value: 1247,
-      conversionRate: 27.4,
-      conversionLabel: 'a Test Drive',
+      value: 3000,
+      conversionRate: 35.0,
+      conversionLabel: 'a Postulación',
       icon: '📝',
-      color: 'from-amber-500 to-orange-500'
+      color: 'from-ucsp-burgundy to-ucsp-wine'
     },
     {
-      stage: 'Test Drives',
-      value: 342,
+      stage: 'Postulaciones',
+      value: 1050,
+      conversionRate: 22.9,
+      conversionLabel: 'a Matrícula',
+      icon: '🎓',
+      color: 'from-ucsp-gold to-ucsp-burgundy'
+    },
+    {
+      stage: 'Matriculados',
+      value: 240,
       conversionRate: null,
       conversionLabel: null,
-      icon: '🚗',
-      color: 'from-honda-red to-honda-darkRed'
+      icon: '✅',
+      color: 'from-green-500 to-green-600'
     }
   ];
 
@@ -82,7 +81,7 @@ export default function OptimizationLayer() {
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="px-3 py-1 bg-honda-blue text-white rounded-full text-sm font-medium flex items-center gap-1">
+            <span className="px-3 py-1 bg-ucsp-blue text-white rounded-full text-sm font-medium flex items-center gap-1">
               <RefreshCw className="w-4 h-4" />
               Auto-optimización activa
             </span>
@@ -92,26 +91,26 @@ export default function OptimizationLayer() {
 
       {/* KPIs Principales */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Leads */}
-        <div className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-6 shadow-lg">
+        {/* Postulaciones */}
+        <div className="bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy text-white rounded-2xl p-6 shadow-lg">
           <div className="flex items-center justify-between mb-3">
-            <Target className="w-8 h-8" />
+            <GraduationCap className="w-8 h-8" />
             <span className={`px-3 py-1 rounded-full text-xs font-bold ${
               PERFORMANCE_KPIS.leads.trend_value > 0 ? 'bg-green-400' : 'bg-red-400'
             }`}>
               {PERFORMANCE_KPIS.leads.trend}
             </span>
           </div>
-          <h3 className="text-sm font-medium text-white/80 mb-1">Leads Calificados</h3>
+          <h3 className="text-sm font-medium text-white/80 mb-1">Postulaciones Completadas</h3>
           <p className="text-2xl font-bold mb-2">{PERFORMANCE_KPIS.leads.qualified.toLocaleString()}</p>
           <div className="flex items-baseline gap-2">
             <span className="text-sm text-white/70">de {PERFORMANCE_KPIS.leads.total.toLocaleString()} total</span>
-            <span className="text-xs bg-white/20 px-2 py-1 rounded">{PERFORMANCE_KPIS.leads.qualification_rate}%</span>
+            <span className="text-xs bg-white/20 px-2 py-1 rounded">{PERFORMANCE_KPIS.leads.qualification_rate}% válidas</span>
           </div>
           <div className="mt-3 pt-3 border-t border-white/20">
             <div className="flex justify-between text-xs">
-              <span className="text-white/70">CPL</span>
-              <span className="font-bold">${PERFORMANCE_KPIS.leads.cost_per_lead}</span>
+              <span className="text-white/70">CPP</span>
+              <span className="font-bold">S/{PERFORMANCE_KPIS.leads.cost_per_lead}</span>
             </div>
           </div>
         </div>
@@ -164,7 +163,7 @@ export default function OptimizationLayer() {
         </div>
 
         {/* Budget */}
-        <div className="bg-gradient-to-br from-honda-blue to-success text-white rounded-2xl p-6 shadow-lg">
+        <div className="bg-gradient-to-br from-ucsp-blue to-success text-white rounded-2xl p-6 shadow-lg">
           <div className="flex items-center justify-between mb-3">
             <Award className="w-8 h-8" />
             <span className="px-3 py-1 rounded-full text-xs font-bold bg-green-400">
@@ -172,14 +171,14 @@ export default function OptimizationLayer() {
             </span>
           </div>
           <h3 className="text-sm font-medium text-white/80 mb-1">Presupuesto Ejecutado</h3>
-          <p className="text-2xl font-bold mb-2">${(PERFORMANCE_KPIS.budget.total_spent / 1000).toFixed(1)}K</p>
+          <p className="text-2xl font-bold mb-2">S/{(PERFORMANCE_KPIS.budget.total_spent / 1000).toFixed(1)}K</p>
           <div className="flex items-baseline gap-2">
-            <span className="text-sm text-white/70">de ${(PERFORMANCE_KPIS.budget.total_budget / 1000).toFixed(0)}K total</span>
+            <span className="text-sm text-white/70">de S/{(PERFORMANCE_KPIS.budget.total_budget / 1000).toFixed(0)}K total</span>
           </div>
           <div className="mt-3 pt-3 border-t border-white/20">
             <div className="flex justify-between text-xs">
               <span className="text-white/70">CPC</span>
-              <span className="font-bold">${PERFORMANCE_KPIS.budget.cost_per_click}</span>
+              <span className="font-bold">S/{PERFORMANCE_KPIS.budget.cost_per_click}</span>
             </div>
           </div>
         </div>
@@ -194,11 +193,11 @@ export default function OptimizationLayer() {
           </div>
           <div className="flex gap-4 text-sm">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-honda-red"></div>
-              <span>Leads</span>
+              <div className="w-3 h-3 rounded-full bg-ucsp-burgundy"></div>
+              <span>Postulaciones</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-honda-blue"></div>
+              <div className="w-3 h-3 rounded-full bg-ucsp-blue"></div>
               <span>Engagement (K)</span>
             </div>
           </div>
@@ -214,15 +213,15 @@ export default function OptimizationLayer() {
               contentStyle={{ backgroundColor: '#fff', border: '1px solid #e5e7eb', borderRadius: '8px' }}
               labelStyle={{ fontWeight: 'bold', marginBottom: '8px' }}
             />
-            <Line yAxisId="left" type="monotone" dataKey="leads" stroke="#EB0A1E" strokeWidth={3} dot={{ r: 5 }} />
-            <Line yAxisId="right" type="monotone" dataKey="engagement" stroke="#00A650" strokeWidth={3} dot={{ r: 5 }} />
+            <Line yAxisId="left" type="monotone" dataKey="postulaciones" stroke="#6B1B3D" strokeWidth={3} dot={{ r: 5 }} />
+            <Line yAxisId="right" type="monotone" dataKey="engagement" stroke="#003B7A" strokeWidth={3} dot={{ r: 5 }} />
           </LineChart>
         </ResponsiveContainer>
       </div>
 
       {/* Channel Distribution */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-        <h3 className="text-base font-bold text-gray-900 mb-4">Distribución de Leads por Canal</h3>
+        <h3 className="text-base font-bold text-gray-900 mb-4">Distribución de Postulaciones por Canal</h3>
 
         <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
           {/* Pie Chart */}
@@ -257,7 +256,7 @@ export default function OptimizationLayer() {
                   <span className="text-xs font-medium text-gray-700 truncate">{channel.name}</span>
                 </div>
                 <div className="flex items-center gap-2 flex-shrink-0 ml-2">
-                  <span className="text-xs font-bold text-gray-900">{channel.leads}</span>
+                  <span className="text-xs font-bold text-gray-900">{channel.postulaciones}</span>
                   <span className="text-xs font-bold text-gray-600 bg-gray-200 px-1.5 py-0.5 rounded">{channel.value}%</span>
                 </div>
               </div>
@@ -298,18 +297,106 @@ export default function OptimizationLayer() {
 
         {/* Summary Stats */}
         <div className="mt-6 pt-6 border-t border-gray-200">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gray-50 rounded-lg p-3">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-ucsp-blue/10 rounded-lg p-3">
               <p className="text-xs text-gray-600 mb-1">Conversión Global</p>
-              <p className="text-xl font-bold text-gray-900">0.01%</p>
-              <p className="text-xs text-gray-500">Impresiones → Test Drives</p>
+              <p className="text-xl font-bold text-ucsp-blue">0.027%</p>
+              <p className="text-xs text-gray-500">Alcance → Matriculados</p>
             </div>
-            <div className="bg-gray-50 rounded-lg p-3">
+            <div className="bg-amber-50 rounded-lg p-3">
               <p className="text-xs text-gray-600 mb-1">Etapa Crítica</p>
-              <p className="text-xl font-bold text-orange-600">1.4%</p>
+              <p className="text-xl font-bold text-orange-600">22.9%</p>
+              <p className="text-xs text-gray-500">Postulaciones → Matrícula</p>
+            </div>
+            <div className="bg-green-50 rounded-lg p-3">
+              <p className="text-xs text-gray-600 mb-1">Tasa Conversión Web</p>
+              <p className="text-xl font-bold text-green-600">25.0%</p>
               <p className="text-xs text-gray-500">Landing → Formulario</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* HubSpot Monitoring (Mockup) */}
+      <div className="bg-gradient-to-br from-orange-500 to-red-500 text-white rounded-2xl shadow-lg p-6">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <Bell className="w-8 h-8" />
+            <div>
+              <h3 className="text-lg font-bold">HubSpot - Monitoreo CPL</h3>
+              <p className="text-sm text-white/90">Alertas automáticas de costo por lead (Mockup)</p>
+            </div>
+          </div>
+          <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-bold">
+            {HUBSPOT_CONFIG.enabled ? 'ACTIVO' : 'MOCKUP'}
+          </span>
+        </div>
+
+        {/* CPL Thresholds */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+            <h4 className="font-bold mb-3 flex items-center gap-2">
+              <GraduationCap className="w-5 h-5" />
+              Pregrado
+            </h4>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span>CPL Máximo</span>
+                <span className="font-bold">S/{HUBSPOT_CONFIG.cpl_thresholds.pregrado.max_cpl}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span>Alerta en</span>
+                <span className="font-bold text-yellow-300">S/{HUBSPOT_CONFIG.cpl_thresholds.pregrado.alert_at}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span>Pausar en</span>
+                <span className="font-bold text-red-300">S/{HUBSPOT_CONFIG.cpl_thresholds.pregrado.pause_at}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+            <h4 className="font-bold mb-3 flex items-center gap-2">
+              <Target className="w-5 h-5" />
+              Posgrado
+            </h4>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm">
+                <span>CPL Máximo</span>
+                <span className="font-bold">S/{HUBSPOT_CONFIG.cpl_thresholds.posgrado.max_cpl}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span>Alerta en</span>
+                <span className="font-bold text-yellow-300">S/{HUBSPOT_CONFIG.cpl_thresholds.posgrado.alert_at}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span>Pausar en</span>
+                <span className="font-bold text-red-300">S/{HUBSPOT_CONFIG.cpl_thresholds.posgrado.pause_at}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Alertas Recientes */}
+        {HUBSPOT_MOCKUP && HUBSPOT_MOCKUP.alerts && HUBSPOT_MOCKUP.alerts.length > 0 && (
+          <div className="space-y-2">
+            <h4 className="font-bold text-sm mb-2">Alertas Recientes:</h4>
+            {HUBSPOT_MOCKUP.alerts.slice(0, 2).map((alert, idx) => (
+              <div key={idx} className={`p-3 rounded-lg ${
+                alert.type === 'critical' ? 'bg-red-500/30 border border-red-300' :
+                alert.type === 'warning' ? 'bg-yellow-500/30 border border-yellow-300' :
+                'bg-blue-500/30 border border-blue-300'
+              }`}>
+                <p className="text-sm font-medium">{alert.message}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-4 p-3 bg-white/20 backdrop-blur-sm rounded-lg">
+          <p className="text-xs">
+            💡 <strong>Nota:</strong> La integración con HubSpot API está en modo mockup. Para activar el monitoreo en tiempo real, configurar API key y activar en config.js
+          </p>
         </div>
       </div>
 
@@ -318,7 +405,7 @@ export default function OptimizationLayer() {
         {/* Alertas Automáticas */}
         <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
           <div className="flex items-center gap-3 mb-4">
-            <AlertCircle className="w-6 h-6 text-honda-red" />
+            <AlertCircle className="w-6 h-6 text-ucsp-burgundy" />
             <h3 className="text-base font-bold text-gray-900">Alertas Automáticas</h3>
           </div>
           <div className="space-y-3">
@@ -339,7 +426,7 @@ export default function OptimizationLayer() {
                   </span>
                 </div>
                 <p className="text-xs text-gray-700 mb-2">{alert.message}</p>
-                <p className="text-xs font-semibold text-honda-blue">
+                <p className="text-xs font-semibold text-ucsp-blue">
                   Acción: {alert.action}
                 </p>
               </div>
@@ -350,7 +437,7 @@ export default function OptimizationLayer() {
         {/* A/B Tests */}
         <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
           <div className="flex items-center gap-3 mb-4">
-            <BarChart3 className="w-6 h-6 text-honda-blue" />
+            <BarChart3 className="w-6 h-6 text-ucsp-blue" />
             <h3 className="text-base font-bold text-gray-900">A/B Tests Activos</h3>
           </div>
           <div className="space-y-4">
@@ -379,7 +466,7 @@ export default function OptimizationLayer() {
                 </div>
 
                 {test.recommendation && (
-                  <p className="text-xs font-semibold text-honda-blue bg-green-50 p-2 rounded">
+                  <p className="text-xs font-semibold text-ucsp-blue bg-green-50 p-2 rounded">
                     ✓ {test.recommendation}
                   </p>
                 )}
@@ -391,10 +478,10 @@ export default function OptimizationLayer() {
 
       {/* Competitor Analysis */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-        <h3 className="text-base font-bold text-gray-900 mb-4">Análisis de Competencia</h3>
+        <h3 className="text-base font-bold text-gray-900 mb-4">Análisis de Competencia Universitaria</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {COMPETITOR_INSIGHTS.filter(c => c.brand !== 'Honda CR-V / HR-V').map((comp, idx) => (
-            <div key={idx} className="p-4 border-2 border-gray-200 rounded-lg hover:border-honda-red transition-colors">
+          {COMPETITOR_INSIGHTS.filter(c => c.brand !== 'UCSP').map((comp, idx) => (
+            <div key={idx} className="p-4 border-2 border-gray-200 rounded-lg hover:border-ucsp-burgundy transition-colors">
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-bold text-gray-900">{comp.brand}</h4>
                 <span className={`px-2 py-1 rounded text-xs font-bold ${
@@ -411,7 +498,7 @@ export default function OptimizationLayer() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500">Sentimiento</p>
-                  <p className="text-base font-bold text-honda-blue">{comp.sentiment}%</p>
+                  <p className="text-base font-bold text-ucsp-blue">{comp.sentiment}%</p>
                 </div>
               </div>
 
@@ -429,25 +516,28 @@ export default function OptimizationLayer() {
           ))}
         </div>
 
-        {/* Honda Comparison */}
-        <div className="mt-4 p-5 bg-gradient-to-br from-honda-red to-honda-darkRed text-white rounded-xl">
+        {/* UCSP Comparison */}
+        <div className="mt-4 p-5 bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy text-white rounded-xl">
           <div className="flex items-center justify-between">
             <div>
-              <h4 className="font-bold text-base mb-1">Honda CR-V / HR-V</h4>
+              <h4 className="font-bold text-base mb-1 flex items-center gap-2">
+                <GraduationCap className="w-5 h-5" />
+                Universidad Católica San Pablo
+              </h4>
               <div className="flex gap-6">
                 <div>
                   <p className="text-xs text-white/70">Share of Voice</p>
-                  <p className="text-xl font-bold">14%</p>
+                  <p className="text-xl font-bold">15%</p>
                 </div>
                 <div>
                   <p className="text-xs text-white/70">Sentimiento</p>
-                  <p className="text-xl font-bold">80%</p>
+                  <p className="text-xl font-bold">82%</p>
                 </div>
               </div>
             </div>
             <div className="text-right">
               <span className="px-3 py-2 bg-white/20 rounded-lg text-sm font-bold">
-                Nuestra Marca
+                Nuestra Universidad
               </span>
             </div>
           </div>

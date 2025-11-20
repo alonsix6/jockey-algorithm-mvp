@@ -1,64 +1,76 @@
-# 🚗 Honda Algorithm
+# 🎓 UCSP Algorithm
 
-**Social Intelligence para Honda Autos y Motos en el mercado peruano**
+**Social Intelligence para Universidad Católica San Pablo - Admisiones 2025**
 
-![Version](https://img.shields.io/badge/version-1.0.0-CC0000)
+![Version](https://img.shields.io/badge/version-1.0.0-003B7A)
 ![Status](https://img.shields.io/badge/status-MVP-0056A3)
-![License](https://img.shields.io/badge/license-Proprietary-000000)
+![License](https://img.shields.io/badge/license-Proprietary-002453)
 
 ---
 
 ## 📋 Descripción
 
-El **Honda Algorithm** es una plataforma de Social Intelligence que unifica datos de diversas fuentes digitales para optimizar la estrategia de lanzamiento de **Honda CR-V Advanced Hybrid y HR-V en Perú**.
+El **UCSP Algorithm** es una plataforma de Social Intelligence que unifica datos de diversas fuentes digitales para optimizar la estrategia de **admisiones de pregrado y posgrado** de la Universidad Católica San Pablo.
 
-Identifica microcomportamientos, emociones e intenciones de compra en el sector automotriz, optimizando la inversión publicitaria mediante decisiones automatizadas basadas en señales de data en tiempo real.
+Identifica microcomportamientos, emociones e intenciones de postulación en el ecosistema digital educativo del sur del Perú, optimizando la inversión publicitaria mediante decisiones automatizadas basadas en señales de data en tiempo real.
 
 ### 🎯 Propuesta de Valor
 
-- **Cliente**: Honda Perú
-- **Agencia**: Reset (Barranco, Lima)
-- **Objetivo**: Sistema automatizado de Social Intelligence para optimizar la estrategia digital del lanzamiento CR-V Advanced Hybrid
-- **Enfoque**: Leads calificados, alcance e interacciones (no solo ventas directas)
+- **Cliente**: Universidad Católica San Pablo (UCSP)
+- **Mercado**: Sur del Perú (Arequipa, Puno, Cusco, Moquegua, Tacna)
+- **Objetivo**: Sistema automatizado de Social Intelligence para optimizar campañas de admisión 2025-I
+- **Enfoque**: Postulaciones calificadas, alcance geográfico e interacciones (lead ads, WhatsApp, landing pages)
 
 ---
 
 ## 🏗️ Las 4 Capas del Algorithm
 
 ### 1. **📊 Capa de Datos (Data Layer)**
-Monitoreo en tiempo real del ecosistema digital automotriz:
-- **Google Trends**: Búsquedas de SUV híbridas en Perú
-- **TikTok Creative Center**: Hashtags y contenido viral automotriz
+Monitoreo en tiempo real del ecosistema digital educativo:
+- **Google Trends**: Búsquedas de carreras universitarias en zonas objetivo
+- **TikTok**: Hashtags y contenido viral educativo
 - **Meta Platforms**: Insights de Facebook e Instagram
-- **YouTube**: Reviews y contenido de influencers
-- **Portales Automotrices**: Neoauto, Autocosmos, Motor1 (Perú)
+- **YouTube**: Testimoniales y tours virtuales
+- **Portales Educativos**: Ponte en Carrera, Estudia Perú, SUNEDU
 
 **Métricas**: Búsqueda, Tendencia, Intención, Engagement
 
+**Geografías monitoreadas**: Arequipa (70%), Puno (18%), Cusco (10%), Moquegua (1%), Tacna (1%)
+
 ### 2. **🎯 Capa de Decisión (Decision Layer)**
 Inteligencia de mercado y estrategia automática:
-- **Honda Opportunity Score**: Índice de oportunidad 0-100
-- **Audiencias objetivo**: Familias jóvenes, profesionales eco-conscious, aventureros urbanos
-- **Mensajes clave**: Tecnología e:HEV, Honda Sensing, versatilidad SUV, eficiencia
+- **UCSP Opportunity Score**: Índice de oportunidad 0-100
+- **Audiencias objetivo**:
+  - Postulantes Pregrado (17-25 años, ~10,500 personas)
+  - Postulantes Posgrado (25-45 años, ~3,000 personas)
+- **Mensajes clave**: Primera universidad licenciada del sur, formación integral, acreditación internacional
 - **Recomendaciones automáticas** basadas en signals de mercado
 
 **Output**: Qué mensaje activar, en qué momento y en qué plataforma
 
 ### 3. **⚡ Capa de Ejecución (Execution Layer)**
 Distribución inteligente de presupuesto y contenidos:
-- **Budget Allocation**: Google Search (35%), Meta Ads (30%), YouTube (20%), Display (10%), TikTok (5%)
-- **Pilares de Contenido**: e:HEV, Honda Sensing, Versatilidad, Eficiencia
-- **Timing Óptimo**: Mejores horarios y días para pauta
-- **KPIs por canal**: Leads calificados, alcance, engagement
+- **Budget Allocation Pregrado**: Meta Ads (35%), Google Search (30%), YouTube (20%), Display (15%)
+- **Budget Allocation Posgrado**: Google Search (40%), Meta Ads (35%), YouTube (15%), Display (10%)
+- **Carreras monitoreadas**: 13 carreras (top 5: Ing. Industrial, Derecho, Medicina, Administración, Arquitectura)
+- **Timing Óptimo**: Mañana (7-9 AM), Tarde (18-21 PM)
+- **KPIs por canal**: Postulaciones, CPP (Costo por Postulación), Alcance, Engagement
+
+**Canales de conversión**:
+- Lead Ads (Meta): Formularios de contacto instantáneos
+- Conversaciones WhatsApp: Objetivo de conversación en Meta Ads
+- Visitas a Landing Page: Desde Google Ads y Meta Ads
 
 **Output**: Implementación en tiempo real de campañas optimizadas
 
 ### 4. **📈 Capa de Optimización (Optimization Layer)**
 Performance y ajustes automáticos:
-- **KPIs principales**: Leads calificados, alcance único, interacciones totales
-- **Funnel de conversión**: Impresiones → Clics → Landing → Formularios → Test Drives
-- **Análisis de competencia**: Toyota RAV4, Mazda CX-5, Hyundai Tucson, Nissan X-Trail
-- **A/B Testing automático** y alertas en tiempo real
+- **KPIs principales**: Postulaciones completadas, Alcance total, Interacciones, Charlas asistidas
+- **Funnel de conversión**: Alcance → Visitas Landing → Formularios → Postulaciones → Matriculados
+- **Análisis de competencia**: UNSA, UCSM, UTP, UAP
+- **Integración HubSpot (Mockup)**: Alertas automáticas cuando CPL supera límites establecidos
+  - Pregrado: Alerta en S/45, Pausa en S/55
+  - Posgrado: Alerta en S/70, Pausa en S/90
 
 **Output**: Evaluación continua y redistribución de inversión
 
@@ -68,7 +80,7 @@ Performance y ajustes automáticos:
 
 ### Frontend
 - **React 18** + **Vite**
-- **Tailwind CSS** (branding Honda: rojo #CC0000, negro, gris, azul tech)
+- **Tailwind CSS** (branding UCSP: azul #003B7A, burdeos #6B1B3D, dorado #C5A572)
 - **Recharts** para visualizaciones de datos
 - **Lucide React** para iconografía
 
@@ -79,7 +91,7 @@ Performance y ajustes automáticos:
 
 ### Infraestructura
 - **GitHub** (repositorio + versionado)
-- **GitHub Actions** (CI/CD automático)
+- **GitHub Actions** (CI/CD automático - scrapers semanales)
 - **Netlify** (hosting + deploy continuo)
 
 ---
@@ -89,8 +101,8 @@ Performance y ajustes automáticos:
 ### 1. Clonar repositorio
 
 ```bash
-git clone https://github.com/alonsix6/honda-algorithm-mvp.git
-cd honda-algorithm-mvp
+git clone https://github.com/alonsix6/SanPablo-algorithm-mvp.git
+cd SanPablo-algorithm-mvp
 ```
 
 ### 2. Instalar dependencias
@@ -101,310 +113,212 @@ npm install
 
 # Scrapers (opcional)
 cd scrapers
-pip install -r requirements.txt
 npm install
-cd ..
+pip install -r requirements.txt
 ```
 
-### 3. Ejecutar localmente
+### 3. Ejecutar en desarrollo
 
 ```bash
-# Dashboard en desarrollo
 npm run dev
-
-# Acceder a http://localhost:5173
 ```
 
-El dashboard funcionará con **datos mock realistas** para demostración. Los scrapers son opcionales para testing.
+Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
----
-
-## 🚀 Deploy a Producción
-
-### Netlify Deploy (Recomendado)
-
-#### Opción A: Deploy con CLI
+### 4. Build para producción
 
 ```bash
-# Instalar Netlify CLI
-npm install -g netlify-cli
-
-# Login
-netlify login
-
-# Deploy
-netlify deploy --prod
+npm run build
+npm run preview
 ```
-
-#### Opción B: Conectar desde Netlify Dashboard
-
-1. Ve a [netlify.com](https://netlify.com)
-2. Click "Add new site" → "Import an existing project"
-3. Conecta tu repo de GitHub
-4. Netlify detectará automáticamente la configuración de `netlify.toml`
-5. Click "Deploy"
-
-**Build settings** (auto-detectados):
-- Build command: `npm run build`
-- Publish directory: `dist`
 
 ---
 
-## 📊 Métricas del Sistema
+## 🎨 Paleta de Colores UCSP
 
-### Honda Opportunity Score: **87/100** (Grado A)
+La paleta está basada en los colores institucionales del logo (#002453 y #4d102c):
 
-**Componentes ponderados:**
-- **Trending Topics** (30%): 92/100 → Contribución: 27.6 pts
-- **Intención de Compra** (35%): 85/100 → Contribución: 29.75 pts
-- **Engagement** (25%): 78/100 → Contribución: 19.5 pts
-- **Alcance** (10%): 94/100 → Contribución: 9.4 pts
+```javascript
+ucsp: {
+  // Azules (basados en #002453)
+  darkBlue: '#002453',     // Azul oscuro del logo
+  blue: '#003B7A',         // Azul principal (más claro)
+  lightBlue: '#0056A3',    // Azul claro para interacciones
+  skyBlue: '#4A90E2',      // Azul cielo para acentos/tech
 
-### Performance KPIs (Mock Data)
+  // Burgundy/Vino (basados en #4d102c)
+  darkBurgundy: '#4d102c', // Burdeos oscuro del logo
+  burgundy: '#6B1B3D',     // Burdeos principal
+  wine: '#8B2449',         // Vino para acentos
 
-| Métrica | Valor | Trend | Target |
-|---------|-------|-------|--------|
-| **Leads Calificados** | 856 | +15% ↑ | 1,000/mes |
-| **CPL (Cost per Lead)** | $12.50 | -8% ↓ | $15.00 |
-| **Alcance Único** | 1.2M | +22% ↑ | 1.5M |
-| **Interacciones** | 87.5K | +8% ↑ | 100K |
-| **Engagement Rate** | 2.5% | +0.3pp ↑ | 2.0% |
+  // Complementarios
+  gold: '#C5A572',         // Dorado académico
+  gray: '#54565A',         // Gris corporativo
+}
+```
+
+---
+
+## 📊 Datos y Configuración
+
+### Keywords y Hashtags
+
+Archivo: `src/data/keywords.js`
+
+- **Marca UCSP**: 10 keywords principales
+- **Carreras**: 10 keywords de las carreras más demandadas
+- **Intención**: 10 keywords de alta conversión
+- **Hashtags**: 40+ hashtags categorizados por tema
+
+### Audiencias Objetivo
+
+Archivo: `src/data/config.js`
+
+**2 audiencias principales:**
+
+1. **Pregrado** (17-25 años, ~10,500 personas)
+   - Escolares 5to Secundaria (17-18 años)
+   - Bachilleres y Trabajadores (19-25 años)
+
+2. **Posgrado** (25-45 años, ~3,000 personas)
+   - Profesionales Jóvenes (25-32 años)
+   - Profesionales Establecidos (33-45 años)
+
+### Carreras Monitoreadas
+
+13 carreras de pregrado:
+1. Ingeniería Industrial ⭐
+2. Derecho ⭐
+3. Medicina Humana ⭐
+4. Administración ⭐
+5. Arquitectura y Urbanismo ⭐
+6. Psicología
+7. Ingeniería Civil
+8. Contabilidad
+9. Ciencia de la Computación
+10. Ciencia de Datos
+11. Ingeniería Electrónica y Telecomunicaciones
+12. Ingeniería Mecatrónica
+13. Ingeniería Ambiental
+
+⭐ = Top 5 con mayor demanda
+
+---
+
+## 🔄 Integración HubSpot (Mockup)
+
+El sistema incluye espacio para integración con HubSpot API:
+
+### Configuración de Alertas CPL
+
+```javascript
+cpl_thresholds: {
+  pregrado: {
+    max_cpl: 50,      // S/ máximo por lead pregrado
+    alert_at: 45,     // Alerta cuando se acerca al límite
+    pause_at: 55,     // Pausar si supera este valor
+  },
+  posgrado: {
+    max_cpl: 80,
+    alert_at: 70,
+    pause_at: 90,
+  },
+}
+```
+
+### Tracking de Conversiones
+
+- ✅ Lead Ads (Meta)
+- ✅ Conversaciones WhatsApp (Meta Ads objetivo)
+- ✅ Visitas a Landing Page
+- ✅ Formularios completados
+
+**Nota**: La integración HubSpot actualmente es mockup. Para activarla, configurar `enabled: true` y agregar API key en `src/data/config.js`.
+
+---
+
+## 📈 UCSP Opportunity Score
+
+Score propietario 0-100 que evalúa 5 componentes:
+
+1. **Interés de Búsqueda** (25%) - Google Trends en zonas objetivo
+2. **Engagement Social** (20%) - TikTok + Instagram + Facebook
+3. **Intención de Conversión** (30%) - Lead Ads + WhatsApp
+4. **Calidad de Leads** (15%) - HubSpot Lead Score
+5. **Competitividad** (10%) - Share of Voice vs UNSA/UCSM
+
+**Score actual**: 82/100 (Grado A)
+
+---
+
+## 🎯 KPIs Principales
+
+### Métricas de Éxito
+
+- **Postulaciones Completadas**: 1,256 (+15.0%)
+- **Alcance Total**: 875,000 usuarios únicos (+21.9%)
+- **Interacciones**: 142,500 (+8.1%)
+- **Costo por Postulación (CPP)**: S/38.50 (-7.9%)
+- **Charlas Asistidas**: 485 (+17.7%)
+- **Conversaciones WhatsApp**: 1,420 (+28.2%)
 
 ### Funnel de Conversión
 
 ```
-3.5M Impresiones (100%)
-    ↓ 3.0% CTR
-105K Clics (3.0%)
-    ↓ 85% landing
-89.2K Landing Page Visits (85%)
-    ↓ 1.4% conversión
-1,247 Formularios Completos (1.4%)
-    ↓ 27.4% booking
-342 Test Drives Agendados (27.4%)
+Alcance (850,000)
+      ↓ 1.4%
+Visitas Landing (12,000)
+      ↓ 25%
+Formularios (3,000)
+      ↓ 35%
+Postulaciones Válidas (1,050)
+      ↓ 23%
+Matriculados (240)
 ```
 
 ---
 
-## 📁 Estructura del Proyecto
+## 🏆 Competencia
 
-```
-honda-algorithm-mvp/
-├── .github/workflows/          # CI/CD
-│   └── scrape-data.yml        # Scrapers automáticos
-├── scrapers/                   # Scripts de recolección de datos
-│   ├── google_trends.py       # Google Trends (Perú, Autos)
-│   ├── tiktok_scraper.js      # TikTok Creative Center
-│   └── meta_scraper.js        # Meta Public Trends
-├── data/                       # Datos recopilados
-│   ├── trends/                # Google Trends
-│   ├── tiktok/                # TikTok hashtags
-│   ├── meta/                  # Meta insights
-│   └── mock/                  # Datos simulados GA4
-├── src/
-│   ├── components/
-│   │   ├── Dashboard.jsx          # Dashboard principal Honda
-│   │   ├── DataLayer.jsx          # Capa 1: Captura de Señales
-│   │   ├── DecisionLayer.jsx      # Capa 2: Inteligencia de Mercado
-│   │   ├── ExecutionLayer.jsx     # Capa 3: Activación Estratégica
-│   │   └── OptimizationLayer.jsx  # Capa 4: Performance & Optimización
-│   ├── data/
-│   │   ├── keywords.js            # Keywords automotrices CR-V
-│   │   ├── mockData.js            # Datos mock GA4 + métricas
-│   │   └── config.js              # Configuración general
-│   ├── App.jsx
-│   └── main.jsx
-├── public/
-├── netlify.toml               # Config Netlify
-├── package.json
-├── tailwind.config.js         # Branding Honda
-└── README.md
-```
+Principales universidades competidoras en Arequipa:
+
+1. **UNSA** - Universidad Nacional de San Agustín (45% market share, 49,509 postulantes)
+2. **UCSM** - Universidad Católica Santa María (28%, 8,500 postulantes)
+3. **UCSP** - Universidad Católica San Pablo (15%, 3,200 postulantes)
+4. **UTP** - Universidad Tecnológica del Perú (8%, 2,800 postulantes)
+5. **UAP** - Universidad Alas Peruanas (4%, 1,500 postulantes)
 
 ---
 
-## 🎨 Branding Honda
+## 📝 Notas Importantes
 
-### Colores Oficiales
+### Datos Actuales
 
-```javascript
-{
-  honda: {
-    red: '#CC0000',        // Honda Red (principal)
-    darkRed: '#A00000',    // Rojo oscuro
-    black: '#000000',      // Negro (secundario)
-    gray: '#54565A',       // Gris corporativo
-    lightGray: '#E6E6E6',  // Gris claro
-    blue: '#0056A3',       // Azul (tecnología/híbrido)
-    silver: '#C0C0C0',     // Plateado (tecnología)
-  }
-}
-```
+⚠️ **Importante**: Actualmente el sistema usa **datos mock/curados** para demostración. Los scrapers están implementados pero no ejecutan scraping en tiempo real.
 
-### Gradientes
+### Próximos Pasos
 
-- **Principal**: `linear-gradient(135deg, #CC0000 0%, #000000 100%)`
-- **Híbrido**: `linear-gradient(135deg, #0056A3 0%, #54565A 100%)`
-- **Light**: `linear-gradient(135deg, #FFFFFF 0%, #E6E6E6 100%)`
+Para implementación en producción:
 
----
-
-## 🔑 Keywords Monitoreadas
-
-### Principales
-- Honda CR-V
-- CR-V Híbrida
-- CR-V Advanced Hybrid Perú
-- Nueva CR-V 2025/2026
-- CR-V precio Perú
-
-### Categoría SUV
-- SUV híbrida
-- mejor SUV Perú
-- SUV familiar
-- comprar SUV
-- SUV confiable
-
-### Tecnología Híbrida e:HEV
-- Honda e:HEV
-- híbrido sin enchufar
-- tecnología e:HEV
-- eficiencia combustible
-- autos ecológicos
-- movilidad sostenible
-
-### Competencia
-- Toyota RAV4
-- Mazda CX-5
-- Nissan X-Trail
-- Hyundai Tucson
-- Hyundai Creta
-- Haval H6
-
-### Intención de Compra (Alta Prioridad)
-- precio SUV Perú
-- financiamiento autos
-- concesionario Honda
-- Pana Autos
-- test drive
-- cotizar auto
-
----
-
-## 🎯 Audiencias Objetivo
-
-### 1. Familias Profesionales (35-50 años)
-- **Tamaño**: ~420K en Perú
-- **Mensaje**: "Tecnología que protege lo que más importa"
-- **Engagement**: 11.8%
-- **Intereses**: Honda Sensing, espacio, confiabilidad
-
-### 2. Profesionales Eco-conscious (30-45 años)
-- **Tamaño**: ~310K
-- **Mensaje**: "Híbrido sin enchufar, 70% del tiempo en modo eléctrico"
-- **Engagement**: 9.4%
-- **Intereses**: e:HEV, eficiencia, tecnología
-
-### 3. Millennials Urbanos (25-35 años)
-- **Tamaño**: ~380K
-- **Mensaje**: "Tu primera SUV Honda a precio accesible"
-- **Engagement**: 8.7%
-- **Intereses**: Tecnología, precio accesible, Magic Seats
-
-### 4. Compradores Pragmáticos (30-50 años)
-- **Tamaño**: ~250K
-- **Mensaje**: "Eficiencia real para el tráfico de Lima"
-- **Engagement**: 7.2%
-- **Intereses**: Ahorro combustible, confiabilidad, servicio
-
----
-
-## 🔧 Comandos Útiles
-
-```bash
-# Desarrollo
-npm run dev              # Iniciar servidor de desarrollo (puerto 5173)
-npm run build           # Build para producción
-npm run preview         # Preview del build
-
-# Scrapers (opcional)
-cd scrapers
-python google_trends.py # Google Trends Perú
-node tiktok_scraper.js  # TikTok hashtags
-node meta_scraper.js    # Meta insights
-
-# Deploy
-netlify deploy --prod   # Deploy a producción
-```
-
----
-
-## 🛣️ Roadmap
-
-### ✅ Fase 1: MVP (Completado)
-- [x] 4 capas del algorithm funcionando
-- [x] Honda Opportunity Score implementado
-- [x] Keywords automotrices monitoreadas
-- [x] Mock data GA4 realista
-- [x] Branding Honda completo
-- [x] Dashboard responsive
-
-### 🚧 Fase 2: Integraciones Reales (Próximo)
-- [ ] Integrar GA4 real (requiere acceso Honda)
-- [ ] Integrar Google Ads API (requiere acceso)
-- [ ] Integrar Meta Ads Manager
-- [ ] Scraping real de portales automotrices Perú
-
-### 🔮 Fase 3: Automatización Avanzada
-- [ ] Reglas automáticas de redistribución de presupuesto
-- [ ] Alertas push en tiempo real (Slack/Email)
-- [ ] Exportación de reportes PDF/Excel
-- [ ] Dashboard multi-usuario con roles
-
-### 🤖 Fase 4: Machine Learning
-- [ ] Predicción de tendencias de búsqueda
-- [ ] Recomendaciones automáticas de campañas
-- [ ] Optimización del Opportunity Score con ML
-- [ ] Sentiment analysis automático
-
----
-
-## 📈 Ventajas Competitivas
-
-### vs. Análisis Manual
-- ⚡ **96% más rápido**: Análisis en tiempo real vs. reportes semanales
-- 🎯 **87% más preciso**: Decisiones basadas en data vs. intuición
-- 💰 **+40% ROI**: Optimización automática de presupuesto
-
-### vs. Herramientas Tradicionales
-- 🔄 **Integración completa**: 6 fuentes de datos unificadas
-- 🤖 **Automatización**: 0 intervención manual en optimización
-- 📊 **Visibilidad 360°**: De impresión a test drive en un solo dashboard
-
----
-
-## 👥 Equipo
-
-**Desarrollado por**: Reset (Agencia de Medios - Barranco, Lima)
-**Cliente**: Honda Perú
-**Versión**: 1.0.0 - MVP
-**Fecha**: Noviembre 2025
-**Contacto**: alonso.ternero@reset.com.pe
-
----
-
-## 📞 Soporte
-
-Para preguntas o problemas técnicos:
-- 📧 Email: alonso.ternero@reset.com.pe
-- 📱 GitHub Issues: [github.com/alonsix6/honda-algorithm-mvp/issues](https://github.com/alonsix6/honda-algorithm-mvp/issues)
+1. **Fase 1**: Configurar API keys de HubSpot
+2. **Fase 2**: Activar scrapers automáticos (GitHub Actions cada lunes)
+3. **Fase 3**: Conectar con GA4 real de UCSP
+4. **Fase 4**: Integrar Meta Ads API y Google Ads API para pausado automático
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto es propiedad de **Honda Perú** y **Reset**. Todos los derechos reservados.
+Este proyecto es propiedad de Universidad Católica San Pablo. Todos los derechos reservados.
 
 ---
 
-**¡Optimizando el lanzamiento de CR-V Advanced Hybrid con Social Intelligence! 🚗⚡📊**
+## 👥 Contacto
+
+Para consultas sobre el proyecto:
+- **Universidad**: Universidad Católica San Pablo
+- **Repositorio**: https://github.com/alonsix6/SanPablo-algorithm-mvp
+
+---
+
+**© 2025 UCSP Algorithm - Universidad Católica San Pablo**

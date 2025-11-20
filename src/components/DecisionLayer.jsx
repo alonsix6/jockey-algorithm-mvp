@@ -1,4 +1,4 @@
-import { Target, Users, MessageSquare, TrendingUp, Lightbulb, Zap, AlertCircle, Car } from 'lucide-react';
+import { Target, Users, MessageSquare, TrendingUp, Lightbulb, Zap, AlertCircle, GraduationCap } from 'lucide-react';
 import { OPPORTUNITY_SCORE } from '../data/mockData';
 import { LAYER_CONFIG, KEY_MESSAGES, TARGET_AUDIENCES } from '../data/config';
 
@@ -7,74 +7,51 @@ export default function DecisionLayer() {
     {
       priority: 'high',
       category: 'Google Search',
-      action: 'Aumentar bid para "SUV híbrida precio" +45% de búsquedas en 48h',
-      impact: '+50 leads calificados estimados',
-      confidence: 94
+      action: 'Aumentar bid para "ingeniería industrial Arequipa" +52% de búsquedas en 48h',
+      impact: '+85 postulaciones calificadas estimadas',
+      confidence: 93
     },
     {
       priority: 'high',
       category: 'Meta Ads',
-      action: 'Redistribuir 15% de budget a Instagram Stories - 3x mejor engagement',
-      impact: '+12K interacciones estimadas',
+      action: 'Redistribuir 20% de budget a Instagram Stories - engagement 3.5x superior en Pregrado',
+      impact: '+18K interacciones estimadas',
       confidence: 91
     },
     {
       priority: 'medium',
       category: 'Contenido',
-      action: 'Escalar mensaje de tecnología híbrida - A/B test mostró +22% CTR',
-      impact: '+185 clics/semana proyectados',
-      confidence: 89
+      action: 'Escalar mensaje de acreditación internacional - A/B test mostró +28% CTR',
+      impact: '+240 clics/semana proyectados',
+      confidence: 88
     },
     {
       priority: 'medium',
       category: 'Audiencias',
-      action: 'Expandir "Familias Profesionales" - engagement 11.8% vs 8.2% promedio',
-      impact: '+342 leads adicionales/mes',
-      confidence: 86
+      action: 'Expandir "Escolares 5to Secundaria" - engagement 12.5% vs 8.5% promedio',
+      impact: '+420 leads adicionales/mes',
+      confidence: 85
     },
     {
       priority: 'low',
-      category: 'TikTok',
-      action: 'Revisar creatividades - 36% por debajo del target mensual',
-      impact: 'Ajuste de estrategia necesario',
-      confidence: 78
+      category: 'WhatsApp',
+      action: 'Optimizar respuestas automáticas - tasa de conversación actual 54% vs 70% objetivo',
+      impact: 'Mejora en cualificación de leads',
+      confidence: 76
     }
   ];
 
-  const audiences = [
-    {
-      name: 'Familias Profesionales 35-50',
-      size: '420K',
-      engagement: '11.8%',
-      status: 'active',
-      description: 'Profesionales con hijos, interés en Honda Sensing y confiabilidad',
-      message: KEY_MESSAGES.family.message
-    },
-    {
-      name: 'Eco-conscious Premium',
-      size: '310K',
-      engagement: '9.4%',
-      status: 'active',
-      description: 'Ejecutivos interesados en e:HEV, eficiencia y tecnología híbrida',
-      message: KEY_MESSAGES.hybrid.message
-    },
-    {
-      name: 'Millennials Urbanos 25-35',
-      size: '380K',
-      engagement: '8.7%',
-      status: 'active',
-      description: 'Primera SUV, interés en tecnología, precio accesible y Magic Seats',
-      message: 'Tu primera SUV Honda a precio accesible'
-    },
-    {
-      name: 'Compradores Pragmáticos',
-      size: '250K',
-      engagement: '7.2%',
-      status: 'testing',
-      description: 'Enfoque en ahorro de combustible, confiabilidad Honda y servicio',
-      message: KEY_MESSAGES.sustainability.message
-    }
-  ];
+  // Usar audiencias de config.js con formato adaptado
+  const audiences = TARGET_AUDIENCES.map(aud => ({
+    name: aud.name,
+    size: aud.size,
+    engagement: `${aud.engagement_rate}%`,
+    status: 'active',
+    description: aud.description + ` - ${aud.interests.slice(0, 3).join(', ')}`,
+    message: aud.message,
+    age_range: aud.age_range,
+    cpl_target: aud.cpl_target
+  }));
 
   // Calcular color del score
   const getScoreColor = (score) => {
@@ -105,23 +82,23 @@ export default function DecisionLayer() {
             </p>
           </div>
           <div className="flex gap-2">
-            <span className="px-3 py-1 bg-honda-blue text-white rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-ucsp-blue text-white rounded-full text-sm font-medium">
               IA Activa
             </span>
           </div>
         </div>
       </div>
 
-      {/* Honda Opportunity Score */}
-      <div className="bg-gradient-to-br from-honda-red to-honda-darkRed text-white rounded-2xl shadow-honda-lg p-8">
+      {/* UCSP Opportunity Score */}
+      <div className="bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy text-white rounded-2xl shadow-ucsp-lg p-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
               <Zap className="w-10 h-10" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Honda Opportunity Score</h3>
-              <p className="text-white/90 mt-1 text-sm">Índice de oportunidad para inversión publicitaria</p>
+              <h3 className="text-xl font-bold">UCSP Opportunity Score</h3>
+              <p className="text-white/90 mt-1 text-sm">Índice de oportunidad para inversión en admisiones</p>
             </div>
           </div>
 
@@ -151,8 +128,11 @@ export default function DecisionLayer() {
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-semibold text-sm text-white/80">
                   {key === 'trending_topics' ? 'Temas Trending' :
-                   key === 'intention_to_buy' ? 'Intención Compra' :
-                   key === 'engagement' ? 'Engagement' : 'Alcance'}
+                   key === 'search_interest' ? 'Interés Búsqueda' :
+                   key === 'social_engagement' ? 'Engagement Social' :
+                   key === 'conversion_intent' ? 'Intención Conversión' :
+                   key === 'lead_quality' ? 'Calidad Leads' :
+                   key === 'competitiveness' ? 'Competitividad' : key}
                 </h4>
                 <span className="text-xs bg-white/20 px-2 py-1 rounded">
                   {(component.weight * 100).toFixed(0)}% peso
@@ -185,12 +165,12 @@ export default function DecisionLayer() {
       {/* Recomendaciones Estratégicas */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-honda-red to-honda-darkRed rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy rounded-xl flex items-center justify-center">
             <TrendingUp className="w-6 h-6 text-white" />
           </div>
           <div>
             <h3 className="text-base font-bold text-gray-900">Recomendaciones Estratégicas</h3>
-            <p className="text-sm text-gray-600">Acciones prioritarias basadas en signals de mercado</p>
+            <p className="text-sm text-gray-600">Acciones prioritarias basadas en signals de mercado educativo</p>
           </div>
         </div>
 
@@ -233,21 +213,21 @@ export default function DecisionLayer() {
         </div>
       </div>
 
-      {/* Audiencias CR-V */}
+      {/* Audiencias UCSP */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-honda-blue to-success rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-gradient-to-br from-ucsp-blue to-ucsp-lightBlue rounded-xl flex items-center justify-center">
             <Users className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-gray-900">Audiencias Objetivo CR-V</h3>
-            <p className="text-sm text-gray-600">Segmentación inteligente para lanzamiento</p>
+            <h3 className="text-base font-bold text-gray-900">Audiencias Objetivo UCSP</h3>
+            <p className="text-sm text-gray-600">Segmentación inteligente para Admisiones 2025-I</p>
           </div>
         </div>
 
         <div className="grid gap-4">
           {audiences.map((aud, idx) => (
-            <div key={idx} className="p-5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border-2 border-gray-200 hover:border-honda-red transition-colors">
+            <div key={idx} className="p-5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border-2 border-gray-200 hover:border-ucsp-burgundy transition-colors">
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
@@ -269,7 +249,11 @@ export default function DecisionLayer() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500">Engagement Rate</p>
-                  <p className="text-xl font-bold text-honda-blue">{aud.engagement}</p>
+                  <p className="text-xl font-bold text-ucsp-blue">{aud.engagement}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">CPL Target</p>
+                  <p className="text-xl font-bold text-ucsp-burgundy">S/{aud.cpl_target}</p>
                 </div>
               </div>
 
@@ -283,7 +267,7 @@ export default function DecisionLayer() {
       </div>
 
       {/* Pilares de Contenido */}
-      <div className="bg-gradient-to-br from-honda-gray to-honda-black text-white rounded-2xl shadow-lg p-8">
+      <div className="bg-gradient-to-br from-ucsp-darkBlue to-ucsp-blue text-white rounded-2xl shadow-lg p-8">
         <div className="flex items-center gap-3 mb-6">
           <MessageSquare className="w-8 h-8" />
           <h3 className="text-lg font-bold">Pilares de Contenido Sugeridos</h3>
@@ -292,24 +276,24 @@ export default function DecisionLayer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
             <div className="flex items-center gap-2 mb-3">
-              <Zap className="w-5 h-5 text-honda-blue" />
-              <p className="text-white/80 text-sm font-semibold">Pilar 1: Tecnología Híbrida</p>
+              <GraduationCap className="w-5 h-5 text-ucsp-gold" />
+              <p className="text-white/80 text-sm font-semibold">Pilar 1: {KEY_MESSAGES.licenciamiento.title}</p>
             </div>
-            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.hybrid.message}"</p>
-            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.hybrid.description}</p>
+            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.licenciamiento.message}"</p>
+            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.licenciamiento.description}</p>
             <div className="flex gap-2">
-              <span className="px-2 py-1 bg-white/20 rounded text-xs">Videos explicativos</span>
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Videos institucionales</span>
               <span className="px-2 py-1 bg-white/20 rounded text-xs">Infografías</span>
             </div>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
             <div className="flex items-center gap-2 mb-3">
-              <Users className="w-5 h-5 text-honda-blue" />
-              <p className="text-white/80 text-sm font-semibold">Pilar 2: Seguridad Familiar</p>
+              <Users className="w-5 h-5 text-ucsp-gold" />
+              <p className="text-white/80 text-sm font-semibold">Pilar 2: {KEY_MESSAGES.formacion.title}</p>
             </div>
-            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.family.message}"</p>
-            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.family.description}</p>
+            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.formacion.message}"</p>
+            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.formacion.description}</p>
             <div className="flex gap-2">
               <span className="px-2 py-1 bg-white/20 rounded text-xs">Testimoniales</span>
               <span className="px-2 py-1 bg-white/20 rounded text-xs">Video emocional</span>
@@ -318,27 +302,40 @@ export default function DecisionLayer() {
 
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
             <div className="flex items-center gap-2 mb-3">
-              <Car className="w-5 h-5 text-honda-blue" />
-              <p className="text-white/80 text-sm font-semibold">Pilar 3: Aventura 4x4</p>
+              <Target className="w-5 h-5 text-ucsp-gold" />
+              <p className="text-white/80 text-sm font-semibold">Pilar 3: {KEY_MESSAGES.acreditacion.title}</p>
             </div>
-            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.adventure.message}"</p>
-            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.adventure.description}</p>
+            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.acreditacion.message}"</p>
+            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.acreditacion.description}</p>
             <div className="flex gap-2">
-              <span className="px-2 py-1 bg-white/20 rounded text-xs">Videos de ruta</span>
-              <span className="px-2 py-1 bg-white/20 rounded text-xs">UGC</span>
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Reconocimientos</span>
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Casos de éxito</span>
             </div>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
             <div className="flex items-center gap-2 mb-3">
-              <AlertCircle className="w-5 h-5 text-honda-blue" />
-              <p className="text-white/80 text-sm font-semibold">Pilar 4: Sostenibilidad</p>
+              <Zap className="w-5 h-5 text-ucsp-gold" />
+              <p className="text-white/80 text-sm font-semibold">Pilar 4: {KEY_MESSAGES.tecnologia.title}</p>
             </div>
-            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.sustainability.message}"</p>
-            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.sustainability.description}</p>
+            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.tecnologia.message}"</p>
+            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.tecnologia.description}</p>
             <div className="flex gap-2">
-              <span className="px-2 py-1 bg-white/20 rounded text-xs">Data viz</span>
-              <span className="px-2 py-1 bg-white/20 rounded text-xs">Educativo</span>
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Innovación</span>
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Carreras tech</span>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <AlertCircle className="w-5 h-5 text-ucsp-gold" />
+              <p className="text-white/80 text-sm font-semibold">Pilar 5: {KEY_MESSAGES.valores.title}</p>
+            </div>
+            <p className="text-base font-bold mb-2">"{KEY_MESSAGES.valores.message}"</p>
+            <p className="text-white/70 text-sm mb-3">{KEY_MESSAGES.valores.description}</p>
+            <div className="flex gap-2">
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Valores</span>
+              <span className="px-2 py-1 bg-white/20 rounded text-xs">Comunidad</span>
             </div>
           </div>
         </div>
