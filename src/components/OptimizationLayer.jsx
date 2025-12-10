@@ -354,7 +354,7 @@ export default function OptimizationLayer() {
       </div>
 
       {/* Jockey Plaza Position */}
-      <div className="bg-jockey-dark text-white rounded-2xl shadow-lg p-8">
+      <div className="bg-jockey-primary text-white rounded-2xl shadow-lg p-8">
         <div className="flex items-center gap-4 mb-6">
           <ShoppingBag className="w-10 h-10" />
           <div>

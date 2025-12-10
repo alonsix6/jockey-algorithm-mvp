@@ -198,7 +198,7 @@ export default function DataLayer() {
   return (
     <div className="space-y-6">
       {/* Header & Score Summary */}
-      <div className="bg-jockey-dark rounded-2xl shadow-lg p-8 text-white">
+      <div className="bg-jockey-primary rounded-2xl shadow-lg p-8 text-white">
         <div className="flex items-start justify-between mb-6">
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-4">
