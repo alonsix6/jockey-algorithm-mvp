@@ -90,7 +90,7 @@ export default function DecisionLayer() {
       </div>
 
       {/* Jockey Opportunity Score */}
-      <div className="bg-jockey-dark text-white rounded-2xl shadow-lg p-8">
+      <div className="bg-jockey-primary text-white rounded-2xl shadow-lg p-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center">
