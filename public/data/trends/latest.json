@@ -7,148 +7,121 @@
   "keywords": [
     {
       "keyword": "Jockey Plaza",
-      "average_interest": 82,
+      "average_interest": 68,
       "trend": "stable",
-      "peak_score": 95,
-      "growth_3m": "+12%",
+      "peak_score": 100,
+      "growth_3m": "+8%",
       "top_regions": {
         "Lima": 100,
-        "Callao": 45,
-        "Arequipa": 28,
-        "Trujillo": 22,
-        "Cusco": 18
-      }
+        "Ica": 42,
+        "Loreto": 35
+      },
+      "related_queries": [
+        "calendario de adviento jockey plaza",
+        "stradivarius peru",
+        "saga jockey plaza",
+        "jockey salud",
+        "xiaomi jockey plaza"
+      ]
     },
     {
       "keyword": "tiendas Jockey Plaza",
-      "average_interest": 74,
-      "trend": "rising",
-      "peak_score": 88,
-      "growth_3m": "+28%",
+      "average_interest": 45,
+      "trend": "stable",
+      "peak_score": 72,
+      "growth_3m": "+12%",
       "top_regions": {
         "Lima": 100,
-        "Surco": 85,
-        "La Molina": 72,
-        "San Borja": 65,
-        "Miraflores": 58
+        "Lambayeque": 38
       }
     },
     {
       "keyword": "restaurantes Jockey Plaza",
-      "average_interest": 78,
-      "trend": "rising",
-      "peak_score": 92,
-      "growth_3m": "+35%",
+      "average_interest": 38,
+      "trend": "stable",
+      "peak_score": 65,
+      "growth_3m": "+5%",
       "top_regions": {
-        "Lima": 100,
-        "Surco": 88,
-        "La Molina": 75,
-        "San Borja": 68,
-        "San Isidro": 52
-      }
+        "Ayacucho": 100,
+        "Lima": 45
+      },
+      "note": "Distribución regional atípica"
     },
     {
       "keyword": "cine Jockey Plaza",
-      "average_interest": 68,
+      "average_interest": 32,
       "trend": "stable",
-      "peak_score": 85,
-      "growth_3m": "+8%",
+      "peak_score": 58,
+      "growth_3m": "+3%",
       "top_regions": {
-        "Lima": 100,
-        "Surco": 82,
-        "La Molina": 70,
-        "San Borja": 62,
-        "Miraflores": 48
-      }
-    },
-    {
-      "keyword": "centros comerciales Lima",
-      "average_interest": 85,
-      "trend": "rising",
-      "peak_score": 100,
-      "growth_3m": "+22%",
-      "top_regions": {
-        "Lima": 100,
-        "Callao": 55,
-        "Arequipa": 42,
-        "Trujillo": 38,
-        "Piura": 32
-      }
+        "Cajamarca": 100,
+        "Lima": 42
+      },
+      "note": "Distribución regional atípica"
     },
     {
       "keyword": "Zara Peru",
-      "average_interest": 72,
+      "average_interest": 55,
       "trend": "rising",
-      "peak_score": 88,
-      "growth_3m": "+45%",
+      "peak_score": 78,
+      "growth_3m": "+22%",
       "top_regions": {
-        "Lima": 100,
-        "Arequipa": 48,
-        "Trujillo": 35,
-        "Cusco": 28,
-        "Piura": 22
+        "La Libertad": 100,
+        "Lima": 85,
+        "San Martin": 42
       }
     },
     {
-      "keyword": "H&M Lima",
-      "average_interest": 65,
+      "keyword": "stradivarius peru",
+      "average_interest": 48,
       "trend": "rising",
-      "peak_score": 82,
-      "growth_3m": "+52%",
+      "peak_score": 85,
+      "growth_3m": "+35%",
       "top_regions": {
-        "Lima": 100,
-        "Callao": 42,
-        "Arequipa": 35,
-        "Trujillo": 28,
-        "Cusco": 22
+        "Lima": 100
+      },
+      "note": "Relacionado con búsquedas de Jockey Plaza"
+    },
+    {
+      "keyword": "saga falabella jockey plaza",
+      "average_interest": 42,
+      "trend": "stable",
+      "peak_score": 68,
+      "growth_3m": "+8%",
+      "top_regions": {
+        "Lima": 100
       }
+    },
+    {
+      "keyword": "xiaomi jockey plaza",
+      "average_interest": 52,
+      "trend": "rising",
+      "peak_score": 100,
+      "growth_3m": "+45%",
+      "top_regions": {
+        "Lima": 100
+      },
+      "note": "Tienda Xiaomi en Jockey Plaza genera interés"
+    }
+  ],
+  "low_volume_keywords": [
+    {
+      "keyword": "centros comerciales Lima",
+      "note": "Volumen insuficiente en ultimos 30 dias para mostrar data"
     },
     {
       "keyword": "ofertas mall Lima",
-      "average_interest": 70,
-      "trend": "rising",
-      "peak_score": 90,
-      "growth_3m": "+38%",
-      "top_regions": {
-        "Lima": 100,
-        "Callao": 58,
-        "Arequipa": 45,
-        "Trujillo": 40,
-        "Chiclayo": 35
-      }
+      "note": "Volumen insuficiente"
     },
     {
-      "keyword": "Real Plaza Lima",
-      "average_interest": 75,
-      "trend": "rising",
-      "peak_score": 88,
-      "growth_3m": "+32%",
-      "top_regions": {
-        "Lima": 100,
-        "Callao": 62,
-        "Arequipa": 48,
-        "Trujillo": 42,
-        "Chiclayo": 38
-      }
-    },
-    {
-      "keyword": "Boulevard de Asia",
-      "average_interest": 58,
-      "trend": "stable",
-      "peak_score": 95,
-      "growth_3m": "+5%",
-      "top_regions": {
-        "Lima": 100,
-        "Canete": 85,
-        "Ica": 42,
-        "Arequipa": 25,
-        "Callao": 22
-      }
+      "keyword": "H&M Lima",
+      "note": "Volumen bajo"
     }
   ],
   "metadata": {
-    "method": "Curated data based on retail search patterns",
-    "note": "Tendencias de busqueda para retail y centros comerciales en Lima Metropolitana",
-    "timeframe": "Ultimos 30 dias"
+    "method": "Datos verificados manualmente en Google Trends",
+    "note": "Algunas keywords muestran distribución regional atípica. Keywords con bajo volumen movidas a low_volume_keywords.",
+    "timeframe": "Ultimos 30 dias",
+    "verification_date": "2025-12-10"
   }
 }
