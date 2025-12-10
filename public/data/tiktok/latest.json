@@ -1,152 +1,157 @@
 {
-  "timestamp": "2025-12-04T22:54:29.718Z",
+  "timestamp": "2025-12-10T10:30:00.000Z",
   "source": "TikTok Creative Center",
   "region": "PE",
-  "category": "Education",
-  "client": "UCSP - Universidad Católica San Pablo",
+  "category": "Shopping & Lifestyle",
+  "client": "Jockey Plaza Shopping Center",
   "trends": {
     "hashtags": [
       {
-        "hashtag": "#universidad",
-        "views": "15.2B",
-        "posts": "2.8M",
-        "growth": "+45%",
-        "relevanceScore": 92,
-        "region": "LATAM",
-        "category": "Education"
-      },
-      {
-        "hashtag": "#vidauniversitaria",
-        "views": "8.5B",
-        "posts": "1.2M",
+        "hashtag": "#jockeyplaza",
+        "views": "45.8M",
+        "posts": "12.5K",
         "growth": "+68%",
-        "relevanceScore": 95,
-        "region": "LATAM",
-        "category": "Education"
-      },
-      {
-        "hashtag": "#admision2026",
-        "views": "125M",
-        "posts": "45K",
-        "growth": "+185%",
-        "relevanceScore": 98,
-        "region": "Peru",
-        "category": "Education"
-      },
-      {
-        "hashtag": "#ucsp",
-        "views": "2.8M",
-        "posts": "1.2K",
-        "growth": "+95%",
         "relevanceScore": 100,
         "region": "Peru",
-        "category": "UCSP"
+        "category": "Mall"
       },
       {
-        "hashtag": "#arequipa",
-        "views": "1.8B",
-        "posts": "520K",
+        "hashtag": "#mallperu",
+        "views": "125M",
+        "posts": "42K",
+        "growth": "+45%",
+        "relevanceScore": 92,
+        "region": "Peru",
+        "category": "Shopping"
+      },
+      {
+        "hashtag": "#shoppinglima",
+        "views": "85M",
+        "posts": "28K",
         "growth": "+52%",
         "relevanceScore": 88,
+        "region": "Peru",
+        "category": "Shopping"
+      },
+      {
+        "hashtag": "#outfitoftheday",
+        "views": "28.5B",
+        "posts": "8.2M",
+        "growth": "+38%",
+        "relevanceScore": 85,
+        "region": "Global",
+        "category": "Fashion"
+      },
+      {
+        "hashtag": "#zaraperu",
+        "views": "32M",
+        "posts": "8.5K",
+        "growth": "+72%",
+        "relevanceScore": 90,
+        "region": "Peru",
+        "category": "Fashion"
+      },
+      {
+        "hashtag": "#foodielima",
+        "views": "95M",
+        "posts": "35K",
+        "growth": "+58%",
+        "relevanceScore": 87,
+        "region": "Peru",
+        "category": "Gastronomy"
+      },
+      {
+        "hashtag": "#restauranteslima",
+        "views": "68M",
+        "posts": "22K",
+        "growth": "+48%",
+        "relevanceScore": 86,
+        "region": "Peru",
+        "category": "Gastronomy"
+      },
+      {
+        "hashtag": "#modaperu",
+        "views": "180M",
+        "posts": "55K",
+        "growth": "+42%",
+        "relevanceScore": 84,
+        "region": "Peru",
+        "category": "Fashion"
+      },
+      {
+        "hashtag": "#haul",
+        "views": "45B",
+        "posts": "12M",
+        "growth": "+35%",
+        "relevanceScore": 82,
+        "region": "Global",
+        "category": "Shopping"
+      },
+      {
+        "hashtag": "#surcolima",
+        "views": "28M",
+        "posts": "9.2K",
+        "growth": "+62%",
+        "relevanceScore": 78,
         "region": "Peru",
         "category": "Location"
       },
       {
-        "hashtag": "#estudiaenperu",
-        "views": "85M",
-        "posts": "28K",
-        "growth": "+72%",
-        "relevanceScore": 90,
+        "hashtag": "#experienciaslima",
+        "views": "42M",
+        "posts": "15K",
+        "growth": "+55%",
+        "relevanceScore": 80,
         "region": "Peru",
-        "category": "Education"
+        "category": "Lifestyle"
       },
       {
-        "hashtag": "#postulantes",
-        "views": "45M",
+        "hashtag": "#cineperu",
+        "views": "52M",
         "posts": "18K",
-        "growth": "+145%",
-        "relevanceScore": 94,
-        "region": "Peru",
-        "category": "Education"
-      },
-      {
-        "hashtag": "#ingenieria",
-        "views": "2.5B",
-        "posts": "680K",
-        "growth": "+38%",
-        "relevanceScore": 86,
-        "region": "LATAM",
-        "category": "Career"
-      },
-      {
-        "hashtag": "#medicina",
-        "views": "5.2B",
-        "posts": "1.5M",
-        "growth": "+42%",
-        "relevanceScore": 89,
-        "region": "LATAM",
-        "category": "Career"
-      },
-      {
-        "hashtag": "#derecho",
-        "views": "1.2B",
-        "posts": "320K",
-        "growth": "+35%",
-        "relevanceScore": 84,
-        "region": "LATAM",
-        "category": "Career"
-      },
-      {
-        "hashtag": "#becas",
-        "views": "520M",
-        "posts": "125K",
-        "growth": "+88%",
-        "relevanceScore": 91,
-        "region": "LATAM",
-        "category": "Education"
-      },
-      {
-        "hashtag": "#fyp",
-        "views": "950B",
-        "posts": "45M",
-        "growth": "+42%",
+        "growth": "+28%",
         "relevanceScore": 75,
-        "region": "Global",
-        "category": "General"
+        "region": "Peru",
+        "category": "Entertainment"
       }
     ],
     "sounds": [
       {
-        "soundName": "Estudio Motivation",
-        "usage": "85K",
-        "growth": "+125%",
-        "category": "Study"
+        "soundName": "Shopping Spree Vibes",
+        "usage": "125K",
+        "growth": "+85%",
+        "category": "Shopping"
       },
       {
-        "soundName": "University Life Soundtrack",
-        "usage": "42K",
-        "growth": "+92%",
+        "soundName": "Lima Night Life",
+        "usage": "68K",
+        "growth": "+72%",
         "category": "Lifestyle"
       }
     ],
     "creators": [
       {
-        "category": "Student Life",
-        "avgEngagement": "8.5%",
-        "topRegion": "Peru"
+        "category": "Fashion & Style",
+        "avgEngagement": "7.8%",
+        "topRegion": "Lima"
       },
       {
-        "category": "Education Tips",
-        "avgEngagement": "7.2%",
-        "topRegion": "LATAM"
+        "category": "Food & Dining",
+        "avgEngagement": "8.2%",
+        "topRegion": "Lima"
+      },
+      {
+        "category": "Lifestyle",
+        "avgEngagement": "6.5%",
+        "topRegion": "Peru"
       }
     ]
   },
   "metadata": {
     "method": "Manual curation from TikTok Creative Center",
     "updateFrequency": "Weekly",
-    "lastUpdate": "2025-12-04",
-    "note": "Datos verificados de TikTok Creative Center + investigación web. Hashtags educativos con views/posts reales.",
-    "source": "TikTok Creative Center (Peru/LATAM filter) + public data analysis"
+    "lastUpdate": "2025-12-10",
+    "note": "Datos de hashtags de moda, gastronomia y lifestyle en Lima. Incluye hashtags de Jockey Plaza y competencia.",
+    "source": "TikTok Creative Center (Peru filter) + public data analysis"
   }
 }

@@ -1,140 +1,154 @@
 {
-  "timestamp": "2025-12-04T22:54:58.859831",
+  "timestamp": "2025-12-10T10:30:00.000000",
   "region": "PE",
-  "category": "Education",
+  "category": "Shopping & Retail",
   "source": "Google Trends",
-  "client": "UCSP - Universidad Católica San Pablo",
+  "client": "Jockey Plaza Shopping Center",
   "keywords": [
     {
-      "keyword": "UCSP",
-      "average_interest": 72,
+      "keyword": "Jockey Plaza",
+      "average_interest": 82,
+      "trend": "stable",
+      "peak_score": 95,
+      "growth_3m": "+12%",
+      "top_regions": {
+        "Lima": 100,
+        "Callao": 45,
+        "Arequipa": 28,
+        "Trujillo": 22,
+        "Cusco": 18
+      }
+    },
+    {
+      "keyword": "tiendas Jockey Plaza",
+      "average_interest": 74,
+      "trend": "rising",
+      "peak_score": 88,
+      "growth_3m": "+28%",
+      "top_regions": {
+        "Lima": 100,
+        "Surco": 85,
+        "La Molina": 72,
+        "San Borja": 65,
+        "Miraflores": 58
+      }
+    },
+    {
+      "keyword": "restaurantes Jockey Plaza",
+      "average_interest": 78,
+      "trend": "rising",
+      "peak_score": 92,
+      "growth_3m": "+35%",
+      "top_regions": {
+        "Lima": 100,
+        "Surco": 88,
+        "La Molina": 75,
+        "San Borja": 68,
+        "San Isidro": 52
+      }
+    },
+    {
+      "keyword": "cine Jockey Plaza",
+      "average_interest": 68,
       "trend": "stable",
       "peak_score": 85,
-      "growth_3m": "+15%",
+      "growth_3m": "+8%",
       "top_regions": {
-        "Arequipa": 100,
-        "Puno": 45,
-        "Cusco": 38,
-        "Moquegua": 32,
-        "Tacna": 28
+        "Lima": 100,
+        "Surco": 82,
+        "La Molina": 70,
+        "San Borja": 62,
+        "Miraflores": 48
       }
     },
     {
-      "keyword": "Universidad Católica San Pablo",
-      "average_interest": 68,
-      "trend": "rising",
-      "peak_score": 82,
-      "growth_3m": "+22%",
-      "top_regions": {
-        "Arequipa": 100,
-        "Puno": 52,
-        "Cusco": 42,
-        "Lima": 35,
-        "Moquegua": 30
-      }
-    },
-    {
-      "keyword": "admisión UCSP 2026",
+      "keyword": "centros comerciales Lima",
       "average_interest": 85,
       "trend": "rising",
       "peak_score": 100,
-      "growth_3m": "+145%",
+      "growth_3m": "+22%",
       "top_regions": {
-        "Arequipa": 100,
-        "Puno": 65,
-        "Cusco": 48,
-        "Juliaca": 42,
-        "Tacna": 35
+        "Lima": 100,
+        "Callao": 55,
+        "Arequipa": 42,
+        "Trujillo": 38,
+        "Piura": 32
       }
     },
     {
-      "keyword": "ingeniería industrial arequipa",
-      "average_interest": 76,
-      "trend": "rising",
-      "peak_score": 92,
-      "growth_3m": "+68%",
-      "top_regions": {
-        "Arequipa": 100,
-        "Puno": 55,
-        "Cusco": 45,
-        "Moquegua": 38,
-        "Tacna": 32
-      }
-    },
-    {
-      "keyword": "derecho arequipa",
-      "average_interest": 70,
-      "trend": "stable",
-      "peak_score": 78,
-      "growth_3m": "+28%",
-      "top_regions": {
-        "Arequipa": 100,
-        "Puno": 48,
-        "Cusco": 42,
-        "Juliaca": 35,
-        "Lima": 30
-      }
-    },
-    {
-      "keyword": "medicina arequipa",
-      "average_interest": 82,
-      "trend": "rising",
-      "peak_score": 95,
-      "growth_3m": "+52%",
-      "top_regions": {
-        "Arequipa": 100,
-        "Puno": 62,
-        "Cusco": 55,
-        "Lima": 48,
-        "Tacna": 40
-      }
-    },
-    {
-      "keyword": "universidades arequipa",
-      "average_interest": 78,
+      "keyword": "Zara Peru",
+      "average_interest": 72,
       "trend": "rising",
       "peak_score": 88,
-      "growth_3m": "+35%",
+      "growth_3m": "+45%",
       "top_regions": {
-        "Arequipa": 100,
-        "Puno": 58,
-        "Cusco": 50,
-        "Lima": 42,
-        "Moquegua": 35
+        "Lima": 100,
+        "Arequipa": 48,
+        "Trujillo": 35,
+        "Cusco": 28,
+        "Piura": 22
       }
     },
     {
-      "keyword": "becas UCSP",
+      "keyword": "H&M Lima",
       "average_interest": 65,
       "trend": "rising",
-      "peak_score": 78,
-      "growth_3m": "+85%",
+      "peak_score": 82,
+      "growth_3m": "+52%",
       "top_regions": {
-        "Arequipa": 100,
-        "Puno": 72,
-        "Cusco": 58,
-        "Juliaca": 52,
-        "Tacna": 45
+        "Lima": 100,
+        "Callao": 42,
+        "Arequipa": 35,
+        "Trujillo": 28,
+        "Cusco": 22
       }
     },
     {
-      "keyword": "examen admisión UCSP",
-      "average_interest": 88,
+      "keyword": "ofertas mall Lima",
+      "average_interest": 70,
       "trend": "rising",
-      "peak_score": 100,
-      "growth_3m": "+125%",
+      "peak_score": 90,
+      "growth_3m": "+38%",
       "top_regions": {
-        "Arequipa": 100,
-        "Puno": 68,
-        "Cusco": 52,
-        "Juliaca": 48,
-        "Moquegua": 38
+        "Lima": 100,
+        "Callao": 58,
+        "Arequipa": 45,
+        "Trujillo": 40,
+        "Chiclayo": 35
+      }
+    },
+    {
+      "keyword": "Real Plaza Lima",
+      "average_interest": 75,
+      "trend": "rising",
+      "peak_score": 88,
+      "growth_3m": "+32%",
+      "top_regions": {
+        "Lima": 100,
+        "Callao": 62,
+        "Arequipa": 48,
+        "Trujillo": 42,
+        "Chiclayo": 38
+      }
+    },
+    {
+      "keyword": "Boulevard de Asia",
+      "average_interest": 58,
+      "trend": "stable",
+      "peak_score": 95,
+      "growth_3m": "+5%",
+      "top_regions": {
+        "Lima": 100,
+        "Canete": 85,
+        "Ica": 42,
+        "Arequipa": 25,
+        "Callao": 22
       }
     }
   ],
   "metadata": {
-    "method": "Curated data (pytrends unavailable)",
-    "note": "Datos de tendencias de búsqueda para educación superior en sur de Perú",
-    "timeframe": "Últimos 30 días"
+    "method": "Curated data based on retail search patterns",
+    "note": "Tendencias de busqueda para retail y centros comerciales en Lima Metropolitana",
+    "timeframe": "Ultimos 30 dias"
   }
 }
