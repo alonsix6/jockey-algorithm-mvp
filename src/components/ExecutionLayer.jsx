@@ -49,10 +49,10 @@ export default function ExecutionLayer() {
       </div>
 
       {/* Budget Overview */}
-      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark text-white rounded-2xl shadow-jockey-lg p-8">
+      <div className="bg-jockey-dark text-white rounded-2xl shadow-lg p-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center">
               <DollarSign className="w-10 h-10" />
             </div>
             <div>
@@ -88,7 +88,7 @@ export default function ExecutionLayer() {
       {/* Budget Allocation by Channel */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-teal rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-jockey-teal rounded-xl flex items-center justify-center">
             <Target className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -169,7 +169,7 @@ export default function ExecutionLayer() {
       {/* Recomendaciones de Redistribución */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center">
             <AlertTriangle className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -223,7 +223,7 @@ export default function ExecutionLayer() {
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-jockey-primary rounded-xl flex items-center justify-center">
               <ShoppingBag className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -254,7 +254,7 @@ export default function ExecutionLayer() {
             .slice(0, showAllCategories ? CATEGORIAS_PERFORMANCE.length : 4)
             .map((categoria, idx) => (
             <div key={categoria.id} className={`p-5 rounded-xl border-2 ${
-              idx < 3 ? 'bg-gradient-to-r from-jockey-primary/5 to-jockey-teal/5 border-jockey-primary/30' : 'bg-gray-50 border-gray-200'
+              idx < 3 ? 'bg-jockey-primary/5 border-jockey-primary/30' : 'bg-gray-50 border-gray-200'
             }`}>
               <div className="flex items-center justify-between mb-3">
                 <h4 className="font-bold text-gray-900 text-base">{categoria.nombre}</h4>
@@ -336,7 +336,7 @@ export default function ExecutionLayer() {
       </div>
 
       {/* Timing Recommendations */}
-      <div className="bg-gradient-to-br from-jockey-primary to-jockey-teal text-white rounded-2xl shadow-lg p-8">
+      <div className="bg-jockey-teal text-white rounded-2xl shadow-lg p-8">
         <div className="flex items-center gap-3 mb-6">
           <Calendar className="w-8 h-8" />
           <h3 className="text-lg font-bold">Timing Óptimo de Campaña</h3>

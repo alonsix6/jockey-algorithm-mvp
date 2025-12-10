@@ -90,10 +90,10 @@ export default function DecisionLayer() {
       </div>
 
       {/* Jockey Opportunity Score */}
-      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark text-white rounded-2xl shadow-jockey-lg p-8">
+      <div className="bg-jockey-dark text-white rounded-2xl shadow-lg p-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center">
               <Zap className="w-10 h-10" />
             </div>
             <div>
@@ -148,7 +148,7 @@ export default function DecisionLayer() {
       {/* Recomendaciones Automáticas */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-jockey-primary rounded-xl flex items-center justify-center">
             <Lightbulb className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -194,7 +194,7 @@ export default function DecisionLayer() {
       {/* Audiencias Jockey Plaza */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-teal rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-jockey-teal rounded-xl flex items-center justify-center">
             <Users className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -205,7 +205,7 @@ export default function DecisionLayer() {
 
         <div className="grid gap-4">
           {audiences.map((aud, idx) => (
-            <div key={idx} className="p-5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl border-2 border-gray-200 hover:border-jockey-primary transition-colors">
+            <div key={idx} className="p-5 bg-gray-50 rounded-xl border border-gray-200 hover:border-jockey-primary transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                 <div>
                   <h4 className="font-bold text-gray-900">{aud.name}</h4>

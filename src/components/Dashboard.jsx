@@ -63,7 +63,7 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-jockey flex items-center justify-center">
+      <div className="min-h-screen bg-jockey-dark flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-white text-lg font-medium">{UI_TEXT.loading}</p>
@@ -75,7 +75,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <header className="bg-gradient-jockey text-white shadow-jockey-lg">
+      <header className="bg-jockey-dark text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3 sm:gap-4">
@@ -127,17 +127,17 @@ export default function Dashboard() {
                   key={layer.id}
                   onClick={() => setActiveLayer(layer.id)}
                   className={`
-                    flex-shrink-0 flex items-center gap-3 px-5 py-3.5 rounded-xl font-medium transition-all duration-300
+                    flex-shrink-0 flex items-center gap-3 px-5 py-3.5 rounded-xl font-medium transition-all duration-200
                     ${isActive
-                      ? `bg-gradient-to-r ${layer.color} text-white shadow-lg transform hover:shadow-xl`
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:shadow-md'
+                      ? `${layer.color} text-white shadow-md hover:shadow-lg`
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }
                   `}
                 >
-                  <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? '' : 'opacity-70'}`} />
+                  <Icon className={`w-5 h-5 flex-shrink-0 ${isActive ? '' : 'opacity-80'}`} />
                   <div className="text-left min-w-0">
-                    <p className="text-xs font-semibold whitespace-nowrap">{layer.name}</p>
-                    <p className={`text-[10px] whitespace-nowrap ${isActive ? 'text-white/80' : 'text-gray-500'}`}>
+                    <p className="text-sm font-semibold whitespace-nowrap">{layer.name}</p>
+                    <p className={`text-[11px] whitespace-nowrap ${isActive ? 'text-white/90' : 'text-gray-500'}`}>
                       {layer.description}
                     </p>
                   </div>

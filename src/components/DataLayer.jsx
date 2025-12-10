@@ -198,18 +198,18 @@ export default function DataLayer() {
   return (
     <div className="space-y-6">
       {/* Header & Score Summary */}
-      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-2xl shadow-jockey-lg p-8 text-white">
+      <div className="bg-jockey-dark rounded-2xl shadow-lg p-8 text-white">
         <div className="flex items-start justify-between mb-6">
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center">
                 <ShoppingBag className="w-8 h-8 text-jockey-primary" />
               </div>
               <div>
                 <h2 className="text-xl font-bold mb-1">
                   Capa de Data - Captura de Señales
                 </h2>
-                <p className="text-white/80 text-base">
+                <p className="text-white/90 text-base">
                   Monitoreo en tiempo real del ecosistema digital retail en Lima Metropolitana
                 </p>
               </div>
@@ -261,9 +261,9 @@ export default function DataLayer() {
       </div>
 
       {/* Insights Clave del Mercado */}
-      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-jockey-lg p-8 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-200">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-jockey-dark rounded-xl flex items-center justify-center">
             <span className="text-2xl">📊</span>
           </div>
           <div>
@@ -273,13 +273,13 @@ export default function DataLayer() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {insights.map((insight, idx) => {
-            // Definir colores por fuente
+            // Definir colores por fuente (sólidos)
             const colorScheme =
-              insight.source === 'Google Trends' ? { gradient: 'from-blue-500 to-blue-600', bg: 'bg-blue-50', text: 'text-blue-700', badge: 'bg-blue-100 text-blue-700' } :
-              insight.source === 'TikTok' ? { gradient: 'from-cyan-400 to-cyan-500', bg: 'bg-cyan-50', text: 'text-cyan-700', badge: 'bg-cyan-100 text-cyan-700' } :
-              insight.source === 'Meta' ? { gradient: 'from-blue-600 to-blue-700', bg: 'bg-blue-50', text: 'text-blue-700', badge: 'bg-blue-100 text-blue-700' } :
-              insight.source === 'GA4' ? { gradient: 'from-amber-500 to-orange-500', bg: 'bg-amber-50', text: 'text-amber-700', badge: 'bg-amber-100 text-amber-700' } :
-              { gradient: 'from-gray-600 to-gray-700', bg: 'bg-gray-50', text: 'text-gray-700', badge: 'bg-gray-100 text-gray-700' };
+              insight.source === 'Google Trends' ? { solid: 'bg-blue-600', bg: 'bg-blue-50', text: 'text-blue-700', badge: 'bg-blue-100 text-blue-700', border: 'border-l-blue-500' } :
+              insight.source === 'TikTok' ? { solid: 'bg-cyan-600', bg: 'bg-cyan-50', text: 'text-cyan-700', badge: 'bg-cyan-100 text-cyan-700', border: 'border-l-cyan-500' } :
+              insight.source === 'Meta' ? { solid: 'bg-indigo-600', bg: 'bg-indigo-50', text: 'text-indigo-700', badge: 'bg-indigo-100 text-indigo-700', border: 'border-l-indigo-500' } :
+              insight.source === 'GA4' ? { solid: 'bg-amber-600', bg: 'bg-amber-50', text: 'text-amber-700', badge: 'bg-amber-100 text-amber-700', border: 'border-l-amber-500' } :
+              { solid: 'bg-gray-600', bg: 'bg-gray-50', text: 'text-gray-700', badge: 'bg-gray-100 text-gray-700', border: 'border-l-gray-500' };
 
             const sourceScore =
               insight.source === 'Google Trends' ? scores.search :
@@ -291,25 +291,23 @@ export default function DataLayer() {
             const isMultiSource = insight.source === 'Conexión Multi-fuente';
 
             return (
-              <div key={idx} className={`relative ${colorScheme.bg} rounded-xl p-5 border-2 border-transparent hover:border-gray-200 transition-all duration-300 hover:shadow-lg group ${isMultiSource ? 'md:col-span-2' : ''}`}>
+              <div key={idx} className={`${colorScheme.bg} rounded-xl p-5 border-l-4 ${colorScheme.border} hover:shadow-md transition-shadow duration-200 ${isMultiSource ? 'md:col-span-2' : ''}`}>
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${colorScheme.gradient} rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-2xl">{insight.icon}</span>
+                  <div className={`w-11 h-11 ${colorScheme.solid} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-xl">{insight.icon}</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <p className={`text-xs font-bold ${colorScheme.text} uppercase tracking-wider`}>{insight.source}</p>
+                      <p className={`text-xs font-bold ${colorScheme.text} uppercase tracking-wide`}>{insight.source}</p>
                       {sourceScore && (
-                        <span className={`${colorScheme.badge} px-2 py-0.5 rounded-full text-xs font-bold`}>
+                        <span className={`${colorScheme.badge} px-2 py-0.5 rounded-full text-xs font-semibold`}>
                           {sourceScore}/10
                         </span>
                       )}
                     </div>
-                    <p className="text-sm text-gray-700 leading-relaxed font-medium">{insight.text}</p>
+                    <p className="text-sm text-gray-800 leading-relaxed">{insight.text}</p>
                   </div>
                 </div>
-                {/* Decorative accent */}
-                <div className={`absolute top-0 left-0 w-1 h-full bg-gradient-to-b ${colorScheme.gradient} rounded-l-xl`}></div>
               </div>
             );
           })}
@@ -705,34 +703,34 @@ export default function DataLayer() {
       </div>
 
       {/* Keywords Reference */}
-      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-xl p-6 text-white">
+      <div className="bg-jockey-dark rounded-xl p-6 text-white">
         <h3 className="text-base font-bold mb-4 flex items-center gap-2">
-          <ShoppingBag className="w-6 h-6" />
+          <ShoppingBag className="w-5 h-5" />
           Keywords Monitoreadas - Jockey Plaza
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <p className="text-sm text-white/70 mb-2 font-semibold">Marca Jockey:</p>
+            <p className="text-sm text-white/80 mb-2 font-semibold">Marca Jockey:</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Jockey Plaza</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Boulevard Jockey</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Jockey Plaza</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Boulevard Jockey</span>
             </div>
           </div>
           <div>
-            <p className="text-sm text-white/70 mb-2 font-semibold">Categorías Retail:</p>
+            <p className="text-sm text-white/80 mb-2 font-semibold">Categorías Retail:</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Fast Fashion Lima</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Tiendas Lujo Perú</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Restaurantes Surco</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Fast Fashion Lima</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Tiendas Lujo Perú</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Restaurantes Surco</span>
             </div>
           </div>
           <div>
-            <p className="text-sm text-white/70 mb-2 font-semibold">Experiencias:</p>
+            <p className="text-sm text-white/80 mb-2 font-semibold">Experiencias:</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Cineplanet Jockey</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Eventos Lima</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Entretenimiento Familiar</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Cineplanet Jockey</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Eventos Lima</span>
+              <span className="px-3 py-1.5 bg-white/15 rounded-lg text-sm">Entretenimiento Familiar</span>
             </div>
           </div>
         </div>
