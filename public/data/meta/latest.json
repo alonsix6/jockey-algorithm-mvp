@@ -17,9 +17,9 @@
           "growth": "+28%",
           "sentiment": "very positive",
           "top_brands": [
-            "Jockey Plaza",
-            "Zara",
-            "H&M"
+            "Xiaomi",
+            "Stradivarius",
+            "Miniso"
           ],
           "avg_reactions": 520,
           "avg_comments": 95,
@@ -32,9 +32,9 @@
           "growth": "+35%",
           "sentiment": "very positive",
           "top_brands": [
-            "Jockey Plaza",
-            "Central",
-            "Tanta"
+            "La Mar",
+            "Tanta",
+            "Papachos"
           ],
           "avg_reactions": 580,
           "avg_comments": 125,
@@ -47,8 +47,9 @@
           "growth": "+42%",
           "sentiment": "positive",
           "top_brands": [
-            "Jockey Plaza",
-            "Cineplanet"
+            "Cineplanet",
+            "MAC Cosmetics",
+            "Adidas"
           ],
           "avg_reactions": 380,
           "avg_comments": 65,
@@ -63,7 +64,7 @@
           "top_brands": [
             "Zara",
             "H&M",
-            "Jockey Plaza"
+            "Stradivarius"
           ],
           "avg_reactions": 480,
           "avg_comments": 85,
@@ -76,9 +77,9 @@
           "growth": "+48%",
           "sentiment": "positive",
           "top_brands": [
-            "Jockey Plaza",
-            "Falabella",
-            "Ripley"
+            "Saga Falabella",
+            "Ripley",
+            "Oechsle"
           ],
           "avg_reactions": 350,
           "avg_comments": 120,
@@ -91,9 +92,9 @@
           "growth": "+22%",
           "sentiment": "positive",
           "top_brands": [
-            "Jockey Plaza",
             "Cineplanet",
-            "Timezone"
+            "Timezone",
+            "Divercity"
           ],
           "avg_reactions": 295,
           "avg_comments": 52,
@@ -165,9 +166,9 @@
       "growth": "+35%",
       "sentiment": "very positive",
       "top_brands": [
-        "Jockey Plaza",
-        "Central",
-        "Tanta"
+        "La Mar",
+        "Tanta",
+        "Papachos"
       ],
       "avg_reactions": 580,
       "avg_comments": 125,
@@ -182,7 +183,7 @@
       "top_brands": [
         "Zara",
         "H&M",
-        "Jockey Plaza"
+        "Stradivarius"
       ],
       "avg_reactions": 480,
       "avg_comments": 85,
@@ -195,9 +196,9 @@
       "growth": "+28%",
       "sentiment": "very positive",
       "top_brands": [
-        "Jockey Plaza",
-        "Zara",
-        "H&M"
+        "Xiaomi",
+        "Stradivarius",
+        "Miniso"
       ],
       "avg_reactions": 520,
       "avg_comments": 95,
@@ -223,8 +224,9 @@
       "growth": "+42%",
       "sentiment": "positive",
       "top_brands": [
-        "Jockey Plaza",
-        "Cineplanet"
+        "Cineplanet",
+        "MAC Cosmetics",
+        "Adidas"
       ],
       "avg_reactions": 380,
       "avg_comments": 65,
@@ -237,9 +239,9 @@
       "growth": "+22%",
       "sentiment": "positive",
       "top_brands": [
-        "Jockey Plaza",
         "Cineplanet",
-        "Timezone"
+        "Timezone",
+        "Divercity"
       ],
       "avg_reactions": 295,
       "avg_comments": 52,
@@ -265,9 +267,9 @@
       "growth": "+48%",
       "sentiment": "positive",
       "top_brands": [
-        "Jockey Plaza",
-        "Falabella",
-        "Ripley"
+        "Saga Falabella",
+        "Ripley",
+        "Oechsle"
       ],
       "avg_reactions": 350,
       "avg_comments": 120,
