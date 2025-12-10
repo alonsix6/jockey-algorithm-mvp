@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { TrendingUp, Search, Target, Heart, Zap, BarChart3, Calendar, GraduationCap } from 'lucide-react';
+import { TrendingUp, Search, Target, Heart, Zap, BarChart3, Calendar, ShoppingBag } from 'lucide-react';
 import DataLayer from './DataLayer';
 import DecisionLayer from './DecisionLayer';
 import ExecutionLayer from './ExecutionLayer';
@@ -14,12 +14,12 @@ export default function Dashboard() {
   useEffect(() => {
     // Simular carga inicial
     setTimeout(() => setLoading(false), 800);
-    
+
     // Actualizar timestamp cada minuto
     const interval = setInterval(() => {
       setLastUpdate(new Date());
     }, 60000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -63,7 +63,7 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-ucsp flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-jockey flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-white text-lg font-medium">{UI_TEXT.loading}</p>
@@ -75,12 +75,12 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <header className="bg-gradient-ucsp text-white shadow-ucsp-lg">
+      <header className="bg-gradient-jockey text-white shadow-jockey-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3 sm:gap-4">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                <GraduationCap className="w-7 h-7 sm:w-8 sm:h-8 text-ucsp-blue" />
+                <ShoppingBag className="w-7 h-7 sm:w-8 sm:h-8 text-jockey-primary" />
               </div>
               <div className="min-w-0">
                 <h1 className="text-xl sm:text-2xl font-bold truncate">{BRAND_CONFIG.name}</h1>
@@ -167,10 +167,10 @@ export default function Dashboard() {
             </p>
             <div className="flex items-center gap-3 sm:gap-4">
               <span className="flex items-center gap-2 text-xs sm:text-sm">
-                <div className="w-2 h-2 bg-ucsp-blue rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-jockey-primary rounded-full animate-pulse"></div>
                 {UI_TEXT.systemActive}
               </span>
-              <span className="text-ucsp-blue font-semibold text-xs sm:text-sm">{UI_TEXT.footer.version}</span>
+              <span className="text-jockey-primary font-semibold text-xs sm:text-sm">{UI_TEXT.footer.version}</span>
             </div>
           </div>
         </div>

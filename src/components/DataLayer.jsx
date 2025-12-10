@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, TrendingUp, Video, Share2, GraduationCap, RefreshCw, ChevronDown, ChevronUp, BarChart3, Info } from 'lucide-react';
+import { Search, TrendingUp, Video, Share2, ShoppingBag, RefreshCw, ChevronDown, ChevronUp, BarChart3, Info } from 'lucide-react';
 
 export default function DataLayer() {
   const [trendsData, setTrendsData] = useState(null);
@@ -24,7 +24,7 @@ export default function DataLayer() {
   const loadData = async () => {
     setIsRefreshing(true);
     try {
-      const basePath = `/data`; // Datos UCSP
+      const basePath = `/data`; // Datos Jockey Plaza
       const [trends, tiktok, meta, ga4] = await Promise.all([
         fetch(`${basePath}/trends/latest.json`).then(r => r.json()).catch(() => null),
         fetch(`${basePath}/tiktok/latest.json`).then(r => r.json()).catch(() => null),
@@ -76,9 +76,11 @@ export default function DataLayer() {
       socialScore = avgEngagement.toFixed(1);
     }
 
-    // GA4: conversión como indicador de intención (0-1 → 0-10)
-    if (ga4Data?.overview?.conversionRate) {
-      intentScore = (ga4Data.overview.conversionRate * 150).toFixed(1); // 0.063 → 9.5
+    // GA4: engagement rate como indicador de interés (0-1 → 0-10)
+    if (ga4Data?.overview?.engagementRate) {
+      intentScore = (ga4Data.overview.engagementRate * 10).toFixed(1);
+    } else if (ga4Data?.overview?.conversionRate) {
+      intentScore = (ga4Data.overview.conversionRate * 150).toFixed(1);
     }
 
     const overallScore = ((parseFloat(searchScore) + parseFloat(trendScore) + parseFloat(socialScore) + parseFloat(intentScore)) / 4).toFixed(1);
@@ -108,50 +110,50 @@ export default function DataLayer() {
       insights.push({
         source: 'Google Trends',
         icon: '🔍',
-        text: `"${topKeyword.keyword}" lidera búsquedas con ${topKeyword.average_interest}/100 de interés. El mercado educativo muestra crecimiento promedio de ${avgGrowth.toFixed(0)}% en keywords universitarias de Arequipa.`
+        text: `"${topKeyword.keyword}" lidera búsquedas con ${topKeyword.average_interest}/100 de interés. El mercado retail de Lima muestra crecimiento promedio de ${avgGrowth.toFixed(0)}% en keywords de shopping y entretenimiento.`
       });
     }
 
     // TikTok Insight
     if (tiktokData?.trends?.hashtags?.length > 0) {
       const topHashtag = tiktokData.trends.hashtags[0];
-      const ucspHashtags = tiktokData.trends.hashtags.filter(h =>
-        h.hashtag?.toLowerCase().includes('ucsp')
+      const jockeyHashtags = tiktokData.trends.hashtags.filter(h =>
+        h.hashtag?.toLowerCase().includes('jockey') || h.hashtag?.toLowerCase().includes('mall')
       );
-      const avgRelevance = ucspHashtags.length > 0
-        ? ucspHashtags.reduce((sum, h) => sum + (h.relevanceScore || 0), 0) / ucspHashtags.length
+      const avgRelevance = jockeyHashtags.length > 0
+        ? jockeyHashtags.reduce((sum, h) => sum + (h.relevanceScore || 0), 0) / jockeyHashtags.length
         : 0;
       insights.push({
         source: 'TikTok',
         icon: '🎥',
-        text: `${topHashtag.hashtag} alcanza ${topHashtag.views} de visualizaciones. UCSP tiene ${ucspHashtags.length} hashtags activos con relevancia promedio de ${avgRelevance.toFixed(0)}/100 (bajo alcance comparado con competencia).`
+        text: `${topHashtag.hashtag} alcanza ${topHashtag.views} visualizaciones. Jockey Plaza tiene ${jockeyHashtags.length} hashtags activos con relevancia promedio de ${avgRelevance.toFixed(0)}/100 en contenido de lifestyle y experiencias.`
       });
     }
 
     // Meta Insight
     if (metaData?.aggregatedTopics?.length > 0) {
       const topTopic = metaData.aggregatedTopics[0];
-      const ucspInTop = metaData.aggregatedTopics.filter(t =>
-        t.top_brands?.includes('UCSP') || t.top_brands?.includes('UCSP Perú')
+      const jockeyInTop = metaData.aggregatedTopics.filter(t =>
+        t.top_brands?.includes('Jockey Plaza') || t.top_brands?.includes('Jockey')
       ).length;
-      const ucspLeads = metaData.aggregatedTopics.filter(t =>
-        t.top_brands?.[0] === 'UCSP' || t.top_brands?.[0] === 'UCSP Perú'
+      const jockeyLeads = metaData.aggregatedTopics.filter(t =>
+        t.top_brands?.[0] === 'Jockey Plaza' || t.top_brands?.[0] === 'Jockey'
       ).length;
       insights.push({
         source: 'Meta',
         icon: '📱',
-        text: `"${topTopic.topic}" genera ${topTopic.mentions?.toLocaleString()} menciones con engagement ${topTopic.engagement_score}/10. UCSP aparece en ${ucspInTop}/${metaData.aggregatedTopics.length} temas pero lidera solo ${ucspLeads} (dominancia: UNSA y UCSM).`
+        text: `"${topTopic.topic}" genera ${topTopic.mentions?.toLocaleString()} menciones con engagement ${topTopic.engagement_score}/10. Jockey Plaza aparece en ${jockeyInTop}/${metaData.aggregatedTopics.length} temas y lidera ${jockeyLeads} conversaciones de moda y entretenimiento.`
       });
     }
 
     // GA4 Insight
     if (ga4Data?.overview) {
-      const convRate = (ga4Data.overview.conversionRate * 100).toFixed(1);
+      const engRate = (ga4Data.overview.engagementRate * 100 || ga4Data.overview.conversionRate * 100).toFixed(1);
       const topPage = ga4Data.topPages?.[0];
       insights.push({
         source: 'GA4',
         icon: '📊',
-        text: `${ga4Data.overview.totalUsers?.toLocaleString()} usuarios generaron ${ga4Data.overview.conversions} leads (${convRate}% conversión), "${topPage?.page}" es la página más efectiva.`
+        text: `${ga4Data.overview.totalUsers?.toLocaleString()} usuarios con ${engRate}% engagement rate. "${topPage?.page}" es la página más visitada con alto tiempo de permanencia.`
       });
     }
 
@@ -178,13 +180,13 @@ export default function DataLayer() {
       insights.push({
         source: 'Conexión Multi-fuente',
         icon: '🔗',
-        text: `${formatted} ${connections.length > 1 ? 'aparecen' : 'aparece'} como señales fuertes en Google Trends, TikTok y Meta simultáneamente, indicando interés del mercado educativo en Arequipa.`
+        text: `${formatted} ${connections.length > 1 ? 'aparecen' : 'aparece'} como señales fuertes en Google Trends, TikTok y Meta simultáneamente, indicando alto interés del mercado retail en Lima.`
       });
     } else {
       insights.push({
         source: 'Conexión Multi-fuente',
         icon: '🔗',
-        text: `Las 4 fuentes confirman interés educativo moderado: búsquedas +${((scores.search / 10) * 10).toFixed(0)}%, presencia social baja en TikTok, competencia dominando Meta, y conversión del ${(ga4Data?.overview?.conversionRate * 100 || 5.8).toFixed(1)}%.`
+        text: `Las 4 fuentes confirman interés retail sólido: búsquedas +${((scores.search / 10) * 10).toFixed(0)}%, contenido viral en TikTok, engagement fuerte en Meta, y ${(ga4Data?.overview?.engagementRate * 100 || 68).toFixed(1)}% engagement web.`
       });
     }
 
@@ -196,19 +198,19 @@ export default function DataLayer() {
   return (
     <div className="space-y-6">
       {/* Header & Score Summary */}
-      <div className="bg-gradient-to-br from-ucsp-blue to-ucsp-darkBlue rounded-2xl shadow-ucsp-lg p-8 text-white">
+      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-2xl shadow-jockey-lg p-8 text-white">
         <div className="flex items-start justify-between mb-6">
           <div className="flex-1">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-lg">
-                <GraduationCap className="w-8 h-8 text-ucsp-blue" />
+                <ShoppingBag className="w-8 h-8 text-jockey-primary" />
               </div>
               <div>
                 <h2 className="text-xl font-bold mb-1">
                   Capa de Data - Captura de Señales
                 </h2>
                 <p className="text-white/80 text-base">
-                  Monitoreo en tiempo real del ecosistema digital educativo en el sur del Perú
+                  Monitoreo en tiempo real del ecosistema digital retail en Lima Metropolitana
                 </p>
               </div>
             </div>
@@ -259,9 +261,9 @@ export default function DataLayer() {
       </div>
 
       {/* Insights Clave del Mercado */}
-      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-ucsp-lg p-8 border border-gray-100">
+      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-jockey-lg p-8 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-xl flex items-center justify-center shadow-lg">
             <span className="text-2xl">📊</span>
           </div>
           <div>
@@ -324,7 +326,7 @@ export default function DataLayer() {
             <Search className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">Google Trends</h3>
-              <p className="text-xs text-blue-100">Keywords universitarias en tendencia • Score: {scores.search}/10</p>
+              <p className="text-xs text-blue-100">Keywords de retail y entretenimiento en tendencia • Score: {scores.search}/10</p>
             </div>
           </div>
           {expandedSections.trends ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -337,9 +339,9 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-blue-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Promedio del "interés de búsqueda" (0-100) de todas las keywords universitarias monitoreadas en Perú. Score alto indica fuerte demanda de información sobre UCSP y carreras híbridas.</p>
+                <p>Promedio del "interés de búsqueda" (0-100) de keywords de retail, moda, gastronomía y entretenimiento monitoreadas en Lima. Score alto indica fuerte demanda e interés en experiencias de shopping.</p>
                 <p className="mt-2 text-xs text-blue-700">
-                  <strong>Fuente:</strong> Google Trends API (Perú) • <strong>Actualización:</strong> Semanal • <strong>Categoría:</strong> Education
+                  <strong>Fuente:</strong> Google Trends API (Perú) • <strong>Actualización:</strong> Semanal • <strong>Categoría:</strong> Shopping & Retail
                 </p>
               </div>
             </div>
@@ -427,7 +429,7 @@ export default function DataLayer() {
             <Video className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">TikTok Creative Center</h3>
-              <p className="text-xs text-cyan-100">Hashtags universitarias virales • Score: {scores.trend}/10</p>
+              <p className="text-xs text-cyan-100">Hashtags de lifestyle y retail virales • Score: {scores.trend}/10</p>
             </div>
           </div>
           {expandedSections.tiktok ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -440,7 +442,7 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-cyan-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Promedio del "relevance score" (0-100) de los hashtags universitarias más virales. Score alto indica alto potencial de viralidad para contenido de UCSP y carreras.</p>
+                <p>Promedio del "relevance score" (0-100) de hashtags de moda, lifestyle, gastronomía y entretenimiento más virales. Score alto indica alto potencial de viralidad para contenido de Jockey Plaza.</p>
                 <p className="mt-2 text-xs text-cyan-700">
                   <strong>Fuente:</strong> TikTok Creative Center (datos públicos) • <strong>Actualización:</strong> Semanal • <strong>Región:</strong> Peru + Global
                 </p>
@@ -502,7 +504,7 @@ export default function DataLayer() {
             <Share2 className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">Meta/Facebook Trends</h3>
-              <p className="text-xs text-blue-100">Tendencias universitarias en redes sociales • Score: {scores.social}/10</p>
+              <p className="text-xs text-blue-100">Tendencias de retail y lifestyle en redes sociales • Score: {scores.social}/10</p>
             </div>
           </div>
           {expandedSections.meta ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -515,9 +517,9 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-blue-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Promedio del "engagement score" (0-10) de los temas universitarias más discutidos en Facebook e Instagram. Score alto indica fuerte conversación social sobre UCSP.</p>
+                <p>Promedio del "engagement score" (0-10) de temas de moda, gastronomía y entretenimiento más discutidos en Facebook e Instagram. Score alto indica fuerte conversación social sobre Jockey Plaza y retail.</p>
                 <p className="mt-2 text-xs text-blue-700">
-                  <strong>Fuente:</strong> Páginas públicas verificadas (UCSP Perú 286K likes, UCSP Oficial 150K, etc.) • <strong>Actualización:</strong> Semanal • <strong>Método:</strong> Análisis manual de engagement público
+                  <strong>Fuente:</strong> Páginas públicas verificadas (Jockey Plaza 254K IG, competidores) • <strong>Actualización:</strong> Semanal • <strong>Método:</strong> Análisis de engagement público
                 </p>
               </div>
             </div>
@@ -581,7 +583,7 @@ export default function DataLayer() {
             <BarChart3 className="w-6 h-6" />
             <div className="text-left">
               <h3 className="text-base font-bold">Google Analytics 4</h3>
-              <p className="text-xs text-amber-100">Conversión e intención de postulación • Score: {scores.intent}/10</p>
+              <p className="text-xs text-amber-100">Engagement web e interés de usuarios • Score: {scores.intent}/10</p>
             </div>
           </div>
           {expandedSections.ga4 ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -594,9 +596,9 @@ export default function DataLayer() {
               <Info className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
               <div className="text-sm text-amber-900">
                 <p className="font-semibold mb-1">Cómo se calcula el score:</p>
-                <p>Basado en tasa de conversión (leads calificados / sesiones totales) multiplicado por factor 150. Score alto indica fuerte intención de postulación de visitantes del portal de admisiones UCSP.</p>
+                <p>Basado en engagement rate (sesiones con interacción / sesiones totales). Score alto indica fuerte interés de visitantes en el contenido de Jockey Plaza y sus experiencias.</p>
                 <p className="mt-2 text-xs text-amber-700">
-                  <strong>Fuente:</strong> Google Analytics 4 • <strong>Actualización:</strong> Diario • <strong>Property:</strong> UCSP Perú - UCSP Microsite
+                  <strong>Fuente:</strong> Google Analytics 4 • <strong>Actualización:</strong> Diario • <strong>Property:</strong> Jockey Plaza - Web Principal
                 </p>
               </div>
             </div>
@@ -612,12 +614,12 @@ export default function DataLayer() {
                 <p className="text-xl font-bold text-gray-900">{ga4Data?.overview?.sessions?.toLocaleString()}</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-4">
-                <p className="text-xs text-gray-600 mb-1">Conversiones (Leads)</p>
-                <p className="text-xl font-bold text-amber-600">{ga4Data?.overview?.conversions?.toLocaleString()}</p>
+                <p className="text-xs text-gray-600 mb-1">Interacciones</p>
+                <p className="text-xl font-bold text-amber-600">{ga4Data?.overview?.interactions?.toLocaleString() || ga4Data?.overview?.conversions?.toLocaleString()}</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-4">
-                <p className="text-xs text-gray-600 mb-1">Tasa Conversión</p>
-                <p className="text-xl font-bold text-amber-600">{(ga4Data?.overview?.conversionRate * 100)?.toFixed(1)}%</p>
+                <p className="text-xs text-gray-600 mb-1">Engagement Rate</p>
+                <p className="text-xl font-bold text-amber-600">{((ga4Data?.overview?.engagementRate || ga4Data?.overview?.conversionRate) * 100)?.toFixed(1)}%</p>
               </div>
             </div>
 
@@ -703,34 +705,34 @@ export default function DataLayer() {
       </div>
 
       {/* Keywords Reference */}
-      <div className="bg-gradient-to-br from-ucsp-burgundy to-ucsp-darkBurgundy rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark rounded-xl p-6 text-white">
         <h3 className="text-base font-bold mb-4 flex items-center gap-2">
-          <GraduationCap className="w-6 h-6" />
-          Keywords Monitoreadas - UCSP (Admisiones 2026)
+          <ShoppingBag className="w-6 h-6" />
+          Keywords Monitoreadas - Jockey Plaza
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <p className="text-sm text-white/70 mb-2 font-semibold">Marca UCSP:</p>
+            <p className="text-sm text-white/70 mb-2 font-semibold">Marca Jockey:</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">UCSP</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">San Pablo</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Jockey Plaza</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Boulevard Jockey</span>
             </div>
           </div>
           <div>
-            <p className="text-sm text-white/70 mb-2 font-semibold">Mercado Educativo:</p>
+            <p className="text-sm text-white/70 mb-2 font-semibold">Categorías Retail:</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Universidades Arequipa</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Admisión 2026</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Carreras Universitarias</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Fast Fashion Lima</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Tiendas Lujo Perú</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Restaurantes Surco</span>
             </div>
           </div>
           <div>
-            <p className="text-sm text-white/70 mb-2 font-semibold">Carreras Generales:</p>
+            <p className="text-sm text-white/70 mb-2 font-semibold">Experiencias:</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Ingeniería Industrial</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Medicina</span>
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Derecho</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Cineplanet Jockey</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Eventos Lima</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Entretenimiento Familiar</span>
             </div>
           </div>
         </div>

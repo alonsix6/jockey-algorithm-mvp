@@ -7,51 +7,54 @@ export default {
   theme: {
     extend: {
       colors: {
-        // UCSP Brand Colors - Based on logo #002453 and #4d102c
-        ucsp: {
-          // Azules (basados en #002453)
-          darkBlue: '#002453',     // Azul oscuro del logo
-          blue: '#003B7A',         // Azul principal (más claro)
-          lightBlue: '#0056A3',    // Azul claro para interacciones
-          skyBlue: '#4A90E2',      // Azul cielo para acentos/tech
+        // Jockey Plaza Brand Colors
+        jockey: {
+          // Principal - Carmesí/Magenta intenso
+          primary: '#d10947',        // Color principal de marca
+          primaryDark: '#b0073b',    // Hover/active state
+          primaryLight: '#e83a6a',   // Highlights
 
-          // Burgundy/Vino (basados en #4d102c)
-          darkBurgundy: '#4d102c', // Burdeos oscuro del logo
-          burgundy: '#6B1B3D',     // Burdeos principal
-          wine: '#8B2449',         // Vino para acentos
+          // Neutros
+          dark: '#1a1a1a',           // Negro profundo
+          gray: '#4a4a4a',           // Gris oscuro
+          grayMedium: '#6b7280',     // Gris neutro
+          grayLight: '#9ca3af',      // Gris claro
+          lightGray: '#f3f4f6',      // Fondos claros
+          white: '#ffffff',          // Blanco
 
           // Complementarios
-          gold: '#C5A572',         // Dorado académico
-          gray: '#54565A',         // Gris corporativo
-          lightGray: '#E6E6E6',    // Gris claro
-          black: '#000000',        // Negro
-          white: '#FFFFFF',        // Blanco
+          teal: '#0d9488',           // Teal complementario (métricas positivas)
+          tealLight: '#14b8a6',      // Teal claro
+          tealDark: '#0f766e',       // Teal oscuro
         },
         // Semantic colors
-        success: '#0056A3',        // Azul UCSP para éxito
-        warning: '#F59E0B',
-        error: '#8B2449',          // Vino UCSP
-        info: '#54565A',           // Gris UCSP
+        success: '#0d9488',          // Teal para éxito
+        warning: '#f59e0b',          // Amber para advertencia
+        error: '#d10947',            // Carmesí para error
+        info: '#6b7280',             // Gris para info
       },
       fontFamily: {
         sans: ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
         display: ['Inter', 'Helvetica Neue', 'sans-serif'],
       },
       backgroundImage: {
-        // Gradientes UCSP
-        'gradient-ucsp': 'linear-gradient(135deg, #003B7A 0%, #002453 100%)',
-        'gradient-ucsp-burgundy': 'linear-gradient(135deg, #6B1B3D 0%, #4d102c 100%)',
-        'gradient-ucsp-light': 'linear-gradient(135deg, #FFFFFF 0%, #E6E6E6 100%)',
-        'gradient-academic': 'linear-gradient(135deg, #0056A3 0%, #C5A572 100%)',
+        // Gradientes Jockey Plaza
+        'gradient-jockey': 'linear-gradient(135deg, #d10947 0%, #b0073b 100%)',
+        'gradient-jockey-dark': 'linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%)',
+        'gradient-jockey-light': 'linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%)',
+        'gradient-jockey-teal': 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)',
+        'gradient-jockey-primary-teal': 'linear-gradient(135deg, #d10947 0%, #0d9488 100%)',
       },
       boxShadow: {
-        'ucsp': '0 20px 50px rgba(0, 59, 122, 0.15)',
-        'ucsp-lg': '0 30px 60px rgba(0, 36, 83, 0.25)',
-        'ucsp-burgundy': '0 15px 40px rgba(107, 27, 61, 0.20)',
+        'jockey': '0 20px 50px rgba(209, 9, 71, 0.15)',
+        'jockey-lg': '0 30px 60px rgba(209, 9, 71, 0.25)',
+        'jockey-dark': '0 15px 40px rgba(26, 26, 26, 0.20)',
+        'jockey-teal': '0 15px 40px rgba(13, 148, 136, 0.15)',
       },
       animation: {
         'fadeIn': 'fadeIn 0.5s ease-in-out',
         'slideIn': 'slideIn 0.4s ease-out',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {

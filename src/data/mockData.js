@@ -1,825 +1,604 @@
-// Mock Data para UCSP - Dashboard Demo
+// Mock Data para Jockey Plaza - Dashboard Demo
 // Datos simulados realistas para presentación
+// Enfoque: Alcance, Frecuencia, Interacciones (NO leads, NO visitas físicas)
 
 // ============================================================================
-// MOCK GA4 DATA - Google Analytics 4 simulado
+// MOCK GA4 DATA - Google Analytics 4 simulado (jockeyplaza.com.pe)
 // ============================================================================
 export const MOCK_GA4_DATA = {
   // Sesiones web
   sessions: {
-    total: 42200,
-    new_users: 25650,
-    returning: 2850,
-    avg_session_duration: '4:15', // Tiempo promedio investigando carreras
-    pages_per_session: 5.8,
-    bounce_rate: 32.5, // porcentaje
+    total: 185000,
+    new_users: 142000,
+    returning: 43000,
+    avg_session_duration: '2:35',
+    pages_per_session: 4.2,
+    bounce_rate: 45.8,
   },
 
   // Páginas más visitadas
   top_pages: [
     {
-      page: '/admision',
-      title: 'Admisión UCSP 2026',
-      views: 11200,
+      page: '/tiendas',
+      title: 'Directorio de Tiendas',
+      views: 52000,
+      bounce_rate: 38,
+      avg_time: '2:15',
+    },
+    {
+      page: '/eventos',
+      title: 'Eventos y Experiencias',
+      views: 38500,
       bounce_rate: 32,
-      avg_time: '3:45',
+      avg_time: '3:05',
     },
     {
-      page: '/carreras/ingenieria-industrial',
-      title: 'Ingeniería Industrial',
-      views: 7500,
-      bounce_rate: 28,
-      avg_time: '4:12',
+      page: '/horarios',
+      title: 'Horarios de Atención',
+      views: 35200,
+      bounce_rate: 55,
+      avg_time: '0:45',
     },
     {
-      page: '/carreras/medicina',
-      title: 'Medicina Humana',
-      views: 7200,
-      bounce_rate: 25,
-      avg_time: '5:05',
-    },
-    {
-      page: '/becas',
-      title: 'Becas y Financiamiento',
-      views: 9500,
-      bounce_rate: 42,
-      avg_time: '2:52',
-    },
-    {
-      page: '/carreras/derecho',
-      title: 'Derecho',
-      views: 5800,
+      page: '/gastronomia',
+      title: 'Restaurantes',
+      views: 28700,
       bounce_rate: 35,
-      avg_time: '3:28',
+      avg_time: '2:45',
+    },
+    {
+      page: '/cine',
+      title: 'Cinemark Jockey Plaza',
+      views: 24500,
+      bounce_rate: 42,
+      avg_time: '1:55',
     },
   ],
 
-  // Conversiones (KPIs principales)
-  conversions: {
-    form_submissions: 980,
-    charla_requests: 185,
-    brochure_downloads: 420,
-    whatsapp_clicks: 1250,
-    phone_calls: 220,
-    newsletter_signups: 380,
+  // Interacciones en sitio
+  interactions: {
+    store_searches: 28500,
+    event_clicks: 15200,
+    map_interactions: 12800,
+    social_shares: 4500,
+    newsletter_signups: 2100,
   },
 
   // Fuentes de tráfico
   traffic_sources: {
-    organic_search: { percentage: 32, sessions: 13504, label: 'Búsqueda Orgánica' },
-    paid_search: { percentage: 30, sessions: 12660, label: 'Google Ads' },
-    social_media: { percentage: 28, sessions: 11816, label: 'Meta Ads' },
-    direct: { percentage: 7, sessions: 2954, label: 'Directo' },
-    referral: { percentage: 3, sessions: 1266, label: 'Referencias' },
+    organic_search: { percentage: 38, sessions: 70300, label: 'Búsqueda Orgánica' },
+    social_media: { percentage: 32, sessions: 59200, label: 'Redes Sociales' },
+    direct: { percentage: 18, sessions: 33300, label: 'Directo' },
+    paid_search: { percentage: 8, sessions: 14800, label: 'Google Ads' },
+    referral: { percentage: 4, sessions: 7400, label: 'Referencias' },
   },
 
   // Dispositivos
   devices: {
-    mobile: { percentage: 72, sessions: 30384, label: 'Mobile' },
-    desktop: { percentage: 23, sessions: 9706, label: 'Desktop' },
-    tablet: { percentage: 5, sessions: 2110, label: 'Tablet' },
+    mobile: { percentage: 78, sessions: 144300, label: 'Mobile' },
+    desktop: { percentage: 17, sessions: 31450, label: 'Desktop' },
+    tablet: { percentage: 5, sessions: 9250, label: 'Tablet' },
   },
 
-  // Ubicaciones (zonas objetivo)
+  // Ubicaciones (distritos objetivo)
   locations: [
-    { city: 'Arequipa', sessions: 29750, conversions: 2240, percentage: 70 },
-    { city: 'Puno', sessions: 7650, conversions: 576, percentage: 18 },
-    { city: 'Cusco', sessions: 4250, conversions: 320, percentage: 10 },
-    { city: 'Moquegua', sessions: 425, conversions: 32, percentage: 1 },
-    { city: 'Tacna', sessions: 425, conversions: 32, percentage: 1 },
+    { district: 'Surco', sessions: 55500, percentage: 30 },
+    { district: 'La Molina', sessions: 37000, percentage: 20 },
+    { district: 'San Borja', sessions: 27750, percentage: 15 },
+    { district: 'Miraflores', sessions: 22200, percentage: 12 },
+    { district: 'San Isidro', sessions: 14800, percentage: 8 },
+    { district: 'Otros Lima', sessions: 27750, percentage: 15 },
   ],
 };
 
 // ============================================================================
-// PERFORMANCE KPIs - Métricas principales del dashboard
+// PERFORMANCE KPIs - Métricas principales (Alcance, Frecuencia, Interacciones)
 // ============================================================================
 export const PERFORMANCE_KPIS = {
-  // Postulaciones completadas (reemplazo de leads)
-  postulaciones: {
-    current: 780,
-    previous: 680,
-    change: '+14.7',
-    trend: 'up',
-    label: 'Postulaciones Completadas',
-    description: 'Total de postulaciones válidas en periodo',
-  },
-
-  // Alias para compatibilidad con OptimizationLayer.jsx
-  leads: {
-    qualified: 780,
-    total: 980,
-    qualification_rate: 79.6,
-    cost_per_lead: 16.80,
-    trend: '+14.7%',
-    trend_value: 14.7,
-  },
-
-  // Alcance total
+  // Alcance total (usuarios únicos)
   alcance: {
-    current: 540000,
-    previous: 445000,
-    change: '+21.3',
+    current: 2850000,
+    previous: 2420000,
+    change: '+17.8',
     trend: 'up',
-    label: 'Alcance Total',
-    description: 'Usuarios únicos impactados',
+    label: 'Alcance',
+    description: 'Usuarios únicos alcanzados en el periodo',
   },
 
   // Alias para compatibilidad
   reach: {
-    unique_reach: 540000,
-    impressions: 1500000,
-    frequency: 2.8,
-    trend: '+21.3%',
-    trend_value: 21.3,
+    unique_reach: 2850000,
+    impressions: 9975000,
+    frequency: 3.5,
+    trend: '+17.8%',
+    trend_value: 17.8,
   },
 
-  // Engagement/Interacciones
+  // Impresiones totales
+  impresiones: {
+    current: 9975000,
+    previous: 8230000,
+    change: '+21.2',
+    trend: 'up',
+    label: 'Impresiones',
+    description: 'Total de veces mostrado el contenido',
+  },
+
+  // Frecuencia (Impresiones / Alcance)
+  frecuencia: {
+    current: 3.5,
+    previous: 3.4,
+    change: '+2.9',
+    trend: 'up',
+    label: 'Frecuencia',
+    description: 'Veces promedio que cada usuario vio el contenido',
+    benchmark: '3.0 - 4.0 óptimo para recordación',
+  },
+
+  // Interacciones totales
   engagement: {
-    total_interactions: 88000,
-    engagement_rate: 16.3,
-    shares: 11400,
-    trend: '+8.1%',
-    trend_value: 8.1,
+    total_interactions: 485000,
+    engagement_rate: 4.86,
+    likes: 285000,
+    comments: 42000,
+    shares: 68000,
+    saves: 90000,
+    trend: '+12.5%',
+    trend_value: 12.5,
   },
 
   // Budget / Presupuesto
   budget: {
-    total_budget: 23000, // USD mensual
-    total_spent: 21200,
-    spent_percentage: 92.0,
-    cost_per_click: 0.77,
+    total_budget: 45000, // USD mensual
+    total_spent: 41850,
+    spent_percentage: 93.0,
+    cpm: 4.20, // Costo por mil impresiones
+    cost_per_engagement: 0.086,
     trend: 'on-track',
   },
 
-  // CPP (Costo por Postulación) - reemplazo de CPL
-  cpp: {
-    current: 16.80,
-    previous: 18.50,
-    change: '-9.2',
+  // CPM (Costo por Mil Impresiones)
+  cpm: {
+    current: 4.20,
+    previous: 4.55,
+    change: '-7.7',
     trend: 'down', // Reducción es positivo
-    label: 'Costo por Postulación',
-    description: '$ invertido por cada postulación válida',
+    label: 'CPM',
+    description: 'Costo por cada 1,000 impresiones',
     currency: '$',
   },
 
-  // Charlas informativas asistidas (reemplazo de test drives)
-  charlas: {
-    current: 185,
-    previous: 165,
-    change: '+12.1',
-    trend: 'up',
-    label: 'Charlas Asistidas',
-    description: 'Asistentes a charlas informativas',
+  // Costo por Interacción
+  cpi: {
+    current: 0.086,
+    previous: 0.095,
+    change: '-9.5',
+    trend: 'down',
+    label: 'Costo por Interacción',
+    description: 'Costo promedio por cada interacción',
+    currency: '$',
   },
 
-  // WhatsApp conversaciones
-  whatsapp: {
-    current: 1250,
-    previous: 980,
+  // Video Views (YouTube + Reels)
+  video_views: {
+    current: 1250000,
+    previous: 980000,
     change: '+27.6',
     trend: 'up',
-    label: 'Conversaciones WhatsApp',
-    description: 'Conversaciones iniciadas vía Meta Ads',
+    label: 'Video Views',
+    description: 'Reproducciones de video en todas las plataformas',
   },
 };
 
 // ============================================================================
-// UCSP OPPORTUNITY SCORE - Índice de oportunidad para admisiones
+// JOCKEY OPPORTUNITY SCORE - Índice de oportunidad para awareness
 // ============================================================================
 export const OPPORTUNITY_SCORE = {
-  current_score: 67,
-  trend: '+3.8%',
+  current_score: 74,
+  trend: '+4.2%',
   components: {
     search_interest: {
-      score: 52,
-      weight: 0.28,
-      contribution: 14.56,
+      label: 'Interés de Búsqueda',
+      score: 68,
+      weight: 0.25,
+      contribution: 17.0,
+      description: 'Tendencias de búsqueda en Google Trends',
     },
     social_engagement: {
-      score: 54,
-      weight: 0.22,
-      contribution: 11.88,
+      label: 'Engagement Social',
+      score: 82,
+      weight: 0.30,
+      contribution: 24.6,
+      description: 'Interacciones en redes sociales',
     },
-    conversion_intent: {
-      score: 87,
-      weight: 0.33,
-      contribution: 28.71,
+    brand_awareness: {
+      label: 'Awareness de Marca',
+      score: 78,
+      weight: 0.25,
+      contribution: 19.5,
+      description: 'Recordación y menciones de marca',
     },
-    lead_quality: {
-      score: 68,
-      weight: 0.17,
-      contribution: 11.56,
+    competitive_position: {
+      label: 'Posición Competitiva',
+      score: 65,
+      weight: 0.20,
+      contribution: 13.0,
+      description: 'Share of voice vs competencia',
     },
   },
   recommendation: {
-    message: 'Oportunidad moderada para inversión focalizada en canales digitales. Priorizar Google Search y Meta Ads con foco en Medicina (alta conversión) y optimizar presencia en TikTok. Score de 67 indica receptividad media del mercado con margen de mejora.',
-    confidence: '82%',
-    priority: 'medium',
+    message: 'Buena oportunidad para aumentar frecuencia y consolidar awareness. El engagement social está en niveles óptimos (82). Recomendamos mantener inversión en Meta Ads y aumentar presencia en Google Display para mejorar frecuencia de impacto. Considerar activaciones especiales en fechas clave.',
+    confidence: '85%',
+    priority: 'high',
   },
 };
 
 // ============================================================================
-// CARRERAS PERFORMANCE - Rendimiento por carrera
+// CATEGORIAS PERFORMANCE - Rendimiento por categoría de tienda
 // ============================================================================
-export const CARRERAS_PERFORMANCE = [
+export const CATEGORIAS_PERFORMANCE = [
   {
     id: 1,
-    nombre: 'Ingeniería Industrial',
-    demanda: 'Alta',
-    postulaciones: 115,
-    cpp: 16.85,
-    conversion: 24,
-    vacantes: 80,
+    nombre: 'Fast Fashion',
+    tiendas: ['Zara', 'H&M', 'Forever 21', 'Stradivarius'],
+    demanda: 'Muy Alta',
+    alcance: 850000,
+    impresiones: 2975000,
+    frecuencia: 3.5,
+    interacciones: 145000,
+    engagement_rate: 4.87,
+    cpm: 3.85,
     tendencia: 'rising',
-    hashtags: ['#IngenieriaIndustrial', '#IngenieriaUCSP'],
-    leadAds: {
-      formularios: 170,
-      conversion_rate: 32,
-      cpl: 12.15,
-    },
-    whatsapp: {
-      conversaciones: 75,
-      respondidas: 58,
-      tasa_respuesta: 77,
-    },
-    landing: {
-      visitas: 1150,
-      conversion_rate: 18.5,
+    hashtags: ['#ZaraLima', '#HMLima', '#ModaLima'],
+    top_content: {
+      tipo: 'Reels',
+      engagement: 6.2,
+      views: 320000,
     },
   },
   {
     id: 2,
-    nombre: 'Derecho',
+    nombre: 'Lujo',
+    tiendas: ['Louis Vuitton', 'Dolce & Gabbana', 'Chanel', 'Dior'],
     demanda: 'Alta',
-    postulaciones: 97,
-    cpp: 19.65,
-    conversion: 22,
-    vacantes: 60,
-    tendencia: 'declining',
-    hashtags: ['#DerechoUCSP', '#Derecho'],
-    leadAds: {
-      formularios: 153,
-      conversion_rate: 28,
-      cpl: 14.15,
-    },
-    whatsapp: {
-      conversaciones: 63,
-      respondidas: 40,
-      tasa_respuesta: 63,
-    },
-    landing: {
-      visitas: 975,
-      conversion_rate: 16.2,
+    alcance: 180000,
+    impresiones: 504000,
+    frecuencia: 2.8,
+    interacciones: 28500,
+    engagement_rate: 5.65,
+    cpm: 8.20,
+    tendencia: 'stable',
+    hashtags: ['#LuxuryPeru', '#LouisVuitton', '#DiorLima'],
+    top_content: {
+      tipo: 'Carousel',
+      engagement: 5.8,
+      views: 85000,
     },
   },
   {
     id: 3,
-    nombre: 'Medicina Humana',
+    nombre: 'Tiendas Ancla',
+    tiendas: ['Falabella', 'Ripley', 'Oechsle', 'Plaza Vea'],
     demanda: 'Muy Alta',
-    postulaciones: 129,
-    cpp: 22.60,
-    conversion: 18,
-    vacantes: 40,
-    tendencia: 'rising',
-    hashtags: ['#MedicinaUCSP', '#Medicina'],
-    leadAds: {
-      formularios: 195,
-      conversion_rate: 35,
-      cpl: 16.50,
-    },
-    whatsapp: {
-      conversaciones: 89,
-      respondidas: 71,
-      tasa_respuesta: 80,
-    },
-    landing: {
-      visitas: 1290,
-      conversion_rate: 22.0,
+    alcance: 1200000,
+    impresiones: 4200000,
+    frecuencia: 3.5,
+    interacciones: 168000,
+    engagement_rate: 4.0,
+    cpm: 3.50,
+    tendencia: 'stable',
+    hashtags: ['#Falabella', '#Ripley', '#OfertasLima'],
+    top_content: {
+      tipo: 'Feed Post',
+      engagement: 4.2,
+      views: 450000,
     },
   },
   {
     id: 4,
-    nombre: 'Administración',
+    nombre: 'Deportes & Lifestyle',
+    tiendas: ['Nike', 'Adidas', 'Puma', 'Under Armour'],
     demanda: 'Alta',
-    postulaciones: 79,
-    cpp: 18.35,
-    conversion: 20,
-    vacantes: 70,
-    tendencia: 'stable',
-    hashtags: ['#AdministracionUCSP', '#Negocios'],
-    leadAds: {
-      formularios: 129,
-      conversion_rate: 26,
-      cpl: 49.00,
-    },
-    whatsapp: {
-      conversaciones: 52,
-      respondidas: 34,
-      tasa_respuesta: 66,
-    },
-    landing: {
-      visitas: 787,
-      conversion_rate: 15.8,
+    alcance: 520000,
+    impresiones: 1820000,
+    frecuencia: 3.5,
+    interacciones: 85000,
+    engagement_rate: 4.67,
+    cpm: 4.10,
+    tendencia: 'rising',
+    hashtags: ['#NikeLima', '#AdidasPeru', '#DeportesLima'],
+    top_content: {
+      tipo: 'Video',
+      engagement: 5.5,
+      views: 180000,
     },
   },
   {
     id: 5,
-    nombre: 'Arquitectura y Urbanismo',
-    demanda: 'Media-Alta',
-    postulaciones: 67,
-    cpp: 21.25,
-    conversion: 19,
-    vacantes: 50,
-    tendencia: 'stable',
-    hashtags: ['#ArquitecturaUCSP', '#Arquitectura'],
-    leadAds: {
-      formularios: 113,
-      conversion_rate: 25,
-      cpl: 54.70,
-    },
-    whatsapp: {
-      conversaciones: 45,
-      respondidas: 29,
-      tasa_respuesta: 64,
-    },
-    landing: {
-      visitas: 735,
-      conversion_rate: 14.5,
+    nombre: 'Gastronomía',
+    tiendas: ['Hard Rock Café', 'Tanta', 'Chilis', 'La Bodega'],
+    demanda: 'Alta',
+    alcance: 680000,
+    impresiones: 2380000,
+    frecuencia: 3.5,
+    interacciones: 125000,
+    engagement_rate: 5.25,
+    cpm: 3.95,
+    tendencia: 'rising',
+    hashtags: ['#FoodiesLima', '#RestaurantesLima', '#DondeComer'],
+    top_content: {
+      tipo: 'Reels',
+      engagement: 7.2,
+      views: 280000,
     },
   },
   {
     id: 6,
-    nombre: 'Psicología',
+    nombre: 'Entretenimiento',
+    tiendas: ['Cinemark', 'Happyland', 'Divercity', 'Kraken'],
     demanda: 'Alta',
-    postulaciones: 71,
-    cpp: 17.60,
-    conversion: 21,
-    vacantes: 60,
-    tendencia: 'stable',
-    hashtags: ['#PsicologiaUCSP', '#Psicologia'],
-    leadAds: {
-      formularios: 119,
-      conversion_rate: 27,
-      cpl: 46.65,
-    },
-    whatsapp: {
-      conversaciones: 50,
-      respondidas: 35,
-      tasa_respuesta: 70,
-    },
-    landing: {
-      visitas: 798,
-      conversion_rate: 16.0,
-    },
-  },
-  {
-    id: 7,
-    nombre: 'Ingeniería Civil',
-    demanda: 'Media',
-    postulaciones: 142,
-    cpp: 11.95,
-    conversion: 18,
-    vacantes: 55,
-    tendencia: 'stable',
-    hashtags: ['#IngenieriaCivil', '#CivilUCSP'],
-    leadAds: {
-      formularios: 240,
-      conversion_rate: 24,
-      cpl: 31.50,
-    },
-    whatsapp: {
-      conversaciones: 95,
-      respondidas: 62,
-      tasa_respuesta: 65,
-    },
-    landing: {
-      visitas: 1650,
-      conversion_rate: 13.8,
-    },
-  },
-  {
-    id: 8,
-    nombre: 'Contabilidad',
-    demanda: 'Media',
-    postulaciones: 128,
-    cpp: 10.50,
-    conversion: 20,
-    vacantes: 50,
-    tendencia: 'stable',
-    hashtags: ['#ContabilidadUCSP', '#Contabilidad'],
-    leadAds: {
-      formularios: 220,
-      conversion_rate: 23,
-      cpl: 7.70,
-    },
-    whatsapp: {
-      conversaciones: 85,
-      respondidas: 58,
-      tasa_respuesta: 68,
-    },
-    landing: {
-      visitas: 1480,
-      conversion_rate: 14.2,
-    },
-  },
-  {
-    id: 9,
-    nombre: 'Ciencia de la Computación',
-    demanda: 'Media-Alta',
-    postulaciones: 158,
-    cpp: 12.45,
-    conversion: 22,
-    vacantes: 45,
+    alcance: 420000,
+    impresiones: 1470000,
+    frecuencia: 3.5,
+    interacciones: 92000,
+    engagement_rate: 6.26,
+    cpm: 4.50,
     tendencia: 'rising',
-    hashtags: ['#CienciaComputacion', '#TechUCSP'],
-    leadAds: {
-      formularios: 265,
-      conversion_rate: 28,
-      cpl: 33.00,
-    },
-    whatsapp: {
-      conversaciones: 105,
-      respondidas: 75,
-      tasa_respuesta: 71,
-    },
-    landing: {
-      visitas: 1920,
-      conversion_rate: 15.5,
-    },
-  },
-  {
-    id: 10,
-    nombre: 'Ciencia de Datos',
-    demanda: 'Alta',
-    postulaciones: 185,
-    cpp: 13.60,
-    conversion: 25,
-    vacantes: 40,
-    tendencia: 'rising',
-    hashtags: ['#CienciaDatos', '#DataScience'],
-    leadAds: {
-      formularios: 320,
-      conversion_rate: 30,
-      cpl: 9.85,
-    },
-    whatsapp: {
-      conversaciones: 135,
-      respondidas: 102,
-      tasa_respuesta: 76,
-    },
-    landing: {
-      visitas: 2150,
-      conversion_rate: 17.8,
-    },
-  },
-  {
-    id: 11,
-    nombre: 'Ingeniería Electrónica y Telecomunicaciones',
-    demanda: 'Media',
-    postulaciones: 118,
-    cpp: 11.55,
-    conversion: 19,
-    vacantes: 45,
-    tendencia: 'stable',
-    hashtags: ['#ElectronicaUCSP', '#Telecomunicaciones'],
-    leadAds: {
-      formularios: 198,
-      conversion_rate: 22,
-      cpl: 30.00,
-    },
-    whatsapp: {
-      conversaciones: 78,
-      respondidas: 50,
-      tasa_respuesta: 64,
-    },
-    landing: {
-      visitas: 1420,
-      conversion_rate: 13.2,
-    },
-  },
-  {
-    id: 12,
-    nombre: 'Ingeniería Mecatrónica',
-    demanda: 'Media',
-    postulaciones: 125,
-    cpp: 12.30,
-    conversion: 20,
-    vacantes: 40,
-    tendencia: 'stable',
-    hashtags: ['#MecatronicaUCSP', '#Mecatronica'],
-    leadAds: {
-      formularios: 210,
-      conversion_rate: 23,
-      cpl: 32.00,
-    },
-    whatsapp: {
-      conversaciones: 82,
-      respondidas: 55,
-      tasa_respuesta: 67,
-    },
-    landing: {
-      visitas: 1520,
-      conversion_rate: 14.0,
-    },
-  },
-  {
-    id: 13,
-    nombre: 'Ingeniería Ambiental',
-    demanda: 'Media',
-    postulaciones: 105,
-    cpp: 11.15,
-    conversion: 18,
-    vacantes: 35,
-    tendencia: 'rising',
-    hashtags: ['#IngenieriaAmbiental', '#Sostenibilidad'],
-    leadAds: {
-      formularios: 175,
-      conversion_rate: 21,
-      cpl: 7.95,
-    },
-    whatsapp: {
-      conversaciones: 68,
-      respondidas: 45,
-      tasa_respuesta: 66,
-    },
-    landing: {
-      visitas: 1280,
-      conversion_rate: 12.8,
+    hashtags: ['#CineLima', '#DiversionLima', '#PlanesLima'],
+    top_content: {
+      tipo: 'Stories',
+      engagement: 6.8,
+      views: 195000,
     },
   },
 ];
 
 // ============================================================================
-// COMPETENCIA - Universidades competidoras
+// TIENDAS TOP PERFORMANCE - Top 10 tiendas por engagement
+// ============================================================================
+export const TIENDAS_TOP = [
+  { nombre: 'Zara', categoria: 'Fast Fashion', alcance: 320000, engagement_rate: 5.2, tendencia: 'rising' },
+  { nombre: 'Cinemark', categoria: 'Entretenimiento', alcance: 285000, engagement_rate: 6.8, tendencia: 'rising' },
+  { nombre: 'Tanta', categoria: 'Gastronomía', alcance: 180000, engagement_rate: 7.5, tendencia: 'rising' },
+  { nombre: 'Nike', categoria: 'Deportes', alcance: 245000, engagement_rate: 5.8, tendencia: 'stable' },
+  { nombre: 'H&M', categoria: 'Fast Fashion', alcance: 275000, engagement_rate: 4.9, tendencia: 'stable' },
+  { nombre: 'Louis Vuitton', categoria: 'Lujo', alcance: 95000, engagement_rate: 6.2, tendencia: 'rising' },
+  { nombre: 'Falabella', categoria: 'Tienda Ancla', alcance: 420000, engagement_rate: 3.8, tendencia: 'stable' },
+  { nombre: 'Hard Rock Café', categoria: 'Gastronomía', alcance: 165000, engagement_rate: 5.5, tendencia: 'stable' },
+  { nombre: 'Adidas', categoria: 'Deportes', alcance: 198000, engagement_rate: 5.2, tendencia: 'rising' },
+  { nombre: 'Happyland', categoria: 'Entretenimiento', alcance: 145000, engagement_rate: 6.5, tendencia: 'rising' },
+];
+
+// ============================================================================
+// COMPETENCIA - Centros comerciales competidores
 // ============================================================================
 export const COMPETENCIA = [
   {
-    name: 'UNSA',
-    full_name: 'Universidad Nacional de San Agustín',
-    market_share: 45,
-    postulantes: 49509,
+    name: 'Real Plaza Puruchuco',
+    full_name: 'Real Plaza Puruchuco',
+    group: 'Grupo Intercorp',
+    market_share: 22,
+    visitors_monthly: '2M',
     rank: 1,
-    type: 'Pública',
-    fortalezas: ['Tradición', 'Bajo costo', 'Mayor demanda del país'],
-    debilidades: ['Masificación', 'Infraestructura limitada'],
+    type: 'Mall tradicional',
+    nse: 'B/C',
+    fortalezas: ['Tamaño (126,000 m²)', 'Sostenibilidad', '440+ tiendas'],
+    debilidades: ['Ubicación (Lima Este)', 'NSE diferente'],
   },
   {
-    name: 'UCSM',
-    full_name: 'Universidad Católica Santa María',
-    market_share: 28,
-    postulantes: 8500,
-    rank: 2,
-    type: 'Privada',
-    fortalezas: ['Infraestructura', 'Carreras similares'],
-    debilidades: ['Menor acreditación internacional'],
-  },
-  {
-    name: 'UCSP',
-    full_name: 'Universidad Católica San Pablo',
+    name: 'Mall Aventura',
+    full_name: 'Mall Aventura Santa Anita',
+    group: 'Grupo Ripley',
     market_share: 15,
-    postulantes: 3200,
-    rank: 3,
-    type: 'Privada',
-    fortalezas: ['Primera licenciada del sur', 'Acreditación internacional', 'Formación integral'],
-    debilidades: ['Menor awareness', 'Percepción de costo'],
+    visitors_monthly: '2.1M',
+    rank: 2,
+    type: 'Mall familiar',
+    nse: 'B/C',
+    fortalezas: ['Entretenimiento OASIS', 'Familias', 'Expansión agresiva'],
+    debilidades: ['Ubicación periférica', 'Menos marcas premium'],
   },
   {
-    name: 'UTP',
-    full_name: 'Universidad Tecnológica del Perú',
+    name: 'Larcomar',
+    full_name: 'Larcomar',
+    group: 'Parque Arauco',
     market_share: 8,
-    postulantes: 2800,
-    rank: 4,
-    type: 'Privada',
-    fortalezas: ['Presencia nacional', 'Marketing agresivo'],
-    debilidades: ['Menor calidad percibida'],
+    visitors_monthly: '800K',
+    rank: 3,
+    type: 'Lifestyle',
+    nse: 'A/B',
+    fortalezas: ['Vista al mar', 'Turismo', 'Ubicación Miraflores'],
+    debilidades: ['Tamaño limitado', 'Estacionamiento'],
   },
   {
-    name: 'UAP',
-    full_name: 'Universidad Alas Peruanas',
-    market_share: 4,
-    postulantes: 1500,
+    name: 'MegaPlaza',
+    full_name: 'MegaPlaza Independencia',
+    group: 'Parque Arauco',
+    market_share: 12,
+    visitors_monthly: '1.5M',
+    rank: 4,
+    type: 'Mall masivo',
+    nse: 'C/D',
+    fortalezas: ['Lima Norte', 'Alto tráfico', 'Precio'],
+    debilidades: ['NSE diferente', 'Menos premium'],
+  },
+  {
+    name: 'Parque La Molina',
+    full_name: 'Parque La Molina',
+    group: 'Parque Arauco',
+    market_share: 3,
+    visitors_monthly: 'Nuevo',
     rank: 5,
-    type: 'Privada',
-    fortalezas: ['Presencia nacional'],
-    debilidades: ['Problemas de licenciamiento'],
+    type: 'Lifestyle',
+    nse: 'A/B',
+    fortalezas: ['Nuevo (2024)', 'Zona objetivo', 'Formato lifestyle'],
+    debilidades: ['En ramp-up', 'Tamaño menor'],
+  },
+  {
+    name: 'Jockey Plaza',
+    full_name: 'Jockey Plaza Shopping Center',
+    group: 'Grupo Altas Cumbres',
+    market_share: 18,
+    visitors_monthly: '1.8M',
+    rank: null,
+    type: 'Premium',
+    nse: 'A/B (70%)',
+    fortalezas: ['Marcas premium', '500+ tiendas', 'NSE A/B', 'Louis Vuitton'],
+    debilidades: ['Percepción de precio alto'],
   },
 ];
-
-// ============================================================================
-// HUBSPOT MOCKUP - Datos simulados de HubSpot
-// ============================================================================
-export const HUBSPOT_MOCKUP = {
-  campaigns: [
-    {
-      id: 'camp_001',
-      name: 'Admisión 2026-I Pregrado',
-      status: 'active',
-      budget: 25000,
-      spent: 18750,
-      leads: 856,
-      cpl: 21.90,
-      alert_status: 'normal', // normal, warning, danger
-      platform: 'Meta Ads',
-      audience: 'Pregrado',
-    },
-    {
-      id: 'camp_002',
-      name: 'Ingeniería Industrial - Lead Ads',
-      status: 'active',
-      budget: 8500,
-      spent: 6820,
-      leads: 285,
-      cpl: 23.93,
-      alert_status: 'normal',
-      platform: 'Meta Ads',
-      audience: 'Pregrado',
-    },
-    {
-      id: 'camp_003',
-      name: 'Medicina - Google Search',
-      status: 'active',
-      budget: 12000,
-      spent: 10500,
-      leads: 198,
-      cpl: 53.03,
-      alert_status: 'warning', // CPL cercano al límite
-      platform: 'Google Ads',
-      audience: 'Pregrado',
-    },
-    {
-      id: 'camp_004',
-      name: 'Posgrado - Maestrías',
-      status: 'active',
-      budget: 6500,
-      spent: 4875,
-      leads: 68,
-      cpl: 71.69,
-      alert_status: 'warning',
-      platform: 'Google Ads',
-      audience: 'Posgrado',
-    },
-  ],
-  alerts: [
-    {
-      type: 'warning',
-      message: 'Campaña "Medicina - Google Search" con CPL de $11.80, cerca del límite de $12',
-      campaign_id: 'camp_003',
-      timestamp: '2025-11-20T14:30:00',
-    },
-    {
-      type: 'warning',
-      message: 'Campaña "Posgrado - Maestrías" con CPL de $14.20, cerca del límite de $15',
-      campaign_id: 'camp_004',
-      timestamp: '2025-11-20T13:15:00',
-    },
-  ],
-  lead_quality: {
-    avg_score: 72,
-    distribution: {
-      hot: 28, // %
-      warm: 45,
-      cold: 27,
-    },
-  },
-};
 
 // ============================================================================
 // BUDGET ALLOCATION - Distribución de presupuesto por canal
 // ============================================================================
 export const BUDGET_ALLOCATION = {
-  total_budget: 23000, // USD mensual para Admisiones 2026-I
+  total_budget: 45000, // USD mensual
+  period: 'Mensual',
+  objective: 'Alcance + Frecuencia + Interacciones',
   distribution: {
-    google_search: {
-      amount: 8050, // 35%
-      percentage: 35,
+    meta_ads: {
+      name: 'Meta Ads',
+      amount: 20250, // 45%
+      percentage: 45,
       status: 'overperforming',
-      kpi: 'CPL (Costo por Lead)',
-      target: '$9.50 o menos',
-      current_performance: '$8.80',
+      kpi_primary: 'Alcance',
+      kpi_secondary: 'Engagement Rate',
+      target: 'Alcance 1.5M, ER 4.5%+',
+      current_performance: 'Alcance 1.8M, ER 5.2%',
+      platforms: ['Facebook', 'Instagram'],
+      formats: ['Feed', 'Stories', 'Reels', 'Carousel'],
     },
-    social_media: {
-      amount: 8050, // 35%
-      percentage: 35,
+    google_display: {
+      name: 'Google Display',
+      amount: 11250, // 25%
+      percentage: 25,
       status: 'performing',
-      kpi: 'CPP (Costo por Postulación)',
-      target: '$10.80 o menos',
-      current_performance: '$10.30',
-      whatsapp_metrics: {
-        conversations: 1847,
-        response_rate: 68,
-      },
+      kpi_primary: 'Impresiones',
+      kpi_secondary: 'Frecuencia',
+      target: 'CPM $4.50, Freq 3.0+',
+      current_performance: 'CPM $4.20, Freq 3.2',
     },
     youtube: {
-      amount: 4600, // 20%
+      name: 'YouTube',
+      amount: 9000, // 20%
       percentage: 20,
-      status: 'ontrack',
-      kpi: 'CPV (Costo por Vista)',
-      target: '$0.04 o menos',
-      current_performance: '$0.038',
-    },
-    display: {
-      amount: 2300, // 10%
-      percentage: 10,
       status: 'performing',
-      kpi: 'CPM (Costo por Mil)',
-      target: '$3.20 o menos',
-      current_performance: '$3.18',
+      kpi_primary: 'Video Views',
+      kpi_secondary: 'VTR (View-through rate)',
+      target: 'CPV $0.03, VTR 25%+',
+      current_performance: 'CPV $0.028, VTR 28%',
+      formats: ['Pre-roll', 'Bumpers', 'Discovery'],
+    },
+    google_search: {
+      name: 'Google Search',
+      amount: 4500, // 10%
+      percentage: 10,
+      status: 'ontrack',
+      kpi_primary: 'Clicks',
+      kpi_secondary: 'CTR',
+      target: 'CTR 8%+, CPC $0.45',
+      current_performance: 'CTR 9.2%, CPC $0.42',
+      focus: 'Branded + Tiendas específicas',
     },
   },
   recommendations: [
     {
-      type: 'increase',
-      channel: 'google_search',
-      from: 35,
-      to: 40,
-      reason: 'CPL 7% por debajo del objetivo, excelente performance en búsquedas de carreras',
-      impact: '+120 postulaciones/mes estimadas',
+      type: 'maintain',
+      channel: 'meta_ads',
+      reason: 'Excelente performance en Reels (+32% engagement vs feed). Mantener mix actual.',
+      impact: 'Mantener alcance de 1.8M usuarios',
     },
     {
-      type: 'maintain',
-      channel: 'social_media',
-      reason: 'Meta Ads con buen engagement en Pregrado, WhatsApp con 68% de respuesta',
-      impact: 'Mantener volumen actual',
+      type: 'increase',
+      channel: 'youtube',
+      from: 20,
+      to: 25,
+      reason: 'Videos de experiencias tienen 28% VTR, superior al benchmark de 22%',
+      impact: '+300K video views estimados',
     },
     {
       type: 'decrease',
-      channel: 'display',
-      from: 10,
-      to: 5,
-      reason: 'Bajo engagement en Display, redirigir a Search',
-      impact: 'Redistribución más eficiente',
+      channel: 'google_display',
+      from: 25,
+      to: 20,
+      reason: 'Frecuencia ya óptima (3.2), redirigir a YouTube para awareness',
+      impact: 'Optimización de mix sin perder alcance',
     },
   ],
 };
 
 // ============================================================================
-// CONTENT PILLARS - Pilares de contenido UCSP
+// CONTENT PILLARS - Pilares de contenido Jockey Plaza
 // ============================================================================
 export const CONTENT_PILLARS = [
   {
     id: 1,
-    title: 'Licenciamiento y Calidad Académica',
-    description: 'Universidad licenciada por SUNEDU con altos estándares de calidad',
+    title: 'Experiencias & Eventos',
+    description: 'Exposiciones inmersivas, eventos especiales y activaciones',
     status: 'overperforming',
     performance: {
-      engagement_rate: 14.2,
-      reach: 182000,
-      conversions: 385,
+      engagement_rate: 6.8,
+      reach: 680000,
+      interactions: 46200,
     },
-    recommended_budget: 0.30, // 30%
-    formats: ['Video institucional', 'Infografías', 'Testimoniales'],
+    recommended_budget: 0.30,
+    formats: ['Reels', 'Stories', 'Lives', 'Video largo'],
+    examples: ['Hello Kitty Experience', 'Blow Up Experience', 'Exposiciones'],
   },
   {
     id: 2,
-    title: 'Formación Profesional Integral',
-    description: 'Educación de excelencia con valores católicos y visión humanista',
+    title: 'Moda & Tendencias',
+    description: 'Nuevas colecciones, marcas y tendencias de temporada',
     status: 'performing',
     performance: {
-      engagement_rate: 11.8,
-      reach: 156000,
-      conversions: 298,
+      engagement_rate: 5.2,
+      reach: 850000,
+      interactions: 44200,
     },
-    recommended_budget: 0.25, // 25%
-    formats: ['Historias de éxito', 'Videos emocionales', 'Lives'],
+    recommended_budget: 0.25,
+    formats: ['Carousel', 'Reels', 'Feed posts'],
+    examples: ['Nuevas marcas', 'Pasillo Inditex', 'Lujo'],
   },
   {
     id: 3,
-    title: 'Acreditación Internacional',
-    description: 'Carreras acreditadas internacionalmente, reconocimiento global',
-    status: 'performing',
+    title: 'Gastronomía',
+    description: 'Restaurantes, nuevas aperturas y experiencias culinarias',
+    status: 'overperforming',
     performance: {
-      engagement_rate: 10.5,
-      reach: 134000,
-      conversions: 245,
+      engagement_rate: 7.2,
+      reach: 520000,
+      interactions: 37440,
     },
-    recommended_budget: 0.20, // 20%
-    formats: ['Reconocimientos', 'Casos de éxito', 'Infografías'],
+    recommended_budget: 0.20,
+    formats: ['Reels', 'Stories', 'UGC'],
+    examples: ['Nuevos restaurantes', 'Food tours', 'Chefs'],
   },
   {
     id: 4,
-    title: 'Innovación y Tecnología',
-    description: 'Laboratorios de última generación, investigación aplicada',
-    status: 'ontrack',
+    title: 'Entretenimiento Familiar',
+    description: 'Cine, juegos y actividades para toda la familia',
+    status: 'performing',
     performance: {
-      engagement_rate: 9.2,
-      reach: 118000,
-      conversions: 185,
+      engagement_rate: 6.5,
+      reach: 420000,
+      interactions: 27300,
     },
-    recommended_budget: 0.15, // 15%
-    formats: ['Tour virtual', 'Videos tech', 'Demos'],
+    recommended_budget: 0.15,
+    formats: ['Video', 'Stories', 'Carousel'],
+    examples: ['Cinemark', 'Happyland', 'Divercity', 'Planes fin de semana'],
   },
   {
     id: 5,
-    title: 'Empleabilidad y Convenios',
-    description: 'Alta tasa de empleabilidad, convenios con empresas líderes',
-    status: 'performing',
+    title: 'Jockey Te Quiere Feliz',
+    description: 'Contenido de marca, valores y comunidad',
+    status: 'ontrack',
     performance: {
-      engagement_rate: 8.8,
-      reach: 105000,
-      conversions: 156,
+      engagement_rate: 4.8,
+      reach: 380000,
+      interactions: 18240,
     },
-    recommended_budget: 0.10, // 10%
-    formats: ['Data viz', 'Testimoniales empresas', 'Estadísticas'],
+    recommended_budget: 0.10,
+    formats: ['Video institucional', 'Stories', 'UGC'],
+    examples: ['Campañas de marca', 'RSE', 'Comunidad'],
   },
 ];
 
@@ -829,105 +608,153 @@ export const CONTENT_PILLARS = [
 export const ALERTS = [
   {
     id: 1,
-    severity: 'high',
-    title: 'CPL elevado en Medicina',
-    message: 'Campaña de Medicina en Google Search superó $11.80, cerca del límite de $12',
-    action: 'Revisar keywords y ajustar bids, considerar pausar temporalmente',
-    timestamp: '2025-11-20T14:30:00',
+    severity: 'low',
+    title: 'Oportunidad: Engagement alto en Gastronomía',
+    message: 'Contenido de restaurantes tiene 7.2% engagement rate, 48% sobre el promedio',
+    action: 'Considerar aumentar contenido gastronómico y colaboraciones con restaurantes',
+    timestamp: '2025-12-10T14:30:00',
   },
   {
     id: 2,
     severity: 'medium',
-    title: 'Engagement bajo en YouTube',
-    message: 'Videos de carreras tech tienen 35% menos engagement que promedio',
-    action: 'Mejorar thumbnails y primeros 5 segundos, probar formato shorts',
-    timestamp: '2025-11-20T13:15:00',
+    title: 'Frecuencia alcanzando óptimo',
+    message: 'Frecuencia actual de 3.5 está en el rango óptimo (3.0-4.0). Monitorear para evitar saturación.',
+    action: 'Mantener niveles actuales, no aumentar impresiones sin aumentar alcance',
+    timestamp: '2025-12-10T12:15:00',
   },
   {
     id: 3,
     severity: 'low',
-    title: 'Oportunidad en Puno',
-    message: 'Tráfico desde Puno creció +28% esta semana, bajo CPL de $7.55',
-    action: 'Considerar aumentar budget 15% para Puno en próxima semana',
-    timestamp: '2025-11-20T11:45:00',
+    title: 'Competidor: Parque La Molina inaugurado',
+    message: 'Nuevo mall lifestyle en La Molina (zona objetivo). Monitorear share of voice.',
+    action: 'Reforzar contenido dirigido a La Molina, destacar diferenciadores premium',
+    timestamp: '2025-12-10T10:00:00',
   },
 ];
 
 // ============================================================================
-// COMPETITOR INSIGHTS - Análisis de competencia universitaria
+// COMPETITOR INSIGHTS - Análisis de competencia de malls
 // ============================================================================
 export const COMPETITOR_INSIGHTS = [
   {
-    brand: 'UNSA',
-    full_name: 'Universidad Nacional de San Agustín',
-    location: 'Arequipa',
-    share_of_voice: 38,
+    brand: 'Real Plaza',
+    full_name: 'Real Plaza Puruchuco',
+    location: 'Ate (Lima Este)',
+    share_of_voice: 28,
     sentiment: 72,
-    threat_level: 'high',
-    trending_topics: ['Universidad pública', 'Tradición', 'Ingeniería'],
-    description: 'Principal universidad pública del sur, 2da en ranking nacional Sunedu 2026',
+    threat_level: 'medium',
+    trending_topics: ['Sostenibilidad', 'Tamaño', 'Nuevas tiendas'],
+    description: 'Líder en recall pero diferente NSE y ubicación. No compite directamente por mismo público.',
   },
   {
-    brand: 'UCSM',
-    full_name: 'Universidad Católica Santa María',
-    location: 'Arequipa',
-    share_of_voice: 22,
-    sentiment: 68,
-    threat_level: 'high',
-    trending_topics: ['Infraestructura', 'Medicina', 'Campus moderno'],
-    description: 'Principal competidor privado en Arequipa, fuerte en medicina',
+    brand: 'Mall Aventura',
+    full_name: 'Mall Aventura',
+    location: 'Santa Anita, SJL',
+    share_of_voice: 18,
+    sentiment: 74,
+    threat_level: 'medium',
+    trending_topics: ['Entretenimiento', 'Familias', 'OASIS'],
+    description: 'Fuerte en entretenimiento familiar. Diferente zona geográfica y NSE.',
   },
   {
-    brand: 'UNSAAC',
-    full_name: 'Universidad Nacional de San Antonio Abad del Cusco',
-    location: 'Cusco',
+    brand: 'Larcomar',
+    full_name: 'Larcomar',
+    location: 'Miraflores',
+    share_of_voice: 15,
+    sentiment: 78,
+    threat_level: 'high',
+    trending_topics: ['Vista al mar', 'Turismo', 'Lifestyle'],
+    description: 'Competidor directo en NSE A/B. Diferenciador: experiencia lifestyle y turismo.',
+  },
+  {
+    brand: 'Parque La Molina',
+    full_name: 'Parque La Molina',
+    location: 'La Molina',
+    share_of_voice: 8,
+    sentiment: 75,
+    threat_level: 'high',
+    trending_topics: ['Nuevo', 'Lifestyle', 'La Molina'],
+    description: 'Nuevo competidor directo en zona objetivo. Formato lifestyle similar a Larcomar.',
+  },
+  {
+    brand: 'MegaPlaza',
+    full_name: 'MegaPlaza',
+    location: 'Independencia',
     share_of_voice: 12,
     sentiment: 70,
-    threat_level: 'high',
-    trending_topics: ['Universidad pública Cusco', '6000+ postulantes', '41 carreras'],
-    description: 'Segunda universidad nacional más grande del sur, posición 9 en ranking público Sunedu',
-  },
-  {
-    brand: 'UTP',
-    full_name: 'Universidad Tecnológica del Perú',
-    location: 'Arequipa',
-    share_of_voice: 10,
-    sentiment: 70,
-    threat_level: 'medium',
-    trending_topics: ['Empleabilidad', 'Carreras tech', 'Innovación'],
-    description: 'Enfoque en tecnología y empleabilidad, creciente presencia regional',
-  },
-  {
-    brand: 'UAC',
-    full_name: 'Universidad Andina del Cusco',
-    location: 'Cusco',
-    share_of_voice: 8,
-    sentiment: 66,
-    threat_level: 'medium',
-    trending_topics: ['Presencia regional', 'Múltiples sedes', 'Flexibilidad'],
-    description: 'Privada con 4 campus (Cusco, Sicuani, Quillabamba, Pto. Maldonado), fuerte cobertura Cusco',
-  },
-  {
-    brand: 'ULASALLE',
-    full_name: 'Universidad La Salle',
-    location: 'Arequipa',
-    share_of_voice: 3,
-    sentiment: 74,
     threat_level: 'low',
-    trending_topics: ['Educación lasallista', 'Valores', 'Calidad nicho'],
-    description: 'Pequeña pero de calidad, enfoque en valores lasallistas, licenciada desde 2018',
+    trending_topics: ['Lima Norte', 'Ofertas', 'Tráfico'],
+    description: 'Diferente zona y NSE. No compite directamente por mismo público objetivo.',
   },
   {
-    brand: 'UCSP',
-    full_name: 'Universidad Católica San Pablo',
-    location: 'Arequipa',
-    share_of_voice: 13,
-    sentiment: 78,
+    brand: 'Jockey Plaza',
+    full_name: 'Jockey Plaza Shopping Center',
+    location: 'Surco',
+    share_of_voice: 22,
+    sentiment: 82,
     threat_level: null,
-    trending_topics: ['Primera licenciada sur', 'Acreditación internacional', 'Valores católicos'],
-    description: 'Primera universidad licenciada del sur, posición 19 en ranking QS 2024',
+    trending_topics: ['Marcas de lujo', 'Experiencias', 'Premium', 'Louis Vuitton'],
+    description: 'El mall premium de Lima. 70% visitantes NSE A/B. Único con Louis Vuitton.',
   },
 ];
+
+// ============================================================================
+// SOCIAL MEDIA METRICS - Métricas de redes sociales
+// ============================================================================
+export const SOCIAL_MEDIA_METRICS = {
+  instagram: {
+    handle: '@jockeyplaza',
+    followers: 254000,
+    following: 500,
+    posts: 4029,
+    engagement_rate: 4.8,
+    avg_likes: 8500,
+    avg_comments: 185,
+    growth_monthly: '+2.3%',
+    top_content: 'Reels de experiencias',
+  },
+  tiktok: {
+    handle: '@jockeytequierefeliz',
+    followers: 38600,
+    likes_total: 627000,
+    following: 177,
+    engagement_rate: 8.2,
+    avg_views: 45000,
+    growth_monthly: '+12.5%',
+    top_content: 'Trends de moda y gastronomía',
+  },
+  facebook: {
+    followers: 312000,
+    engagement_rate: 2.1,
+    reach_organic: 85000,
+    top_content: 'Eventos y promociones',
+  },
+  linkedin: {
+    followers: 42523,
+    engagement_rate: 3.5,
+    top_content: 'Noticias corporativas y retail',
+  },
+};
+
+// ============================================================================
+// TIMING PERFORMANCE - Rendimiento por horarios
+// ============================================================================
+export const TIMING_PERFORMANCE = {
+  best_days: [
+    { day: 'Sábado', engagement_multiplier: 1.45, reach_multiplier: 1.35 },
+    { day: 'Domingo', engagement_multiplier: 1.38, reach_multiplier: 1.30 },
+    { day: 'Viernes', engagement_multiplier: 1.25, reach_multiplier: 1.20 },
+  ],
+  best_hours: [
+    { hour: '19:00-21:00', engagement_multiplier: 1.50, label: 'Prime time' },
+    { hour: '12:00-14:00', engagement_multiplier: 1.25, label: 'Almuerzo' },
+    { hour: '16:00-18:00', engagement_multiplier: 1.20, label: 'Tarde' },
+  ],
+  worst_hours: [
+    { hour: '00:00-06:00', engagement_multiplier: 0.35, label: 'Madrugada' },
+    { hour: '06:00-09:00', engagement_multiplier: 0.65, label: 'Mañana temprano' },
+  ],
+};
 
 // ============================================================================
 // EXPORTS
@@ -936,11 +763,13 @@ export default {
   MOCK_GA4_DATA,
   PERFORMANCE_KPIS,
   OPPORTUNITY_SCORE,
-  CARRERAS_PERFORMANCE,
+  CATEGORIAS_PERFORMANCE,
+  TIENDAS_TOP,
   COMPETENCIA,
-  HUBSPOT_MOCKUP,
   BUDGET_ALLOCATION,
   CONTENT_PILLARS,
   ALERTS,
   COMPETITOR_INSIGHTS,
+  SOCIAL_MEDIA_METRICS,
+  TIMING_PERFORMANCE,
 };
