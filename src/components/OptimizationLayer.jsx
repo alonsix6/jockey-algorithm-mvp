@@ -31,7 +31,7 @@ export default function OptimizationLayer() {
       conversionRate: 28.6,
       conversionLabel: 'a Alcance único',
       icon: '👁️',
-      color: 'from-jockey-primary to-jockey-dark'
+      color: 'bg-jockey-primary'
     },
     {
       stage: 'Alcance',
@@ -39,7 +39,7 @@ export default function OptimizationLayer() {
       conversionRate: 17.0,
       conversionLabel: 'a Interacción',
       icon: '👥',
-      color: 'from-jockey-dark to-gray-600'
+      color: 'bg-jockey-dark'
     },
     {
       stage: 'Interacciones',
@@ -47,7 +47,7 @@ export default function OptimizationLayer() {
       conversionRate: 38.4,
       conversionLabel: 'a Website',
       icon: '❤️',
-      color: 'from-jockey-teal to-jockey-tealLight'
+      color: 'bg-jockey-teal'
     },
     {
       stage: 'Visitas Web',
@@ -55,7 +55,7 @@ export default function OptimizationLayer() {
       conversionRate: null,
       conversionLabel: null,
       icon: '🌐',
-      color: 'from-green-500 to-green-600'
+      color: 'bg-green-600'
     }
   ];
 
@@ -84,54 +84,54 @@ export default function OptimizationLayer() {
       {/* KPIs Principales */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Alcance */}
-        <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark text-white rounded-2xl p-6 shadow-lg">
+        <div className="bg-jockey-primary text-white rounded-2xl p-6 shadow-md">
           <div className="flex items-center justify-between mb-3">
-            <Users className="w-8 h-8" />
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-green-400">
-              {PERFORMANCE_KPIS.alcance.change}%
+            <Users className="w-7 h-7" />
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20">
+              +{PERFORMANCE_KPIS.alcance.change}%
             </span>
           </div>
           <p className="text-4xl font-bold">{(PERFORMANCE_KPIS.alcance.current / 1000000).toFixed(1)}M</p>
-          <p className="text-white/80 mt-1">{PERFORMANCE_KPIS.alcance.label}</p>
+          <p className="text-white/90 mt-1 font-medium">{PERFORMANCE_KPIS.alcance.label}</p>
           <span className="text-sm text-white/70">{PERFORMANCE_KPIS.alcance.description}</span>
         </div>
 
         {/* Impresiones */}
-        <div className="bg-gradient-to-br from-jockey-dark to-gray-700 text-white rounded-2xl p-6 shadow-lg">
+        <div className="bg-jockey-dark text-white rounded-2xl p-6 shadow-md">
           <div className="flex items-center justify-between mb-3">
-            <Eye className="w-8 h-8" />
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-green-400">
-              {PERFORMANCE_KPIS.impresiones.change}%
+            <Eye className="w-7 h-7" />
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20">
+              +{PERFORMANCE_KPIS.impresiones.change}%
             </span>
           </div>
           <p className="text-4xl font-bold">{(PERFORMANCE_KPIS.impresiones.current / 1000000).toFixed(1)}M</p>
-          <p className="text-white/80 mt-1">{PERFORMANCE_KPIS.impresiones.label}</p>
+          <p className="text-white/90 mt-1 font-medium">{PERFORMANCE_KPIS.impresiones.label}</p>
           <span className="text-sm text-white/70">{PERFORMANCE_KPIS.impresiones.description}</span>
         </div>
 
         {/* Frecuencia */}
-        <div className="bg-gradient-to-br from-jockey-teal to-jockey-tealDark text-white rounded-2xl p-6 shadow-lg">
+        <div className="bg-jockey-teal text-white rounded-2xl p-6 shadow-md">
           <div className="flex items-center justify-between mb-3">
-            <Repeat className="w-8 h-8" />
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-green-400">
-              {PERFORMANCE_KPIS.frecuencia.change}%
+            <Repeat className="w-7 h-7" />
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20">
+              +{PERFORMANCE_KPIS.frecuencia.change}%
             </span>
           </div>
           <p className="text-4xl font-bold">{PERFORMANCE_KPIS.frecuencia.current}x</p>
-          <p className="text-white/80 mt-1">{PERFORMANCE_KPIS.frecuencia.label}</p>
+          <p className="text-white/90 mt-1 font-medium">{PERFORMANCE_KPIS.frecuencia.label}</p>
           <span className="text-sm text-white/70">{PERFORMANCE_KPIS.frecuencia.benchmark}</span>
         </div>
 
         {/* Interacciones */}
-        <div className="bg-gradient-to-br from-jockey-primary to-jockey-teal text-white rounded-2xl p-6 shadow-lg">
+        <div className="bg-jockey-gray text-white rounded-2xl p-6 shadow-md">
           <div className="flex items-center justify-between mb-3">
-            <Heart className="w-8 h-8" />
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-green-400">
+            <Heart className="w-7 h-7" />
+            <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20">
               {PERFORMANCE_KPIS.engagement.trend}
             </span>
           </div>
           <p className="text-4xl font-bold">{(PERFORMANCE_KPIS.engagement.total_interactions / 1000).toFixed(0)}K</p>
-          <p className="text-white/80 mt-1">Interacciones</p>
+          <p className="text-white/90 mt-1 font-medium">Interacciones</p>
           <span className="text-sm text-white/70">Eng. Rate: {PERFORMANCE_KPIS.engagement.engagement_rate}%</span>
         </div>
       </div>
@@ -207,7 +207,7 @@ export default function OptimizationLayer() {
       {/* Funnel de Awareness */}
       <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-br from-jockey-primary to-jockey-teal rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-jockey-primary rounded-xl flex items-center justify-center">
             <TrendingUp className="w-6 h-6 text-white" />
           </div>
           <div>
@@ -222,7 +222,7 @@ export default function OptimizationLayer() {
             return (
               <div key={idx} className="relative">
                 <div
-                  className={`bg-gradient-to-r ${step.color} rounded-xl p-4 text-white transition-all duration-500`}
+                  className={`${step.color} rounded-xl p-4 text-white transition-all duration-500`}
                   style={{ width: `${width}%` }}
                 >
                   <div className="flex items-center justify-between">
@@ -354,7 +354,7 @@ export default function OptimizationLayer() {
       </div>
 
       {/* Jockey Plaza Position */}
-      <div className="bg-gradient-to-br from-jockey-primary to-jockey-dark text-white rounded-2xl shadow-lg p-8">
+      <div className="bg-jockey-dark text-white rounded-2xl shadow-lg p-8">
         <div className="flex items-center gap-4 mb-6">
           <ShoppingBag className="w-10 h-10" />
           <div>
@@ -398,29 +398,29 @@ export default function OptimizationLayer() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-4 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl text-white">
+          <div className="p-4 bg-pink-600 rounded-xl text-white">
             <p className="text-sm font-semibold mb-1">Instagram</p>
             <p className="text-2xl font-bold">{(SOCIAL_MEDIA_METRICS.instagram.followers / 1000).toFixed(0)}K</p>
-            <p className="text-xs text-white/80">seguidores</p>
-            <p className="text-xs mt-2 text-white/70">ER: {SOCIAL_MEDIA_METRICS.instagram.engagement_rate}%</p>
+            <p className="text-xs text-white/90">seguidores</p>
+            <p className="text-xs mt-2 text-white/80">ER: {SOCIAL_MEDIA_METRICS.instagram.engagement_rate}%</p>
           </div>
-          <div className="p-4 bg-gradient-to-br from-gray-900 to-gray-700 rounded-xl text-white">
+          <div className="p-4 bg-gray-900 rounded-xl text-white">
             <p className="text-sm font-semibold mb-1">TikTok</p>
             <p className="text-2xl font-bold">{(SOCIAL_MEDIA_METRICS.tiktok.followers / 1000).toFixed(1)}K</p>
-            <p className="text-xs text-white/80">seguidores</p>
-            <p className="text-xs mt-2 text-white/70">ER: {SOCIAL_MEDIA_METRICS.tiktok.engagement_rate}%</p>
+            <p className="text-xs text-white/90">seguidores</p>
+            <p className="text-xs mt-2 text-white/80">ER: {SOCIAL_MEDIA_METRICS.tiktok.engagement_rate}%</p>
           </div>
-          <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-400 rounded-xl text-white">
+          <div className="p-4 bg-blue-600 rounded-xl text-white">
             <p className="text-sm font-semibold mb-1">Facebook</p>
             <p className="text-2xl font-bold">{(SOCIAL_MEDIA_METRICS.facebook.followers / 1000).toFixed(0)}K</p>
-            <p className="text-xs text-white/80">seguidores</p>
-            <p className="text-xs mt-2 text-white/70">ER: {SOCIAL_MEDIA_METRICS.facebook.engagement_rate}%</p>
+            <p className="text-xs text-white/90">seguidores</p>
+            <p className="text-xs mt-2 text-white/80">ER: {SOCIAL_MEDIA_METRICS.facebook.engagement_rate}%</p>
           </div>
-          <div className="p-4 bg-gradient-to-br from-blue-700 to-blue-500 rounded-xl text-white">
+          <div className="p-4 bg-blue-700 rounded-xl text-white">
             <p className="text-sm font-semibold mb-1">LinkedIn</p>
             <p className="text-2xl font-bold">{(SOCIAL_MEDIA_METRICS.linkedin.followers / 1000).toFixed(1)}K</p>
-            <p className="text-xs text-white/80">seguidores</p>
-            <p className="text-xs mt-2 text-white/70">ER: {SOCIAL_MEDIA_METRICS.linkedin.engagement_rate}%</p>
+            <p className="text-xs text-white/90">seguidores</p>
+            <p className="text-xs mt-2 text-white/80">ER: {SOCIAL_MEDIA_METRICS.linkedin.engagement_rate}%</p>
           </div>
         </div>
       </div>

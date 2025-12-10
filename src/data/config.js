@@ -26,7 +26,7 @@ export const LAYER_CONFIG = {
     subtitle: 'Monitoreo en tiempo real del ecosistema digital retail',
     description: 'Búsqueda, Tendencia, Intención, Engagement',
     icon: 'Search',
-    color: 'from-jockey-dark to-jockey-gray',
+    color: 'bg-jockey-dark',
   },
   decision: {
     id: 'decision',
@@ -34,7 +34,7 @@ export const LAYER_CONFIG = {
     subtitle: 'Insights automáticos para optimizar awareness y engagement',
     description: 'Análisis y definición de estrategia',
     icon: 'Target',
-    color: 'from-jockey-gray to-jockey-primary',
+    color: 'bg-jockey-gray',
   },
   execution: {
     id: 'execution',
@@ -42,7 +42,7 @@ export const LAYER_CONFIG = {
     subtitle: 'Distribución inteligente de presupuesto por alcance y frecuencia',
     description: 'Implementación en tiempo real',
     icon: 'Zap',
-    color: 'from-jockey-primary to-jockey-teal',
+    color: 'bg-jockey-primary',
   },
   optimization: {
     id: 'optimization',
@@ -50,7 +50,7 @@ export const LAYER_CONFIG = {
     subtitle: 'Métricas de alcance, frecuencia e interacciones en tiempo real',
     description: 'Evaluación y redistribución',
     icon: 'TrendingUp',
-    color: 'from-jockey-teal to-jockey-primary',
+    color: 'bg-jockey-teal',
   },
 };
 
