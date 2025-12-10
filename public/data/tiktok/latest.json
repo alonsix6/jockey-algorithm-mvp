@@ -8,27 +8,27 @@
     "hashtags": [
       {
         "hashtag": "#jockeyplaza",
-        "views": "45.8M",
-        "posts": "12.5K",
-        "growth": "+68%",
+        "views": "18.2M",
+        "posts": "4.8K",
+        "growth": "+32%",
         "relevanceScore": 100,
         "region": "Peru",
         "category": "Mall"
       },
       {
         "hashtag": "#mallperu",
-        "views": "125M",
-        "posts": "42K",
-        "growth": "+45%",
+        "views": "48M",
+        "posts": "15K",
+        "growth": "+28%",
         "relevanceScore": 92,
         "region": "Peru",
         "category": "Shopping"
       },
       {
         "hashtag": "#shoppinglima",
-        "views": "85M",
-        "posts": "28K",
-        "growth": "+52%",
+        "views": "32M",
+        "posts": "9.5K",
+        "growth": "+35%",
         "relevanceScore": 88,
         "region": "Peru",
         "category": "Shopping"
@@ -37,43 +37,43 @@
         "hashtag": "#outfitoftheday",
         "views": "28.5B",
         "posts": "8.2M",
-        "growth": "+38%",
+        "growth": "+18%",
         "relevanceScore": 85,
         "region": "Global",
         "category": "Fashion"
       },
       {
         "hashtag": "#zaraperu",
-        "views": "32M",
-        "posts": "8.5K",
-        "growth": "+72%",
+        "views": "12.5M",
+        "posts": "3.2K",
+        "growth": "+42%",
         "relevanceScore": 90,
         "region": "Peru",
         "category": "Fashion"
       },
       {
         "hashtag": "#foodielima",
-        "views": "95M",
-        "posts": "35K",
-        "growth": "+58%",
+        "views": "38M",
+        "posts": "12K",
+        "growth": "+35%",
         "relevanceScore": 87,
         "region": "Peru",
         "category": "Gastronomy"
       },
       {
         "hashtag": "#restauranteslima",
-        "views": "68M",
-        "posts": "22K",
-        "growth": "+48%",
+        "views": "25M",
+        "posts": "8K",
+        "growth": "+28%",
         "relevanceScore": 86,
         "region": "Peru",
         "category": "Gastronomy"
       },
       {
         "hashtag": "#modaperu",
-        "views": "180M",
-        "posts": "55K",
-        "growth": "+42%",
+        "views": "65M",
+        "posts": "18K",
+        "growth": "+25%",
         "relevanceScore": 84,
         "region": "Peru",
         "category": "Fashion"
@@ -82,34 +82,34 @@
         "hashtag": "#haul",
         "views": "45B",
         "posts": "12M",
-        "growth": "+35%",
+        "growth": "+15%",
         "relevanceScore": 82,
         "region": "Global",
         "category": "Shopping"
       },
       {
         "hashtag": "#surcolima",
-        "views": "28M",
-        "posts": "9.2K",
-        "growth": "+62%",
+        "views": "8.5M",
+        "posts": "2.8K",
+        "growth": "+38%",
         "relevanceScore": 78,
         "region": "Peru",
         "category": "Location"
       },
       {
         "hashtag": "#experienciaslima",
-        "views": "42M",
-        "posts": "15K",
-        "growth": "+55%",
+        "views": "15M",
+        "posts": "5.2K",
+        "growth": "+32%",
         "relevanceScore": 80,
         "region": "Peru",
         "category": "Lifestyle"
       },
       {
         "hashtag": "#cineperu",
-        "views": "52M",
-        "posts": "18K",
-        "growth": "+28%",
+        "views": "22M",
+        "posts": "6.5K",
+        "growth": "+18%",
         "relevanceScore": 75,
         "region": "Peru",
         "category": "Entertainment"
@@ -118,14 +118,14 @@
     "sounds": [
       {
         "soundName": "Shopping Spree Vibes",
-        "usage": "125K",
-        "growth": "+85%",
+        "usage": "45K",
+        "growth": "+38%",
         "category": "Shopping"
       },
       {
         "soundName": "Lima Night Life",
-        "usage": "68K",
-        "growth": "+72%",
+        "usage": "28K",
+        "growth": "+32%",
         "category": "Lifestyle"
       }
     ],

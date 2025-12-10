@@ -12,92 +12,92 @@
       "topics": [
         {
           "topic": "Nuevas tiendas Jockey Plaza",
-          "mentions": 4250,
-          "engagement_score": 8.8,
-          "growth": "+45%",
+          "mentions": 2850,
+          "engagement_score": 8.4,
+          "growth": "+28%",
           "sentiment": "very positive",
           "top_brands": [
             "Jockey Plaza",
             "Zara",
             "H&M"
           ],
-          "avg_reactions": 720,
-          "avg_comments": 145,
-          "avg_shares": 210
+          "avg_reactions": 520,
+          "avg_comments": 95,
+          "avg_shares": 145
         },
         {
           "topic": "Experiencias gastronomicas",
-          "mentions": 3800,
-          "engagement_score": 9.2,
-          "growth": "+58%",
+          "mentions": 2400,
+          "engagement_score": 8.8,
+          "growth": "+35%",
           "sentiment": "very positive",
           "top_brands": [
             "Jockey Plaza",
             "Central",
             "Tanta"
           ],
-          "avg_reactions": 850,
-          "avg_comments": 180,
-          "avg_shares": 165
+          "avg_reactions": 580,
+          "avg_comments": 125,
+          "avg_shares": 110
         },
         {
           "topic": "Eventos y activaciones",
-          "mentions": 2950,
-          "engagement_score": 8.5,
-          "growth": "+72%",
+          "mentions": 1850,
+          "engagement_score": 8.2,
+          "growth": "+42%",
           "sentiment": "positive",
           "top_brands": [
             "Jockey Plaza",
             "Cineplanet"
           ],
-          "avg_reactions": 580,
-          "avg_comments": 95,
-          "avg_shares": 125
+          "avg_reactions": 380,
+          "avg_comments": 65,
+          "avg_shares": 85
         },
         {
           "topic": "Moda y tendencias",
-          "mentions": 3200,
-          "engagement_score": 8.9,
-          "growth": "+38%",
+          "mentions": 2100,
+          "engagement_score": 8.5,
+          "growth": "+25%",
           "sentiment": "very positive",
           "top_brands": [
             "Zara",
             "H&M",
             "Jockey Plaza"
           ],
-          "avg_reactions": 680,
-          "avg_comments": 120,
-          "avg_shares": 145
+          "avg_reactions": 480,
+          "avg_comments": 85,
+          "avg_shares": 95
         },
         {
           "topic": "Ofertas y promociones",
-          "mentions": 2650,
-          "engagement_score": 7.8,
-          "growth": "+85%",
+          "mentions": 1680,
+          "engagement_score": 7.6,
+          "growth": "+48%",
           "sentiment": "positive",
           "top_brands": [
             "Jockey Plaza",
             "Falabella",
             "Ripley"
           ],
-          "avg_reactions": 520,
-          "avg_comments": 185,
-          "avg_shares": 95
+          "avg_reactions": 350,
+          "avg_comments": 120,
+          "avg_shares": 65
         },
         {
           "topic": "Entretenimiento familiar",
-          "mentions": 2100,
-          "engagement_score": 8.2,
-          "growth": "+42%",
+          "mentions": 1350,
+          "engagement_score": 7.9,
+          "growth": "+22%",
           "sentiment": "positive",
           "top_brands": [
             "Jockey Plaza",
             "Cineplanet",
             "Timezone"
           ],
-          "avg_reactions": 450,
-          "avg_comments": 75,
-          "avg_shares": 110
+          "avg_reactions": 295,
+          "avg_comments": 52,
+          "avg_shares": 72
         }
       ],
       "metadata": {
@@ -125,11 +125,11 @@
       "topics": [
         {
           "topic": "Mejores malls de Lima",
-          "mentions": 1850,
-          "engagement_score": 8.6,
-          "growth": "+52%",
+          "mentions": 1250,
+          "engagement_score": 8.2,
+          "growth": "+32%",
           "sentiment": "positive",
-          "discussion_volume": "very high",
+          "discussion_volume": "high",
           "top_queries": [
             "Jockey Plaza vs Real Plaza",
             "mejores restaurantes",
@@ -138,11 +138,11 @@
         },
         {
           "topic": "Recomendaciones de tiendas",
-          "mentions": 1420,
-          "engagement_score": 7.9,
-          "growth": "+35%",
+          "mentions": 980,
+          "engagement_score": 7.6,
+          "growth": "+22%",
           "sentiment": "positive",
-          "discussion_volume": "high",
+          "discussion_volume": "moderate",
           "top_queries": [
             "donde comprar ropa",
             "tiendas nuevas",
@@ -151,65 +151,65 @@
         }
       ],
       "metadata": {
-        "groups_analyzed": 12,
-        "members_total": 125000,
-        "posts_analyzed": 950
+        "groups_analyzed": 8,
+        "members_total": 85000,
+        "posts_analyzed": 620
       }
     }
   ],
   "aggregatedTopics": [
     {
       "topic": "Experiencias gastronomicas",
-      "mentions": 3800,
-      "engagement_score": 9.2,
-      "growth": "+58%",
+      "mentions": 2400,
+      "engagement_score": 8.8,
+      "growth": "+35%",
       "sentiment": "very positive",
       "top_brands": [
         "Jockey Plaza",
         "Central",
         "Tanta"
       ],
-      "avg_reactions": 850,
-      "avg_comments": 180,
-      "avg_shares": 165
+      "avg_reactions": 580,
+      "avg_comments": 125,
+      "avg_shares": 110
     },
     {
       "topic": "Moda y tendencias",
-      "mentions": 3200,
-      "engagement_score": 8.9,
-      "growth": "+38%",
+      "mentions": 2100,
+      "engagement_score": 8.5,
+      "growth": "+25%",
       "sentiment": "very positive",
       "top_brands": [
         "Zara",
         "H&M",
         "Jockey Plaza"
       ],
-      "avg_reactions": 680,
-      "avg_comments": 120,
-      "avg_shares": 145
+      "avg_reactions": 480,
+      "avg_comments": 85,
+      "avg_shares": 95
     },
     {
       "topic": "Nuevas tiendas Jockey Plaza",
-      "mentions": 4250,
-      "engagement_score": 8.8,
-      "growth": "+45%",
+      "mentions": 2850,
+      "engagement_score": 8.4,
+      "growth": "+28%",
       "sentiment": "very positive",
       "top_brands": [
         "Jockey Plaza",
         "Zara",
         "H&M"
       ],
-      "avg_reactions": 720,
-      "avg_comments": 145,
-      "avg_shares": 210
+      "avg_reactions": 520,
+      "avg_comments": 95,
+      "avg_shares": 145
     },
     {
       "topic": "Mejores malls de Lima",
-      "mentions": 1850,
-      "engagement_score": 8.6,
-      "growth": "+52%",
+      "mentions": 1250,
+      "engagement_score": 8.2,
+      "growth": "+32%",
       "sentiment": "positive",
-      "discussion_volume": "very high",
+      "discussion_volume": "high",
       "top_queries": [
         "Jockey Plaza vs Real Plaza",
         "mejores restaurantes",
@@ -218,40 +218,40 @@
     },
     {
       "topic": "Eventos y activaciones",
-      "mentions": 2950,
-      "engagement_score": 8.5,
-      "growth": "+72%",
+      "mentions": 1850,
+      "engagement_score": 8.2,
+      "growth": "+42%",
       "sentiment": "positive",
       "top_brands": [
         "Jockey Plaza",
         "Cineplanet"
       ],
-      "avg_reactions": 580,
-      "avg_comments": 95,
-      "avg_shares": 125
+      "avg_reactions": 380,
+      "avg_comments": 65,
+      "avg_shares": 85
     },
     {
       "topic": "Entretenimiento familiar",
-      "mentions": 2100,
-      "engagement_score": 8.2,
-      "growth": "+42%",
+      "mentions": 1350,
+      "engagement_score": 7.9,
+      "growth": "+22%",
       "sentiment": "positive",
       "top_brands": [
         "Jockey Plaza",
         "Cineplanet",
         "Timezone"
       ],
-      "avg_reactions": 450,
-      "avg_comments": 75,
-      "avg_shares": 110
+      "avg_reactions": 295,
+      "avg_comments": 52,
+      "avg_shares": 72
     },
     {
       "topic": "Recomendaciones de tiendas",
-      "mentions": 1420,
-      "engagement_score": 7.9,
-      "growth": "+35%",
+      "mentions": 980,
+      "engagement_score": 7.6,
+      "growth": "+22%",
       "sentiment": "positive",
-      "discussion_volume": "high",
+      "discussion_volume": "moderate",
       "top_queries": [
         "donde comprar ropa",
         "tiendas nuevas",
@@ -260,18 +260,18 @@
     },
     {
       "topic": "Ofertas y promociones",
-      "mentions": 2650,
-      "engagement_score": 7.8,
-      "growth": "+85%",
+      "mentions": 1680,
+      "engagement_score": 7.6,
+      "growth": "+48%",
       "sentiment": "positive",
       "top_brands": [
         "Jockey Plaza",
         "Falabella",
         "Ripley"
       ],
-      "avg_reactions": 520,
-      "avg_comments": 185,
-      "avg_shares": 95
+      "avg_reactions": 350,
+      "avg_comments": 120,
+      "avg_shares": 65
     }
   ],
   "metadata": {
