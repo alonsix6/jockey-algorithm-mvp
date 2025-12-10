@@ -1,127 +1,151 @@
 {
-  "timestamp": "2025-11-20T18:30:00.000000",
-  "property": "UCSP Perú - Admisiones",
+  "timestamp": "2025-12-10T10:30:00.000000",
+  "property": "Jockey Plaza - Web Principal",
   "source": "Google Analytics 4",
   "overview": {
-    "totalUsers": 28500,
-    "sessions": 42200,
-    "conversions": 980,
-    "conversionRate": 0.058
+    "totalUsers": 185000,
+    "sessions": 245000,
+    "engagementRate": 0.68,
+    "interactions": 142000,
+    "avgSessionDuration": "3m 42s",
+    "bounceRate": 0.32
   },
   "topPages": [
     {
-      "page": "/admision/pregrado",
-      "views": 11200,
-      "avgTimeOnPage": "3m 45s",
-      "exitRate": 0.32,
-      "conversionRate": 0.078
-    },
-    {
-      "page": "/carreras/ingenieria-industrial",
-      "views": 7500,
-      "avgTimeOnPage": "4m 12s",
+      "page": "/tiendas",
+      "views": 52000,
+      "avgTimeOnPage": "2m 45s",
       "exitRate": 0.28,
-      "conversionRate": 0.085
+      "engagementRate": 0.72
     },
     {
-      "page": "/carreras/medicina",
-      "views": 7200,
-      "avgTimeOnPage": "5m 05s",
-      "exitRate": 0.25,
-      "conversionRate": 0.092
-    },
-    {
-      "page": "/carreras/derecho",
-      "views": 5800,
-      "avgTimeOnPage": "3m 28s",
-      "exitRate": 0.35,
-      "conversionRate": 0.068
-    },
-    {
-      "page": "/becas-y-financiamiento",
-      "views": 9500,
-      "avgTimeOnPage": "2m 52s",
-      "exitRate": 0.42,
-      "conversionRate": 0.062
-    },
-    {
-      "page": "/carreras/ciencia-datos",
-      "views": 5400,
-      "avgTimeOnPage": "4m 38s",
-      "exitRate": 0.30,
-      "conversionRate": 0.080
-    },
-    {
-      "page": "/admision/posgrado",
-      "views": 4400,
+      "page": "/restaurantes",
+      "views": 48500,
       "avgTimeOnPage": "3m 15s",
-      "exitRate": 0.38,
-      "conversionRate": 0.065
+      "exitRate": 0.25,
+      "engagementRate": 0.78
     },
     {
-      "page": "/acreditacion-calidad",
-      "views": 4100,
-      "avgTimeOnPage": "2m 38s",
+      "page": "/eventos",
+      "views": 35200,
+      "avgTimeOnPage": "4m 02s",
+      "exitRate": 0.22,
+      "engagementRate": 0.82
+    },
+    {
+      "page": "/horarios",
+      "views": 42800,
+      "avgTimeOnPage": "1m 28s",
       "exitRate": 0.45,
-      "conversionRate": 0.052
+      "engagementRate": 0.55
+    },
+    {
+      "page": "/ubicacion",
+      "views": 38500,
+      "avgTimeOnPage": "1m 52s",
+      "exitRate": 0.42,
+      "engagementRate": 0.58
+    },
+    {
+      "page": "/cine",
+      "views": 32100,
+      "avgTimeOnPage": "2m 38s",
+      "exitRate": 0.30,
+      "engagementRate": 0.70
+    },
+    {
+      "page": "/promociones",
+      "views": 28900,
+      "avgTimeOnPage": "2m 15s",
+      "exitRate": 0.35,
+      "engagementRate": 0.65
+    },
+    {
+      "page": "/boulevard-asia",
+      "views": 18500,
+      "avgTimeOnPage": "2m 48s",
+      "exitRate": 0.32,
+      "engagementRate": 0.68
     }
   ],
   "searchTerms": [
     {
-      "term": "admisión 2026",
-      "searches": 2100,
-      "resultClicks": 1780,
-      "conversionRate": 0.088,
+      "term": "tiendas jockey plaza",
+      "searches": 8500,
+      "resultClicks": 7200,
+      "engagementRate": 0.72,
       "trend": "rising"
     },
     {
-      "term": "ingeniería industrial",
-      "searches": 1700,
-      "resultClicks": 1450,
-      "conversionRate": 0.080,
+      "term": "restaurantes jockey",
+      "searches": 7200,
+      "resultClicks": 6100,
+      "engagementRate": 0.78,
       "trend": "rising"
     },
     {
-      "term": "medicina requisitos",
-      "searches": 1600,
-      "resultClicks": 1350,
-      "conversionRate": 0.085,
-      "trend": "rising"
-    },
-    {
-      "term": "becas pregrado",
-      "searches": 1950,
-      "resultClicks": 1650,
-      "conversionRate": 0.072,
-      "trend": "rising"
-    },
-    {
-      "term": "ciencia de datos",
-      "searches": 1150,
-      "resultClicks": 980,
-      "conversionRate": 0.078,
+      "term": "horario jockey plaza",
+      "searches": 6800,
+      "resultClicks": 5900,
+      "engagementRate": 0.55,
       "trend": "stable"
     },
     {
-      "term": "maestrías",
-      "searches": 900,
-      "resultClicks": 750,
-      "conversionRate": 0.065,
+      "term": "cine jockey plaza",
+      "searches": 5500,
+      "resultClicks": 4800,
+      "engagementRate": 0.70,
       "trend": "stable"
     },
     {
-      "term": "derecho ucsp",
-      "searches": 1100,
-      "resultClicks": 920,
-      "conversionRate": 0.070,
-      "trend": "declining"
+      "term": "eventos jockey",
+      "searches": 4200,
+      "resultClicks": 3600,
+      "engagementRate": 0.82,
+      "trend": "rising"
     },
     {
-      "term": "acreditación",
-      "searches": 720,
-      "resultClicks": 590,
-      "conversionRate": 0.058,
+      "term": "zara jockey plaza",
+      "searches": 3800,
+      "resultClicks": 3200,
+      "engagementRate": 0.75,
+      "trend": "rising"
+    },
+    {
+      "term": "estacionamiento jockey",
+      "searches": 3500,
+      "resultClicks": 2900,
+      "engagementRate": 0.52,
+      "trend": "stable"
+    },
+    {
+      "term": "boulevard asia",
+      "searches": 2800,
+      "resultClicks": 2400,
+      "engagementRate": 0.68,
       "trend": "stable"
     }
-  ]
+  ],
+  "demographics": {
+    "ageGroups": [
+      { "range": "18-24", "percentage": 22 },
+      { "range": "25-34", "percentage": 35 },
+      { "range": "35-44", "percentage": 25 },
+      { "range": "45-54", "percentage": 12 },
+      { "range": "55+", "percentage": 6 }
+    ],
+    "topCities": [
+      { "city": "Surco", "percentage": 32 },
+      { "city": "La Molina", "percentage": 22 },
+      { "city": "San Borja", "percentage": 18 },
+      { "city": "Miraflores", "percentage": 15 },
+      { "city": "San Isidro", "percentage": 8 },
+      { "city": "Otros", "percentage": 5 }
+    ]
+  },
+  "devices": {
+    "mobile": 68,
+    "desktop": 25,
+    "tablet": 7
+  }
 }
