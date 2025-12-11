@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import { DollarSign, TrendingUp, Target, Zap, Calendar, PlayCircle, AlertTriangle, ShoppingBag, ChevronDown, ChevronUp, Eye, Users, Heart } from 'lucide-react';
-import { BUDGET_ALLOCATION, CONTENT_PILLARS, CATEGORIAS_PERFORMANCE } from '../data/mockData';
-import { LAYER_CONFIG, CHANNELS_CONFIG } from '../data/config';
+import { DollarSign, TrendingUp, Target, Calendar, PlayCircle, AlertTriangle } from 'lucide-react';
+import { BUDGET_ALLOCATION } from '../data/mockData';
+import { LAYER_CONFIG } from '../data/config';
 
 export default function ExecutionLayer() {
-  const [showAllCategories, setShowAllCategories] = useState(false);
-
   const getStatusColor = (status) => {
     if (status === 'overperforming') return { bg: 'bg-green-50', border: 'border-green-300', text: 'text-green-700', badge: 'bg-green-100' };
     if (status === 'performing') return { bg: 'bg-blue-50', border: 'border-blue-300', text: 'text-blue-700', badge: 'bg-blue-100' };
@@ -18,12 +15,6 @@ export default function ExecutionLayer() {
     if (status === 'performing') return '✓';
     if (status === 'ontrack') return '→';
     return '⚠';
-  };
-
-  const getTendenciaIcon = (tendencia) => {
-    if (tendencia === 'rising') return '📈';
-    if (tendencia === 'stable') return '➡️';
-    return '📉';
   };
 
   return (
@@ -217,122 +208,6 @@ export default function ExecutionLayer() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Categorías Performance */}
-      <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-jockey-primary rounded-xl flex items-center justify-center">
-              <ShoppingBag className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h3 className="text-base font-bold text-gray-900">Performance por Categoría</h3>
-              <p className="text-sm text-gray-600">Métricas de alcance, frecuencia e interacciones por tipo de tienda</p>
-            </div>
-          </div>
-          <button
-            onClick={() => setShowAllCategories(!showAllCategories)}
-            className="flex items-center gap-2 px-4 py-2 bg-jockey-primary text-white rounded-lg hover:bg-jockey-dark transition-colors text-sm font-medium"
-          >
-            {showAllCategories ? (
-              <>
-                <ChevronUp className="w-4 h-4" />
-                Mostrar menos
-              </>
-            ) : (
-              <>
-                <ChevronDown className="w-4 h-4" />
-                Ver todas ({CATEGORIAS_PERFORMANCE.length})
-              </>
-            )}
-          </button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {CATEGORIAS_PERFORMANCE
-            .slice(0, showAllCategories ? CATEGORIAS_PERFORMANCE.length : 4)
-            .map((categoria, idx) => (
-            <div key={categoria.id} className={`p-5 rounded-xl border-2 ${
-              idx < 3 ? 'bg-jockey-primary/5 border-jockey-primary/30' : 'bg-gray-50 border-gray-200'
-            }`}>
-              <div className="flex items-center justify-between mb-3">
-                <h4 className="font-bold text-gray-900 text-base">{categoria.nombre}</h4>
-                <span className="text-lg">{getTendenciaIcon(categoria.tendencia)}</span>
-              </div>
-
-              {/* Tiendas en la categoría */}
-              <div className="flex flex-wrap gap-1 mb-4">
-                {categoria.tiendas.slice(0, 3).map((tienda, tidx) => (
-                  <span key={tidx} className="px-2 py-1 bg-gray-200 rounded text-xs text-gray-700">
-                    {tienda}
-                  </span>
-                ))}
-                {categoria.tiendas.length > 3 && (
-                  <span className="px-2 py-1 bg-gray-200 rounded text-xs text-gray-500">
-                    +{categoria.tiendas.length - 3}
-                  </span>
-                )}
-              </div>
-
-              {/* Métricas principales */}
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-jockey-primary" />
-                  <div>
-                    <p className="text-xs text-gray-500">Alcance</p>
-                    <p className="font-semibold text-gray-900">{(categoria.alcance / 1000).toFixed(0)}K</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Eye className="w-4 h-4 text-jockey-teal" />
-                  <div>
-                    <p className="text-xs text-gray-500">Impresiones</p>
-                    <p className="font-semibold text-gray-900">{(categoria.impresiones / 1000000).toFixed(1)}M</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Frecuencia y Engagement */}
-              <div className="pt-3 border-t border-gray-300">
-                <div className="grid grid-cols-3 gap-2 text-center">
-                  <div>
-                    <p className="text-xs text-gray-500">Frecuencia</p>
-                    <p className="font-bold text-jockey-primary">{categoria.frecuencia}x</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">Eng. Rate</p>
-                    <p className="font-bold text-jockey-teal">{categoria.engagement_rate}%</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">CPM</p>
-                    <p className="font-bold text-gray-700">${categoria.cpm}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Top Content */}
-              {categoria.top_content && (
-                <div className="mt-3 pt-3 border-t border-gray-300">
-                  <p className="text-xs text-gray-500 mb-1">Top Content: {categoria.top_content.tipo}</p>
-                  <div className="flex items-center gap-2">
-                    <Heart className="w-3 h-3 text-jockey-primary" />
-                    <span className="text-xs font-semibold">{categoria.top_content.engagement}% eng.</span>
-                    <span className="text-xs text-gray-500">• {(categoria.top_content.views / 1000).toFixed(0)}K views</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {!showAllCategories && (
-          <div className="mt-4 text-center">
-            <p className="text-sm text-gray-500">
-              Mostrando top 4 categorías. Haz clic en "Ver todas" para ver las {CATEGORIAS_PERFORMANCE.length} categorías monitoreadas.
-            </p>
-          </div>
-        )}
       </div>
 
       {/* Timing Recommendations */}
